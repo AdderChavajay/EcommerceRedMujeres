@@ -1,0 +1,78 @@
+
+ nav .icono img{
+    width: 50px;
+}
+
+
+main .producto_nuevo{
+    /*padding: 1rem;
+    box-shadow: var(--Flotante);*/
+    margin: 10px 0px 10px 0px;
+}
+
+
+main .row div .carousel, .slide, img{
+    width: 100%;
+    max-height: 400px;
+   
+}
+
+
+
+.Products_As{
+    display: inline-block;
+    position: relative;
+    padding: 1rem;
+}
+
+.Products_As::before, .Products_As::after{
+    
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background-color: black;
+    top: 1em;
+}
+
+.Products_As::before{
+    left: -140px;
+}
+
+.Products_As::after{
+    right: -140px;
+}
+
+main section .asociaciones ol li a{
+    text-decoration: none;
+    color: #000;
+}
+
+main section .asociaciones ol li:hover{
+    background-color: #d5d8dc;
+    border-radius: 5px;
+}
+
+.productos_sugeridos .all_product{
+    padding: 1rem;
+}
+
+.productos_sugeridos .all_product .producto:hover{
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    transition:all 0.6s ease;
+    box-shadow: 0px 0px 5px 0px #000;    
+}
+
+.productos_sugeridos .all_product .producto .productinfo .margen{
+    padding: 0rem 0rem 1rem 0rem;
+    
+}
+
+.productos_sugeridos .all_product .producto .productinfo .margen button{
+    background-color: #1c2833;
+    color: #eee;
+}
+.titulos{
+    padding: 1rem;
+} 
