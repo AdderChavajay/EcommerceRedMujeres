@@ -3,9 +3,11 @@
 @section('title','Crear Cuenta')
     
 @section('header')
-    <header class="text-center">
-            <img src="{{asset('images/icons/LogoMercado.jpg')}}" class="img img-fluid" alt="">    
+   <header class="text-center ">
+            <img src="{{asset('images/icons/icons/LogoMercado.png')}}" class="img img-fluid" alt="">    
+            <img src="{{asset('images/icons/icons/medianologopnggrande.ico')}}" class="img img-fluid"  alt="">
     </header>
+
 @endsection
 
 <!--######################### main ###############################-->
@@ -14,20 +16,26 @@
 <main>       
     <div class="container">
         <div class="row ">
-            <div class="col-md-5 col-lg-5 mx-auto d-flex align-items-center imagen">
-                <img src="{{asset('images/icons/LogoMercado.jpg')}}" class="img img-fluid" alt="">  
-            </div>
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-          <div class=" shadow  my-5">
+
+
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto my-5">
+          <div class=" shadow  ">
               
             <div class="card-body p-4 p-sm-5">
+
                         <div class="text-center">
                             <h3>crea una cuenta </h3>
                         </div>
                         <form action="" method="POST">
                                 <div class="row">
                                     <div class="form-floating mb-3 col">
-                                        <input type="text" class="form-control" id="floatingInput" placeholder="Nombre">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                              <span class="input-group-text" id="basic-addon1"><ion-icon name="person-outline"></ion-icon></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+                                          </div>
+                                        <!--<input type="text" class="form-control" id="floatingInput" placeholder="Nombre">-->
                                     </div>
                                     <div class="form-floating mb-3 col" >
                                         <input type="text" class="form-control" id="floatingInput" placeholder="Apellido">
@@ -36,10 +44,28 @@
                 
                                 <div class="">
                                     <div class="form-floating mb-3 ">
-                                        <input type="email" placeholder="Correo Electronico" class="form-control" name="" id="">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                              <span class="input-group-text" id="basic-addon1">@</span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="email@example.com"  aria-describedby="basic-addon1">
+                                          </div>
+                                        <!--
+                                        
+                                            <input type="email" placeholder="Correo Electronico" class="form-control" name="" id="">
+                                        -->
                                     </div>
                                 <div class="form-floating mb-3 " >
-                                    <input type="password" placeholder="Contrasenia" class="form-control" name="" id="">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text" id="basic-addon1"> <ion-icon name="key-outline"></ion-icon> </span>
+                                        </div>
+                                        <input type="password" class="form-control" placeholder="Contraseña"  aria-describedby="basic-addon1">
+                                      </div>
+                                    
+                                    <!--
+                                        <input type="password" placeholder="Contrasenia" class="form-control" name="" id="">
+                                    -->
                                 </div>
 
                     

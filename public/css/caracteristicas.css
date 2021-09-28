@@ -1,9 +1,11 @@
-nav a img{
-    width: 50px;
+header {
+    padding: 10px;
 }
+
 .input{
   padding: 1rem 0rem 1rem 0rem;
 }
+
 
 .descripcion .margen_descripcion{
     margin: 1rem;

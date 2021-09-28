@@ -18,7 +18,10 @@ main .row div .carousel, .slide, img{
 }
 
 
-
+div form .buscador::placeholder{
+    font-family: "Font Awesome 5 Free"; font-weight: 900;
+}
+/*
 .Products_As{
     display: inline-block;
     position: relative;
@@ -29,20 +32,20 @@ main .row div .carousel, .slide, img{
     
     content: '';
     position: absolute;
-    width: 120px;
+    width: 100px;
     height: 2px;
     background-color: black;
     top: 1em;
 }
 
 .Products_As::before{
-    left: -140px;
+    left: -110px;
 }
 
 .Products_As::after{
-    right: -140px;
+    right: -110px;
 }
-
+*/
 main section .asociaciones ol li a{
     text-decoration: none;
     color: #000;

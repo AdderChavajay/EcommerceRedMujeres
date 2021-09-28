@@ -7,8 +7,7 @@
     <nav class="navbar navbar-expand-lg navbar-light container ">
           
     <a class="navbar-brand icono" href="#"> 
-      <img src="images/icons/LogoMercado.jpg"  alt="">
-      
+      <img src="images/icons/icons/LogoMercado.png"  alt="">   
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,10 +18,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
      
-      <form class="form-inline my-2 my-lg-0 mx-auto">
+      <form class="form-inline my-2 my-lg-0 mx-auto">    
+          
+          <input type="text" class="form-control mr-sm-2 buscador" placeholder="  " aria-describedby="basic-addon1">
         
-        <input type="text" class="form-control mr-sm-2" placeholder="Buscar" aria-describedby="basic-addon1">
-        <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
+          <button class="btn btn-primary my-2 my-sm-0 rounded" type="submit">Buscar</button>
       
       </form>
       
@@ -99,7 +99,7 @@
 
     </div>
     
-    <div class="col-md-4 col-sm-12 texto shadow ">
+    <div class="col-md-4 col-sm-12 texto">
       
         <h3 class="text-center my-3"> <strong>Red de mujeres</strong></h3>
 
@@ -133,7 +133,7 @@
       <section class="productos_sugeridos row">
           <div class="asociaciones col-md-3 ">
               
-               <h4 class="text-center list-group-item list-group-item-success bordeo_asociacion" ><b> Asociaciones </b></h4>
+               <h5 class=" list-group-item list-group-item-success" ><b> Asociaciones </b></h5>
               <ol class="list-group list-group-flush">
                 
                   <li class="list-group-item"><a href="list-group-item">Tz'unun Ya'</a> </li>
@@ -164,7 +164,7 @@
                           <h3>$56</h3>
                           <p>Easy Polo Black Edition</p>
                           <div class="margen">
-                              <button type=" submit"  class="btn btn-primary">            
+                              <button type=" submit"  class="btn btn-default">            
                                   <ion-icon name="cart"></ion-icon>
                                   Agregar
                               </button>                                
@@ -175,7 +175,7 @@
           </div>
           
          
-          <div class="col-md-4 col-sm-6 all_product">
+          <div class="col-md-4 col-sm-4 all_product">
               <div class="product-image-wrapper producto shadow">
                   <div class="single-products">
                       <img src="images/Carrusell/3.JPG" alt="" class="img img-fluid">
@@ -183,7 +183,7 @@
                           <h3>$56</h3>
                           <p>Easy Polo Black Edition</p>
                           <div class="margen">
-                              <button type="button" class="btn btn-primary ">
+                              <button type="button" class="btn btn-default ">
                                   <ion-icon name="cart"></ion-icon>
                                   Agregar
                               </button>
@@ -192,18 +192,18 @@
                   </div>
               </div>
           </div>
-          <div class="col-md-4  col-sm-6 all_product">
-              <div class="product-image-wrapper producto shadow">
-                  <div class="single-products">
-                      <img src="images/Carrusell/1.JPG" alt="" class="img img-fluid">
-                      <div class="productinfo text-center">
-                          <h3>$56</h3>
-                          <p>Easy Polo Black Edition</p>
-                          <div class="margen">
-                              <button type="button" class="btn btn-primary ">
-                                  <ion-icon name="cart"></ion-icon>
-                                  Agregar
-                              </button>
+              <div class="col-md-4  col-sm-4 all_product">
+                <div class="product-image-wrapper producto shadow">
+                    <div class="single-products">
+                        <img src="images/Carrusell/1.JPG" alt="" class="img img-fluid">
+                        <div class="productinfo text-center">
+                              <h3>$56</h3>
+                              <p>Easy Polo Black Edition</p>
+                            <div class="margen">
+                                <button type="button" class="btn btn-default ">
+                                    <ion-icon name="cart"></ion-icon>
+                                    Agregar
+                                </button>
                           </div>
                       </div>     
                   </div>
