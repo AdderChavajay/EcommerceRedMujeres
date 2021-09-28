@@ -19,14 +19,14 @@ class CreateContactsTable extends Migration
             $table->integer('celular');
             $table->string('contra');
             $table->timestamps();
-            $table->unsignedBigInteger('id_usernorm')->nullable();
-            $table->unsignedBigInteger('id_useradmin')->nullable();
+            $table->unsignedBigInteger('id_user_normal')->nullable();
+            $table->unsignedBigInteger('id_user_admin')->nullable();
 
-            $table->foreign('id_usernormls')->references('id')
-                  ->on('usernormals')->onDelete('set null');
-                  
-            $table->foreign('id_useradmin')->references('id')
-                  ->on('useradmins')->onDelete('set null');
+            $table->foreign('id_user_normal')->references('id')
+                ->on('user_normals')->onDelete('set null');
+
+            $table->foreign('id_user_admin')->references('id')
+                ->on('user_admins')->onDelete('set null');
         });
     }
 

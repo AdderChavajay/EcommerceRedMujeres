@@ -15,7 +15,7 @@ class CreateAssociationsTable extends Migration
     {
         Schema::create('associations', function (Blueprint $asociacion) {
             $asociacion->id();
-            $asociacion->string('nombre');
+            $asociacion->string('name');
             $asociacion->timestamps();
         });
     }

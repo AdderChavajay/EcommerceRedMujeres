@@ -13,18 +13,18 @@ class CreateUseradminsTable extends Migration
      */
     public function up()
     {
-        Schema::create('useradmins', function (Blueprint $table) {
+        Schema::create('user_admins', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre',50);
-            $table->string('apellido',50);
-            $table->timestamp('fecha_nacimiento');
-            $table->char('sexo');
+            $table->string('name', 50);
+            $table->string('last_name', 50);
+            $table->timestamp('date_birth');
+            $table->char('gender');
             $table->timestamps();
             $table->unsignedBigInteger('id_socio')->nullable();
 
             $table->foreign('id_socio')
-                  ->references('id')->on('associations')
-                  ->onDelete('set null') ;
+                ->references('id')->on('associations')
+                ->onDelete('set null');
         });
     }
 
@@ -35,6 +35,6 @@ class CreateUseradminsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('useradmins');
+        Schema::dropIfExists('user_admins');
     }
 }
