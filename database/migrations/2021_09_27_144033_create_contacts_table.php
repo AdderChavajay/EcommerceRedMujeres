@@ -15,7 +15,18 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->string('email');
+            $table->integer('celular');
+            $table->string('contra');
             $table->timestamps();
+            $table->unsignedBigInteger('id_usernorm')->nullable();
+            $table->unsignedBigInteger('id_useradmin')->nullable();
+
+            $table->foreign('id_usernormls')->references('id')
+                  ->on('usernormals')->onDelete('set null');
+                  
+            $table->foreign('id_useradmin')->references('id')
+                  ->on('useradmins')->onDelete('set null');
         });
     }
 

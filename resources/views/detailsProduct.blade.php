@@ -5,8 +5,8 @@
 @section('header')
 <nav class="navbar navbar-expand-lg navbar-light container ">
           
-    <a class="navbar-brand" href="#"> 
-      <img src="{{asset('images/icons/LogoMercado.png')}}"  alt="">
+    <a class="navbar-brand icono" href="#"> 
+      <img src="{{asset('images/icons/icons/LogoMercado.png')}}" alt="">
     </a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@
      
       <form class="form-inline my-2 my-lg-0 mx-auto">
         
-        <input type="text" class="form-control mr-sm-2" placeholder="Buscar" aria-describedby="basic-addon1">
+        <input type="text" class="form-control mr-sm-2 buscador" placeholder="  " aria-describedby="basic-addon1">
         <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
       
       </form>
@@ -27,23 +27,12 @@
       <ul class="navbar-nav ml-auto ">
         
         <li class="nav-item active w-100">
-          <a class="nav-link" href="#"><ion-icon name="home-sharp"></ion-icon>inicio</a>
+          <a class="nav-link" href="#">Inicio</a>
         </li>
         
-        <!--##################################Menu deplegable de Asociaciones ################################-->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <ion-icon name="cart-sharp"></ion-icon>
-            Carrito
-          </a>
-          <div class="dropdown-menu  " aria-labelledby="dropdownMenuButton">
-            
-              <div class="row" >
-                <a href=""> <img src="" alt=""> <p>Nombre Producto</p>  </a>
-                <p>$50</p>
-                <ion-icon name="close-outline"></ion-icon>
-              </div>
-            </div>
+        <!--################################# Carrito ################################-->
+        <li class="nav-item active w-100 ">
+            <a href="#" class="nav-link" >  Carrito</a>
         </li>
 
         <!--###################### meno desplegable de inicio de secion#######################-->
@@ -82,15 +71,15 @@
             <div class="img-mini ">
                 <div class="col-md-12 ">
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 img">
-                            <img class="img img-fluid shadow" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
+                        <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
+                        <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
+                        <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
+                        <!--<div class="col-md-4 col-sm-4 img">
                         </div>
                         <div class="col-md-4 col-sm-4 img">
-                            <img class="img img-fluid shadow" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
                         </div>
                         <div class="col-md-4 col-sm-4 img ">
-                            <img class="img img-fluid shadow" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

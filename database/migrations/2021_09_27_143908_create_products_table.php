@@ -13,12 +13,24 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $product) {
-            $product->id();
-            $product->string('nombre',50);
-            $product->number('cantidad');
-            $product->
-            $product->timestamps();
+        Schema::create('products', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre',30);
+            $table->integer('cantidad');
+            $table->integer('preciodollar');
+            $table->string('tamanio',20);
+            $table->text('descripcion');
+            $table->timestamps();
+            $table->unsignedBigInteger('id_usernorm')->nullable();
+            $table->unsignedBigInteger('id_useradmin')->nullable();
+
+            $table->foreign('id_usernorm')
+                  ->references('id')->on('usernormals')
+                  ->onDelete('set null');
+
+            $table->foreign('id_user')
+                  ->references('id')->on('useradmins')
+                  ->onDelete('set null');
         });
     }
 
