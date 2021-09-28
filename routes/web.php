@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\detailsProduct;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\loginEcommerce;
 use Illuminate\Support\Facades\Route;
@@ -16,8 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/2', function () {
+    return view('welcome');
+});
 Route::get('/', homeController::class);
+Route::get('/create-account', [loginEcommerce::class, 'createAcount'])->name('createAccount');
 
-Route::get('/detailsProduct', [detailsProduct::class,'show']); 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-Route::get('/createAcount',[loginEcommerce::class,'createAcount'] );
+require __DIR__ . '/auth.php';
