@@ -48,7 +48,7 @@
                                             <div class="input-group-prepend">
                                               <span class="input-group-text" id="basic-addon1">@</span>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="email@example.com"  aria-describedby="basic-addon1">
+                                            <input type="text" class="form-control" placeholder="email@ejemplo.com"  aria-describedby="basic-addon1">
                                           </div>
                                         <!--
                                         
@@ -86,11 +86,11 @@
                                     <div class="col-md-12 mb-2">
                                         <label class="form-check-label" for="inlineRadio1">Sexo:</label>
                                     </div>
-                                    <div class="form-check col-md-4">
+                                    <div class="form-check col-md-4 col-sm-2">
                                         <input class="position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
                                         <label class="form-check-label" for="inlineRadio1">Hombre</label>
                                     </div>
-                                    <div class="form-check col-md-4">
+                                    <div class="form-check col-md-4 col-sm-2">
                                         <input class="position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
                                         <label class="form-check-label" for="inlineRadio1">Mujer</label>
                                     </div>

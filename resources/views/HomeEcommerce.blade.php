@@ -50,17 +50,17 @@
 
             </li>
             @else
-            <li class="nav-item dropdown w-100 ">
-                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown w-100" >
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Iniciar Sesion
                 </a>
                 <div class="dropdown-menu">
-                    <form method="POST" action="{{ route('login') }}" class="px-4 py-3" style="width: 300px;">
+                    <form method="POST" action="{{ route('login') }}" class="px-4 py-3" ">
                         @csrf
                         <!-- Email Address -->
                         <div class="form-group">
                             <x-label for="email" :value="__('Email')" />
-                            <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
+                            <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus placeholder="email@ejemplo.com" />
                         </div>
 
                         <!-- Password -->
@@ -73,21 +73,21 @@
                         <div class="block mt-4">
                             <label for="remember_me" class="inline-flex items-center">
                                 <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                <span class="ml-2 text-sm text-gray-600">{{ __('Recordar contraseña') }}</span>
                             </label>
                         </div>
 
-                        <div class="">
+                        <div class="text-center">
                             <button class="btn btn-primary">
                                 {{ __('Iniciar sesion') }}
                             </button>
                         </div>
                     </form>
                     <div class="dropdown-divider"></div>
-                    <div class="px-4">
+                    <div class="px-2">
                         <a class="dropdown-item" href="{{ route('createAccount') }}">Crear Cuenta</a>
                         @if (Route::has('password.request'))
-                        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        <a class="dropdown-item " href="{{ route('password.request') }}">
                             {{ __('Olvido su contraseña?') }}
                         </a>
                         @endif
