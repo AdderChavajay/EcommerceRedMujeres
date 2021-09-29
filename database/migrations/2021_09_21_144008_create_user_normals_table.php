@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUseranormalsTable extends Migration
+class CreateUserNormalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,8 @@ class CreateUseranormalsTable extends Migration
     {
         Schema::create('user_normals', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 50);
-            $table->string('lastname', 40);
+            $table->string('name',50);
+            $table->string('lastname',40);
             $table->date('date_birth');
             $table->char('gender');
             $table->timestamps();

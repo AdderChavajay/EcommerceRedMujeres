@@ -69,14 +69,19 @@
 
                 
                                 <div>
-                                    <input type="file" name="" class="form-control-file" data-browser-on-zone-click="true"  id="">
+                                    <form id='post-form' class='post-form' method='post'>
+                                        <label for='files'>Select multiple files: </label>
+                                        <input id='files' type='file' multiple/>
+                                        <output id='result' />
+                                      </form>
+                                
                                 </div>
                                 
                                               
                             </div>
                 
                 
-                            <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                            
                     
                             <div class="d-grid text-center py-3">
                                 <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Crear Cuenta</button>

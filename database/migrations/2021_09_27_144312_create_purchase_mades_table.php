@@ -15,7 +15,14 @@ class CreatePurchaseMadesTable extends Migration
     {
         Schema::create('purchase_mades', function (Blueprint $table) {
             $table->id();
+            $table->string('customer',50);
+            $table->integer('total_car');
+            $table->integer('num_purchase');
             $table->timestamps();
+            $table->unsignedBigInteger('id_usernormals')->nullable();
+
+            $table->foreign('id_usernormals')->references('id')
+                   ->on('user_normals')->onDelete('set null');
         });
     }
 
