@@ -8,7 +8,7 @@ class detailsProduct extends Controller
 {
     //
 
-    public function show(){
+    public function detailsProduct(){
         return view('detailsProduct');
     }
 }

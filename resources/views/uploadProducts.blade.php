@@ -49,30 +49,22 @@
                                     </div>
                                 </div>
                 
-                                <div class="">
-                                    <div class="form-floating mb-3 ">
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                              <span class="input-group-text" id="basic-addon1"><ion-icon name="cash-outline"></ion-icon></span>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="Precio en Dollar"  aria-describedby="basic-addon1">
-                                          </div>
-                                        <!--
-                                        
-                                            <input type="email" placeholder="Correo Electronico" class="form-control" name="" id="">
-                                        -->
+                            <div class="">
+                                <div class="form-floating mb-3 ">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addon1"><ion-icon name="cash-outline"></ion-icon></span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Precio en Dollar"  aria-describedby="basic-addon1">
                                     </div>
+                                </div>
                                 <div class="form-floating mb-3 " >
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                           <span class="input-group-text" id="basic-addon1"> <ion-icon name="text-outline"></ion-icon> </span>
                                         </div>
                                         <textarea class="form-control" name="" id="" cols="10" rows="5" placeholder="Descripción" ></textarea>
-                                      </div>
-                                    
-                                    <!--
-                                        <input type="password" placeholder="Contrasenia" class="form-control" name="" id="">
-                                    -->
+                                    </div>
                                 </div>
 
                 
@@ -89,8 +81,6 @@
                             <div class="d-grid text-center py-3">
                                 <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Crear Cuenta</button>
                             </div>
-       
-                
                         </form>
                     </div>
                 </div>

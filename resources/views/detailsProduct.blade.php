@@ -70,17 +70,80 @@
                 <img  src="{{asset('images/Carrusell/3.JPG')}}" class="img img-fluid shadow" alt="">
             <div class="img-mini ">
                 <div class="col-md-12 ">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                             <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <div class="sigle-box">
+                                            <div class="img-area">
+                                                <img class="d-block w-100" src="{{asset('images/Carrusell/3.JPG')}}" alt="First slide">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="sigle-box">
+                                            <div class="img-area">
+                                                <img class="d-block w-100" src="{{asset('images/Carrusell/3.JPG')}}" alt="First slide">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="sigle-box">
+                                            <div class="img-area">
+                                                <img class="d-block w-100" src="{{asset('images/Carrusell/3.JPG')}}" alt="First slide">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="sigle-box">
+                                            <div class="img-area">
+                                                <img class="d-block w-100" src="{{asset('images/Carrusell/3.JPG')}}" alt="First slide">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                            
+                                    <div class="row">
+                                        <div class="col-md-3 ">
+                                            <div class="sigle-box">
+                                                <div class="img-area">
+                                                  <img class="d-block w-100" src="{{asset('images/Carrusell/3.JPG')}}" alt="First slide">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            
+                                </div> 
+                                
+                          
+                            </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                  
+                    <!--- 
+                
                     <div class="row">
                         <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
                         <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
                         <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
-                        <!--<div class="col-md-4 col-sm-4 img">
+                        <div class="col-md-4 col-sm-4 img">
                         </div>
                         <div class="col-md-4 col-sm-4 img">
                         </div>
                         <div class="col-md-4 col-sm-4 img ">
-                        </div>-->
+                        </div>
                     </div>
+                    -->
                 </div>
             </div>
         </div>
