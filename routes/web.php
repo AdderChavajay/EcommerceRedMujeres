@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\loginEcommerce;
+use App\Http\Controllers\uploadProducts;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/2', function () {
     return view('welcome');
 });
+
 Route::get('/', homeController::class);
 Route::get('/create-account', [loginEcommerce::class, 'createAcount'])->name('createAccount');
+Route::get('/uploadProducts', [uploadProducts::class, 'upload_details_product']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
