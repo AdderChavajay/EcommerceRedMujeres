@@ -1,11 +1,11 @@
 @extends('layauts.plantilla')
 
 @section('title','Informacion del producto')
-    
+
 @section('header')
 <nav class="navbar navbar-expand-lg navbar-light container ">
-          
-    <a class="navbar-brand icono" href="#"> 
+
+    <a class="navbar-brand icono" href="#">
       <img src="{{asset('images/icons/icons/LogoMercado.png')}}" alt="">
     </a>
 
@@ -13,23 +13,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    
+
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-     
+
       <form class="form-inline my-2 my-lg-0 mx-auto">
-        
+
         <input type="text" class="form-control mr-sm-2 buscador" placeholder="  " aria-describedby="basic-addon1">
         <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
-      
+
       </form>
-      
+
       <ul class="navbar-nav ml-auto ">
-        
+
         <li class="nav-item active w-100">
           <a class="nav-link" href="#">Inicio</a>
         </li>
-        
+
         <!--################################# Carrito ################################-->
         <li class="nav-item active w-100 ">
             <a href="#" class="nav-link" >  Carrito</a>
@@ -57,7 +57,7 @@
             <a class="dropdown-item" href="#">Olvido su contraseña</a>
           </div>
         </li>
-      </ul>     
+      </ul>
     </div>
 </nav>
 @endsection
@@ -65,7 +65,7 @@
 @section('main')
 <main class="container">
     <Section class="row">
-        
+
         <div class="imagen col-md-8  col-sm-12">
                 <img  src="{{asset('images/Carrusell/3.JPG')}}" class="img img-fluid shadow" alt="">
             <div class="img-mini ">
@@ -105,7 +105,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item">
-                            
+
                                     <div class="row">
                                         <div class="col-md-3 ">
                                             <div class="sigle-box">
@@ -115,10 +115,10 @@
                                             </div>
                                         </div>
                                     </div>
-                            
-                                </div> 
-                                
-                          
+
+                                </div>
+
+
                             </div>
                         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -129,9 +129,9 @@
                           <span class="sr-only">Next</span>
                         </a>
                       </div>
-                  
-                    <!--- 
-                
+
+                    <!---
+
                     <div class="row">
                         <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
                         <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
@@ -154,7 +154,7 @@
                 <p> <b>Web ID:</b>  1089772</p>
                 <span class="span">
                     <h2 class="text-center"><b> US $15 </b> </h2>
-                    
+
                     <div class="input">
                         <input type="text" class="form-control" placeholder="Cantidad de productos"/>
                         <br>
@@ -162,18 +162,18 @@
                             <option>Grande</option>
                             <option>Mediano</option>
                             <option>Pequeño</option>
-                            
+
                         </select>
-                          
+
                     </div>
-                    <div class="text-center "> 
+                    <div class="text-center ">
                         <button type="button" class="btn btn-danger ">
                             <ion-icon name="cart" class=""></ion-icon>
                             Agregar al carrito
-                        </button> 
+                        </button>
                     </div>
-                    
-            
+
+
                 </span>
                 <div class="estados_di  estados_disponibildad">
                     <p><b>Disponibilidad:</b> En existencia</p>
@@ -184,17 +184,17 @@
     </Section >
    <section class="titulos row">
     <div class="text-center">
-        
+
     </div>
-        
+
    </section>
     <section>
     <section class="productos_sugeridos row">
         <div class="asociaciones col-md-3 ">
-            
+
              <h4 class="text-center list-group-item list-group-item-success bordeo_asociacion" ><b> Asociaciones </b></h4>
             <ol class="list-group list-group-flush">
-              
+
                 <li class="list-group-item"><a href="list-group-item">Tz'unun Ya'</a> </li>
                 <li class="list-group-item"><a href="">Maya Tzutuhil</a></li>
                 <li class="list-group-item"><a href="">Jun Mokaaj Ixmucane</a></li>
@@ -206,33 +206,33 @@
                 <li class="list-group-item"><a href="">Mujeres Tz'utujiles Semilla I'XIJA'TZ</a></li>
                 <li class="list-group-item"><a href="">Ixoq Ajqeem</a></li>
                 <li class="list-group-item"><a href=""> Mujeres Trabajadoras </a></li>
-            </ol>              
-                    
+            </ol>
+
         </div>
 
 
         <div class="col-md-9">
             <div class="text-center"> <h3 class="Products_As" > <b> Productos sugeridos </b> </h3>   </div>
-            
+
                 <div class="row col-md-12">
                     <div class="col-md-4 col-sm-6 all_product">
                         <div class="product-image-wrapper producto shadow">
-                            <div class="single-products">   
+                            <div class="single-products">
                                     <img src="{{asset('images/Carrusell/1.JPG')}}" class="img img-fluid" alt="">
                                 <div class="productinfo text-center">
                                         <h3>$56</h3>
                                         <p>Easy Polo Black Edition</p>
                                     <div class="margen">
-                                        <button type=" submit"  class="btn btn-default">            
+                                        <button type=" submit"  class="btn btn-default">
                                         <ion-icon name="cart"></ion-icon>
                                         Agregar
-                                        </button>                                
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-        
+
                     <div class="col-md-4 col-sm-6 all_product">
                         <div class="product-image-wrapper producto shadow">
                             <div class="single-products">

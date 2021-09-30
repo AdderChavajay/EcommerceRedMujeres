@@ -32,6 +32,9 @@
             </li>
             <!--###################### meno desplegable de inicio de secion#######################-->
             @auth
+            <li class="nav-item active w-100 ">
+                <a href="{{ route('product.create') }}" class="nav-link">Crear producto</a>
+            </li>
             <li class="nav-item dropdown w-100 ">
 
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -50,22 +53,22 @@
 
             </li>
             @else
-            <li class="nav-item dropdown w-100" >
-                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown w-100">
+                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Iniciar Sesion
                 </a>
                 <div class="dropdown-menu">
                     <form method="POST" action="{{ route('login') }}" class="px-4 py-3" ">
                         @csrf
                         <!-- Email Address -->
-                        <div class="form-group">
-                            <x-label for="email" :value="__('Email')" />
+                        <div class=" form-group">
+                            <x-label for="email" :value="__('Correo electronico')" />
                             <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus placeholder="email@ejemplo.com" />
                         </div>
 
                         <!-- Password -->
                         <div class="form-group">
-                            <x-label for="password" :value="__('Password')" />
+                            <x-label for="password" :value="__('Contraseña')" />
                             <x-input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" />
                         </div>
 
@@ -83,21 +86,21 @@
                             </button>
                         </div>
                     </form>
-                    <div class="dropdown-divider"></div>
-                    <div class="px-2">
-                        <a class="dropdown-item" href="{{ route('createAccount') }}">Crear Cuenta</a>
-                        @if (Route::has('password.request'))
-                        <a class="dropdown-item " href="{{ route('password.request') }}">
-                            {{ __('Olvido su contraseña?') }}
-                        </a>
-                        @endif
+                <div class="dropdown-divider"></div>
+                <div class="px-2">
+                    <a class="dropdown-item" href="{{ route('register') }}">Crear Cuenta</a>
+                    @if (Route::has('password.request'))
+                    <a class="dropdown-item " href="{{ route('password.request') }}">
+                        {{ __('Olvido su contraseña?') }}
+                    </a>
+                    @endif
 
-                    </div>
                 </div>
-            </li>
-            @endauth
+    </div>
+    </li>
+    @endauth
 
-        </ul>
+    </ul>
 
     </div>
 </nav>
