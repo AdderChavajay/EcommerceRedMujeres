@@ -35,7 +35,8 @@
                                                 <ion-icon name="shirt-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Nombre" aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control" placeholder="Nombre"
+                                            aria-describedby="basic-addon1">
                                     </div>
                                     <!--<input type="text" class="form-control" id="floatingInput" placeholder="Nombre">-->
                                 </div>
@@ -48,12 +49,11 @@
                                                 <ion-icon name="infinite-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Cantidad" aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control" placeholder="Cantidad"
+                                            aria-describedby="basic-addon1">
                                     </div>
-
                                 </div>
                             </div>
-
                             <div class="">
                                 <div class="form-floating mb-3 ">
                                     <div class="input-group mb-3">
@@ -62,7 +62,8 @@
                                                 <ion-icon name="cash-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Precio en Dollar" aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control" placeholder="Precio en Dollar"
+                                            aria-describedby="basic-addon1">
                                     </div>
                                 </div>
                                 <div class="form-floating mb-3 ">
@@ -72,28 +73,21 @@
                                                 <ion-icon name="text-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <textarea class="form-control" name="" id="" cols="10" rows="5" placeholder="Descripción"></textarea>
+                                        <textarea class="form-control" name="" id="" cols="10" rows="5"
+                                            placeholder="Descripción"></textarea>
                                     </div>
                                 </div>
-
-
                                 <div>
                                     <form id='post-form' class='post-form' method='post'>
                                         <label for='files'>Select multiple files: </label>
                                         <input id='files' type='file' multiple />
                                         <output id='result' />
                                     </form>
-
                                 </div>
-
-
                             </div>
-
-
-
-
                             <div class="d-grid text-center py-3">
-                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Crear Cuenta</button>
+                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Crear
+                                    Cuenta</button>
                             </div>
                         </form>
                     </div>

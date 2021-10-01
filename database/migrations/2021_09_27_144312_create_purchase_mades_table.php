@@ -19,10 +19,10 @@ class CreatePurchaseMadesTable extends Migration
             $table->integer('total_car');
             $table->integer('num_purchase');
             $table->timestamps();
-            $table->unsignedBigInteger('id_usernormals')->nullable();
+            $table->unsignedBigInteger('id_user')->nullable();
 
-            $table->foreign('id_usernormals')->references('id')
-                   ->on('user_normals')->onDelete('set null');
+            $table->foreign('id_user')->references('id')
+                   ->on('users')->onDelete('set null');
         });
     }
 

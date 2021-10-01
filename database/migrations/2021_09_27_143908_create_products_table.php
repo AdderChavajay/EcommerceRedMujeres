@@ -22,11 +22,9 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->text('images');
             $table->timestamps();
-            $table->unsignedBigInteger('id_user_admin')->nullable();
-
-            $table->foreign('id_user_admin')
-                ->references('id')->on('user_admins')
-                ->onDelete('set null');
+            $table->unsignedBigInteger('id_user')->nullable();
+            $table->foreign('id_user')->references('id')
+                  ->on('users')->onDelete('set null');
         });
     }
 
