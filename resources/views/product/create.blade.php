@@ -16,8 +16,6 @@
 <main>
     <div class="container">
         <div class="row ">
-
-
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto my-5">
                 <div class=" shadow border-radius ">
 
@@ -26,7 +24,16 @@
                             <h3>Ingresar Producto </h3>
                         </div>
 
-                        <form action="" method="POST">
+                        @if ($errors->any())
+                            @foreach ($errors->all() as $message)
+                            <div class="alert alert-danger" role="alert">
+                                {{ $message }}
+                            </div>
+                            @endforeach
+                        @endif
+
+                        <form action="{{ route('product.store') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="form-floating mb-3 col">
                                     <div class="input-group mb-3">
@@ -35,8 +42,8 @@
                                                 <ion-icon name="shirt-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Nombre"
-                                            aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control" placeholder="Nombre" name="name"
+                                            aria-describedby="basic-addon1" required value="{{old('name')}}">
                                     </div>
                                     <!--<input type="text" class="form-control" id="floatingInput" placeholder="Nombre">-->
                                 </div>
@@ -49,8 +56,21 @@
                                                 <ion-icon name="infinite-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Cantidad"
-                                            aria-describedby="basic-addon1">
+                                        <input type="number" class="form-control" placeholder="Cantidad" name="quantity"
+                                            aria-describedby="basic-addon1" required value="{{old('quantity')}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-floating mb-3 col">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="basic-addonddd">
+                                                <ion-icon name="infinite-outline"></ion-icon>
+                                            </span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Tama;o" name="size"
+                                            aria-describedby="basic-addonddd" required value="{{old('size')}}">
                                     </div>
                                 </div>
                             </div>
@@ -62,8 +82,8 @@
                                                 <ion-icon name="cash-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Precio en Dollar"
-                                            aria-describedby="basic-addon1">
+                                        <input type="number" class="form-control" placeholder="Precio en Dollar" name="price"
+                                            aria-describedby="basic-addon1" required value="{{old('price')}}">
                                     </div>
                                 </div>
                                 <div class="form-floating mb-3 ">
@@ -73,17 +93,17 @@
                                                 <ion-icon name="text-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <textarea class="form-control" name="" id="" cols="10" rows="5"
-                                            placeholder="Descripción"></textarea>
+                                        <textarea class="form-control" name="" id="" cols="10" rows="5" name="description"
+                                            placeholder="Descripción" value="{{old('description')}}"></textarea>
                                     </div>
                                 </div>
-                                <div>
+                                {{-- <div>
                                     <form id='post-form' class='post-form' method='post'>
                                         <label for='files'>Select multiple files: </label>
                                         <input id='files' type='file' multiple />
                                         <output id='result' />
                                     </form>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="d-grid text-center py-3">
                                 <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Crear

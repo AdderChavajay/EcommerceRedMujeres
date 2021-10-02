@@ -19,12 +19,12 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->integer('price');
             $table->string('size', 20);
-            $table->text('description');
-            $table->text('images');
+            $table->text('description')->nullable();
+            $table->text('images')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')
-                  ->on('users')->onDelete('set null');
+                ->on('users')->onDelete('set null');
         });
     }
 
