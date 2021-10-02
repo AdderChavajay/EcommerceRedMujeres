@@ -41,7 +41,7 @@
                                     <!--<input type="text" class="form-control" id="floatingInput" placeholder="Nombre">-->
                                 </div>
                                 <div class="form-floating mb-3 col">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Apellido">
+                                    <input type="text" name="last_name" class="form-control" id="floatingInput" placeholder="Apellido">
                                 </div>
                             </div>
 
@@ -84,7 +84,7 @@
 
                                 <div>
                                     <label for=""> Fecha de nacimiento </label>
-                                    <input type="date" class="form-control " name="" id="">
+                                    <input type="date" class="form-control " name="birth_date" id="">
                                     <div class="mb-3 col-md-8 col-sm-12 "></div>
                                 </div>
 
@@ -92,12 +92,12 @@
                                     <div class="col-md-12 mb-2">
                                         <label class="form-check-label" for="inlineRadio1">Sexo:</label>
                                     </div>
-                                    <div class="form-check col-md-4 col-sm-2">
-                                        <input class="position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+                                    <div class="form-check col-md-5 col-sm-6">
+                                        <input class="position-static" type="radio" name="gender" id="radio1" value="M" >
                                         <label class="form-check-label" for="inlineRadio1">Hombre</label>
                                     </div>
-                                    <div class="form-check col-md-4 col-sm-2">
-                                        <input class="position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+                                    <div class="form-check col-md-5 col-sm-6">
+                                        <input class="position-static" type="radio" name="gender" id="radio2" value="F" >
                                         <label class="form-check-label" for="inlineRadio1">Mujer</label>
                                     </div>
                                 </div>
