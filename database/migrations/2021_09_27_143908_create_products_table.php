@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('price');
             $table->string('size', 20);
             $table->text('description')->nullable();
-            $table->text('images')->nullable();
+            $table->string('images')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('id_user')->nullable();
             $table->foreign('id_user')->references('id')

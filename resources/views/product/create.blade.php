@@ -32,7 +32,7 @@
                             @endforeach
                         @endif
 
-                        <form action="{{ route('product.store') }}" method="POST">
+                        <form action="{{ route('product.store') }}" method="POST"  id="post-form" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="form-floating mb-3 col">
@@ -93,17 +93,16 @@
                                                 <ion-icon name="text-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <textarea class="form-control" name="" id="" cols="10" rows="5" name="description"
+                                        <textarea class="form-control" cols="10" rows="5" name="description"
                                             placeholder="Descripción" value="{{old('description')}}"></textarea>
                                     </div>
                                 </div>
-                                {{-- <div>
-                                    <form id='post-form' class='post-form' method='post'>
+                                
+                                <div>
                                         <label for='files'>Select multiple files: </label>
-                                        <input id='files' type='file' multiple />
+                                        <input id='files' type='file' name="images" />
                                         <output id='result' />
-                                    </form>
-                                </div> --}}
+                                 </div>
                             </div>
                             <div class="d-grid text-center py-3">
                                 <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Crear

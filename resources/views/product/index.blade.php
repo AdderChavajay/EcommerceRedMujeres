@@ -22,7 +22,9 @@
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
-            <th scope="col">Tama;o</th>
+            <th scope="col">Tamaño</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Imagen</th>     
         </tr>
     </thead>
         <tbody>
@@ -33,6 +35,16 @@
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->quantity }}</td>
                 <td>{{ $product->size }}</td>
+                <td>{{ $product->description}}</td>
+                <td>{{ $product->images}}</td>
+                <td>
+                    <form action="{{ url('product/'.$product->id) }}" method="post">
+                        @csrf
+                        {{ method_field('DELETE') }}
+                        <button type="submit" onclick="return confirm('Deseas borrar el prducto?')"
+                        value="borrar" class="btn btn-primary" >Borrar </button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>
