@@ -40,7 +40,7 @@ class ProductController extends Controller
     {
 /*
 //utilizando esta validacion me retornaba que el valor de images tenia que ser tipo string
-//al principio funciono enctype="multipart/form-data" pero es ecencial para el manejo de fotos
+//al principio funciono sin el enctype="multipart/form-data" pero es ecencial para el manejo de fotos
         $data = $request->validate([
             'name'        => ['required', 'string', 'max:30'],
             'quantity'    => ['required', 'numeric'],
@@ -83,6 +83,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        $product=product::findOrFail($id);
+        return view('product.edit',compact('product'));
     }
 
     /**

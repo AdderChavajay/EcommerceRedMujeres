@@ -37,12 +37,15 @@
                 <td>{{ $product->size }}</td>
                 <td>{{ $product->description}}</td>
                 <td>{{ $product->images}}</td>
-                <td>
+                <td class="row">
+                    <a href="{{url('product/'.$product->id.'/edit')}}" class="btn btn-secondary col">
+                         editar   
+                    </a>|
                     <form action="{{ url('product/'.$product->id) }}" method="post">
                         @csrf
                         {{ method_field('DELETE') }}
-                        <button type="submit" onclick="return confirm('Deseas borrar el prducto?')"
-                        value="borrar" class="btn btn-primary" >Borrar </button>
+                        <button type="submit" onclick="return confirm('Deseas borrar el prducto')"
+                        value="borrar" class="btn btn-danger col" >Borrar </button>
                     </form>
                 </td>
             </tr>

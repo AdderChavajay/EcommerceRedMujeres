@@ -32,10 +32,12 @@
                             @endforeach
                         @endif
 
-                        <form action="{{ route('product.store') }}" method="POST"  id="post-form" enctype="multipart/form-data">
+                        <form action="{{route('product.store') }}" method="POST"  id="post-form" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="form-floating mb-3 col">
+                            
+                                    <label for="name">Nombre del Producto</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -43,13 +45,14 @@
                                             </span>
                                         </div>
                                         <input type="text" class="form-control" placeholder="Nombre" name="name"
-                                            aria-describedby="basic-addon1" required value="{{old('name')}}">
+                                            aria-describedby="basic-addon1" required value="{{old('name')}} {{$product->name}}" id="name">
                                     </div>
                                     <!--<input type="text" class="form-control" id="floatingInput" placeholder="Nombre">-->
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-floating mb-3 col">
+                                    <label for="quantity">Cantidad del Producto</label>
                                     <div class="input-group mb-3">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">
@@ -57,7 +60,7 @@
                                             </span>
                                         </div>
                                         <input type="number" class="form-control" placeholder="Cantidad" name="quantity"
-                                            aria-describedby="basic-addon1" required value="{{old('quantity')}}">
+                                            aria-describedby="basic-addon1" required value="{{old('quantity')}}" id="quantity">
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +72,7 @@
                                                 <ion-icon name="infinite-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Tama;o" name="size"
+                                        <input type="text" class="form-control" placeholder="Tamaño del Producto" name="size"
                                             aria-describedby="basic-addonddd" required value="{{old('size')}}">
                                     </div>
                                 </div>
@@ -94,7 +97,7 @@
                                             </span>
                                         </div>
                                         <textarea class="form-control" cols="10" rows="5" name="description"
-                                            placeholder="Descripción" value="{{old('description')}}"></textarea>
+                                            placeholder="Descripción del producto" value="{{old('description')}}"></textarea>
                                     </div>
                                 </div>
                                 
