@@ -29,8 +29,9 @@
                             @endforeach
                         @endif
 
-                        <form action="" method="POST"  id="post-form" enctype="multipart/form-data">
+                        <form action="{{url('product',$product->id)}} " method="POST"  id="post-form" enctype="multipart/form-data">
                             @csrf
+                            {{method_field('PATCH')}}
                             @include('layauts.form')
                         </form>
                     </div>

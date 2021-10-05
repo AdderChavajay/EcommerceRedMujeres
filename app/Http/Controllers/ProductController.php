@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\product;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -38,9 +39,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
-//utilizando esta validacion me retornaba que el valor de images tenia que ser tipo string
-//al principio funciono sin el enctype="multipart/form-data" pero es ecencial para el manejo de fotos
         $data = $request->validate([
             'name'        => ['required', 'string', 'max:30'],
             'quantity'    => ['required', 'numeric'],
@@ -53,7 +51,7 @@ class ProductController extends Controller
         $data = request()->except('_token'); 
 
         if($request->hasFile('images')){
-            $data['images']=$request->file('images')->store('uploads','public');
+            $data['images'] = $request->file('images')->store('uploads','public');
         }
         
      
@@ -83,7 +81,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
-        $product=product::findOrFail($id);
+        $product = product::findOrFail($id);
         return view('product.edit',compact('product'));
     }
 
@@ -97,6 +95,17 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $data = request()->except(['_token','_method']);
+
+        if($request->hasFile('images')){
+            $product=product::findOrFail($id);
+            Storage::delete('public/'.$product->images);
+            $data['images'] = $request->file('images')->store('uploads','public');
+        }
+
+        product::where('id','=',$id)->update($data);  
+        $product = product::findOrFail($id);
+        return view('product.edit',compact('product'));
     }
 
     /**
@@ -108,8 +117,12 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+        $productPhoto = product::findOrFail($id);
 
-        product::destroy($id);
-        return redirect('product');
+        if(Storage::delete('public/'.$productPhoto->images)){
+            product::destroy($id);
+        }
+        
+        return redirect('product')->with('message','Producto Borrado');
     }
 }
