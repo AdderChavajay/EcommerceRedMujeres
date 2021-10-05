@@ -8,7 +8,7 @@
                 </span>
             </div>
             <input type="text" class="form-control" placeholder="Nombre" name="name" aria-describedby="basic-addon1"
-                required value="{{old('name')}}" id="name">
+                required value="{{old('name', $product->name)}}" id="name">
         </div>
         <!--<input type="text" class="form-control" id="floatingInput" placeholder="Nombre">-->
     </div>
@@ -23,7 +23,7 @@
                 </span>
             </div>
             <input type="number" class="form-control" placeholder="Cantidad" name="quantity"
-                aria-describedby="basic-addon1" required value="{{old('quantity')}}" id="quantity">
+                aria-describedby="basic-addon1" required value="{{old('quantity', $product->quantity)}}" id="quantity">
         </div>
     </div>
 </div>
@@ -37,7 +37,7 @@
                 </span>
             </div>
             <input type="text" class="form-control" placeholder="Tamaño del Producto" name="size"
-                aria-describedby="basic-addonddd" required value="{{old('size')}}" id="size">
+                aria-describedby="basic-addonddd" required value="{{old('size', $product->size)}}" id="size">
         </div>
     </div>
 </div>
@@ -51,7 +51,7 @@
                 </span>
             </div>
             <input type="number" class="form-control" placeholder="Precio en Dollar" name="price"
-                aria-describedby="basic-addon1" required value="{{old('price')}}" id="price">
+                aria-describedby="basic-addon1" required value="{{old('price',$product->price)}}" id="price">
         </div>
     </div>
     <div class="form-floating mb-3 ">
@@ -63,7 +63,7 @@
                 </span>
             </div>
             <textarea class="form-control" cols="10" rows="5" name="description" placeholder="Descripción del producto"
-                value="{{old('description')}}" id="description"></textarea>
+                value="{{old('description', $product->description)}}" id="description"></textarea>
         </div>
     </div>
 
@@ -74,6 +74,5 @@
     </div>
 </div>
 <div class="d-grid text-center py-3">
-    <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Crear
-        Cuenta</button>
+    <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Confirmar</button>
 </div>

@@ -15,9 +15,8 @@ class ProductController extends Controller
     public function index()
     {
         //$products = Product::all();
-        $datos['products']=product::paginate(10);
-        return view('product.index',$datos);
-        //return view('product.index', compact('products'));
+        $products = product::paginate(10);
+        return view('product.index', compact('products'));
     }
 
     /**
@@ -26,8 +25,9 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('product.create');
+    { 
+        $product = new product();
+        return view('product.create',compact('product'));
     }
 
     /**
@@ -38,7 +38,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-/*
+
 //utilizando esta validacion me retornaba que el valor de images tenia que ser tipo string
 //al principio funciono sin el enctype="multipart/form-data" pero es ecencial para el manejo de fotos
         $data = $request->validate([
@@ -47,9 +47,9 @@ class ProductController extends Controller
             'price'       => ['required', 'numeric'],
             'size'        => ['required', 'string'],
             'description' => ['nullable', 'string', 'max:500'],
-            'images'      => ['nullable', 'string'],
+            'images'      => ['nullable', 'image'],
         ]);
-*/
+
         $data = request()->except('_token'); 
 
         if($request->hasFile('images')){

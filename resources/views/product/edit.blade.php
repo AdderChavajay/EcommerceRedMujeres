@@ -18,7 +18,7 @@
 
                     <div class="card-body p-4 p-sm-5">
                         <div class="text-center ">
-                            <h3>Ingresar Producto </h3>
+                            <h3>Editar Informacion Producto </h3>
                         </div>
 
                         @if ($errors->any())
