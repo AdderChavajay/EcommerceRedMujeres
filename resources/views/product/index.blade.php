@@ -48,18 +48,24 @@
             <td>{{ $product->size }}</td>
             <td>{{ $product->description}}</td>
             <td>
-                <img src="{{asset('storage'.'/'.$product->images)}}" class="img img-fluid" style="max-width: 8rem;" alt=""> 
+                @empty($product->images)
+                @else
+                    @php
+                        $images = explode(',', $product->images);
+                    @endphp
+                <img src="{{asset('storage/'.$images[0])}}" class="img img-fluid" style="max-width: 8rem;" alt="">
+                @endempty
             </td>
             <td class="row">
                 <div class="text-center col">
-                    <a title="Editar Producto" href="{{url('product/'.$product->id.'/edit')}}" class="btn btn-secondary ">
+                    <a title="Editar Producto" href="{{ route('product.edit', $product->id) }}" class="btn btn-secondary ">
                         <ion-icon name="create" title="Editar Producto"></ion-icon>
                     </a>
                 </div>
                 <div class=" text-center col">
-                    <form action="{{ url('product/'.$product->id) }}" method="post">
+                    <form action="{{ route('product.destroy', $product->id) }}" method="post">
                         @csrf
-                        {{ method_field('DELETE') }}
+                        @method('DELETE')
                         <button title="Borrar" type="submit" onclick="return confirm('Deseas borrar el prducto')" value="borrar"
                             class="btn btn-danger">
                             <ion-icon name="close"></ion-icon>

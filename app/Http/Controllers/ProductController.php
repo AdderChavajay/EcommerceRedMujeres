@@ -26,9 +26,9 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    { 
+    {
         $product = new product();
-        return view('product.create',compact('product'));
+        return view('product.create', compact('product'));
     }
 
     /**
@@ -45,20 +45,19 @@ class ProductController extends Controller
             'price'       => ['required', 'numeric'],
             'size'        => ['required', 'string'],
             'description' => ['nullable', 'string', 'max:500'],
-            'images'      => ['nullable', 'image'],
+            'images'      => ['nullable', 'array'],
         ]);
 
-        $data = request()->except('_token'); 
-
-        if($request->hasFile('images')){
-            $data['images'] = $request->file('images')->store('uploads','public');
+        $images = array();
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $url = $image->store('uploads', 'public');
+                array_push($images, $url);
+            }
         }
-        
-     
+        $data['images'] = join(',', $images);
         Product::insert($data);
-        //return response()->json($data);
         return redirect()->route('product.index')->with('message', 'Producto agregado');
-       
     }
 
     /**
@@ -82,7 +81,7 @@ class ProductController extends Controller
     {
         //
         $product = product::findOrFail($id);
-        return view('product.edit',compact('product'));
+        return view('product.edit', compact('product'));
     }
 
     /**
@@ -95,17 +94,17 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $data = request()->except(['_token','_method']);
+        $data = request()->except(['_token', '_method']);
 
-        if($request->hasFile('images')){
-            $product=product::findOrFail($id);
-            Storage::delete('public/'.$product->images);
-            $data['images'] = $request->file('images')->store('uploads','public');
+        if ($request->hasFile('images')) {
+            $product = product::findOrFail($id);
+            Storage::delete('public/' . $product->images);
+            $data['images'] = $request->file('images')->store('uploads', 'public');
         }
 
-        product::where('id','=',$id)->update($data);  
+        product::where('id', '=', $id)->update($data);
         $product = product::findOrFail($id);
-        return view('product.edit',compact('product'));
+        return view('product.edit', compact('product'));
     }
 
     /**
@@ -119,10 +118,10 @@ class ProductController extends Controller
         //
         $productPhoto = product::findOrFail($id);
 
-        if(Storage::delete('public/'.$productPhoto->images)){
+        if (Storage::delete('public/' . $productPhoto->images)) {
             product::destroy($id);
         }
-        
-        return redirect('product')->with('message','Producto Borrado');
+
+        return redirect('product')->with('message', 'Producto Borrado');
     }
 }

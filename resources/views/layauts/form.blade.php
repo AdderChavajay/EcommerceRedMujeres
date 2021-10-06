@@ -70,10 +70,13 @@
     <div class="">
         <label for='files'>Fotos: </label>
         <div class="py-3">
-            <img src="{{asset('storage'.'/'.$product->images)}}" class="img img-fluid" style="max-width: 8rem;" alt=""> 
+            @empty($product->image)
+            @else
+            <img src="{{asset('storage'.'/'.$product->images)}}" class="img img-fluid" style="max-width: 8rem;" alt="">
+            @endempty
         </div>
-        
-        <input id='files' type='file' name="images[]" multiple value=""/>
+
+        <input id='files' type='file' name="images[]" multiple />
         <output id='result' />
     </div>
 </div>
@@ -81,10 +84,10 @@
     <div class="d-grid text-center col">
         <button class="btn btn-primary  fw-bold" type="submit">Confirmar</button>
     </div>
-    
+
     <div class="d-grid text-center col">
         <a href="{{url('product/')}}" class="btn btn-primary row">
-                <ion-icon name="arrow-back-outline"></ion-icon> 
+                <ion-icon name="arrow-back-outline"></ion-icon>
         </a>
     </div>
 </div>
