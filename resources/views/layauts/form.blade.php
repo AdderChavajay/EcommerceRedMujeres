@@ -63,7 +63,7 @@
                 </span>
             </div>
             <textarea class="form-control" cols="10" rows="5" name="description" placeholder="Descripción del producto"
-                value="{{old('description', $product->description)}}" id="description"></textarea>
+            id="description">{{old('description', $product->description)}}</textarea>
         </div>
     </div>
 
@@ -73,7 +73,7 @@
             <img src="{{asset('storage'.'/'.$product->images)}}" class="img img-fluid" style="max-width: 8rem;" alt=""> 
         </div>
         
-        <input id='files' type='file' name="images" multiple value=""/>
+        <input id='files' type='file' name="images[]" multiple value=""/>
         <output id='result' />
     </div>
 </div>
