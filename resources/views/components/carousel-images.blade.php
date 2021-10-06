@@ -1,18 +1,29 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <div class="row">
-                @foreach ($images as $image)
+            <img class="d-block w-200" src="{{asset('storage/'.$fimage)}}" alt="First slide"/>
+            {{-- <div class="row">
                 <div class="col-md-3">
                     <div class="sigle-box">
                         <div class="img-area">
-                            <img class="d-block w-100" src="{{asset('storage/'.$image)}}" alt="First slide"/>
                         </div>
                     </div>
                 </div>
-                @endforeach
-            </div>
+            </div> --}}
         </div>
+        @foreach ($images as $image)
+        <div class="carousel-item">
+            <img class="d-block w-200" src="{{asset('storage/'.$image)}}" alt="First slide"/>
+            {{-- <div class="row">
+                <div class="col-md-3">
+                    <div class="sigle-box">
+                        <div class="img-area">
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+        </div>
+        @endforeach
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
         data-slide="prev">

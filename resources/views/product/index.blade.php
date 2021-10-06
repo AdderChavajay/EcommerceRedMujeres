@@ -58,8 +58,13 @@
             </td>
             <td class="row">
                 <div class="text-center col">
+                    <a title="Detalles" href="{{ route('product.show', $product->id) }}" class="btn btn-secondary ">
+                        <ion-icon name="eye" title="Detalles"></ion-icon>
+                    </a>
+                </div>
+                <div class="text-center col">
                     <a title="Editar Producto" href="{{ route('product.edit', $product->id) }}" class="btn btn-secondary ">
-                        <ion-icon name="create" title="Editar Producto"></ion-icon>
+                        <ion-icon name="pencil" title="Editar Producto"></ion-icon>
                     </a>
                 </div>
                 <div class=" text-center col">

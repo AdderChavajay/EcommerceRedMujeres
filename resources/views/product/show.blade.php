@@ -71,76 +71,20 @@
     <Section class="row">
 
         <div class="imagen col-md-8  col-sm-12">
-            <img src="{{asset('images/Carrusell/3.JPG')}}" class="img img-fluid shadow" alt="">
-            <div class="img-mini ">
-                <div class="col-md-12 ">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="sigle-box">
-                                            <div class="img-area">
-                                                <img class="d-block w-100" src="{{asset('images/Carrusell/3.JPG')}}"
-                                                    alt="First slide">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="sigle-box">
-                                            <div class="img-area">
-                                                <img class="d-block w-100" src="{{asset('images/Carrusell/3.JPG')}}"
-                                                    alt="First slide">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="sigle-box">
-                                            <div class="img-area">
-                                                <img class="d-block w-100" src="{{asset('images/Carrusell/3.JPG')}}"
-                                                    alt="First slide">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="sigle-box">
-                                            <div class="img-area">
-                                                <img class="d-block w-100" src="{{asset('images/Carrusell/3.JPG')}}"
-                                                    alt="First slide">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-
-                                <div class="row">
-                                    <div class="col-md-3 ">
-                                        <div class="sigle-box">
-                                            <div class="img-area">
-                                                <img class="d-block w-100" src="{{asset('images/Carrusell/3.JPG')}}"
-                                                    alt="First slide">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-
-
+            @php
+                $images = explode(',', $product->images);
+                $fimage = array_shift($images);
+            @endphp
+            @include('components.carousel-images')
+            <div style="overflow: auto;">
+                <div style="overflow: auto;">
+                    <div class="d-flex">
+                        @foreach ($images as $image)
+                        <div class="d-inline-block" style="width: 500px;">
+                            <img class="w-200" src="{{asset('storage/'.$image)}}" alt="First slide" width="500px"/>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                            data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                            data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        @endforeach
                     </div>
-
                     <!---
 
                     <div class="row">
