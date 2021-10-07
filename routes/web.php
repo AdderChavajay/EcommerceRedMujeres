@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\detailsProduct;
 use App\Http\Controllers\homeController;
-use App\Http\Controllers\loginEcommerce;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,6 +22,7 @@ Route::get('/2', function () {
 
 Route::get('/', homeController::class);
 Route::resource('product', ProductController::class)->middleware('auth');
+Route::resource('category', CategoryController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

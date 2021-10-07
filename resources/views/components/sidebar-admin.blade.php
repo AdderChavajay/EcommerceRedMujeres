@@ -9,11 +9,11 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item {{ (request()->routeIs('product.index')) ? 'active' : '' }}">
             <a class="nav-link" href="{{ route('product.index') }}">Productos <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Categorias</a>
+          <li class="nav-item {{ (request()->routeIs('category.index')) ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('category.index') }}">Categorias</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Asociasiones</a>
