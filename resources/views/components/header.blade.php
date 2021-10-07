@@ -25,8 +25,8 @@
                 <!--###################### meno desplegable de inicio de secion#######################-->
                 @auth
                 <li class="nav-item active w-100">
-                    <a href="{{ route('product.create') }}" class="nav-link">
-                        Agregar_Producto
+                    <a href="{{ route('product.index') }}" class="nav-link">
+                        Productos
                     </a>
                 </li>
                 <!--opcion de cerrar cesion-->

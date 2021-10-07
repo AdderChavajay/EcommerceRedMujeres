@@ -1,9 +1,9 @@
-@extends('layauts.plantilla')
+@extends('layouts.app')
 
-@section('title','Ingresar Producto')
+@section('title', 'Ingresar Producto')
 
-@section('header')
-@include('components.header');
+{{-- @section('header')
+@include('components.header'); --}}
 <!--
 
     <header class="text-center ">
@@ -12,17 +12,15 @@
     </header>
 -->
 
-@endsection
+{{-- @endsection --}}
 
 <!--######################### main ###############################-->
 @section('main')
-
 <main>
     <div class="">
         <div class="row ">
             <div class="col-sm-12 col-md-7 col-lg-7 mx-auto my-3">
                 <div class=" shadow border-radius ">
-
                     <div class="card-body p-4 p-sm-5">
                         <div class="text-center ">
                             <h3>Ingresar Producto </h3>
@@ -46,6 +44,5 @@
             </div>
         </div>
     </div>
-
 </main>
 @endsection

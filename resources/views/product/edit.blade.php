@@ -1,19 +1,6 @@
-@extends('layauts.plantilla')
+@extends('layouts.app')
 
 @section('title','Editar infromcaion del Producto')
-
-@section('header')
-
-@include('components.header');
-
-<!--
-
-    <header class="text-center ">
-        <img src="{{asset('images/icons/icons/LogoMercado.png')}}" class="img img-fluid" alt="">
-        <img src="{{asset('images/icons/icons/medianologopnggrande.ico')}}" class="img img-fluid" alt="">
-    </header>
--->
-@endsection
 
 @section('main')
 <main>

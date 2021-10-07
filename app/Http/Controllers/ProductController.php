@@ -116,13 +116,12 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
-        $productPhoto = product::findOrFail($id);
-
-        if (Storage::delete('public/' . $productPhoto->images)) {
-            product::destroy($id);
+        $product = product::findOrFail($id);
+        $images = explode(',', $product->images);
+        foreach ($images as $image) {
+            Storage::delete('public/' . $image);
         }
-
+        product::destroy($id);
         return redirect('product')->with('message', 'Producto Borrado');
     }
 }
