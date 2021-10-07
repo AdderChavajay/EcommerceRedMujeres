@@ -3,67 +3,7 @@
 @section('title','Informacion del producto')
 
 @section('header')
-<nav class="navbar navbar-expand-lg navbar-light container ">
-
-    <a class="navbar-brand icono" href="#">
-        <img src="{{asset('images/icons/icons/LogoMercado.png')}}" alt="">
-    </a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <form class="form-inline my-2 my-lg-0 mx-auto">
-
-            <input type="text" class="form-control mr-sm-2 buscador" placeholder="  " aria-describedby="basic-addon1">
-            <button class="btn btn-primary my-2 my-sm-0" type="submit">Buscar</button>
-
-        </form>
-
-        <ul class="navbar-nav ml-auto ">
-
-            <li class="nav-item active w-100">
-                <a class="nav-link" href="#">Inicio</a>
-            </li>
-
-            <!--################################# Carrito ################################-->
-            <li class="nav-item active w-100 ">
-                <a href="#" class="nav-link"> Carrito</a>
-            </li>
-
-            <!--###################### meno desplegable de inicio de secion#######################-->
-            <li class="nav-item dropdown w-100">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Iniciar Secion
-                </a>
-                <div class="dropdown-menu">
-                    <form class="px-4 py-3">
-                        <div class="form-group">
-                            <label for="exampleDropdownFormEmail1">Correo Electronico</label>
-                            <input type="email" class="form-control" id="exampleDropdownFormEmail1"
-                                placeholder="email@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleDropdownFormPassword1">Contraseña</label>
-                            <input type="password" class="form-control" id="exampleDropdownFormPassword1"
-                                placeholder="Contraseña">
-                        </div>
-                        <button type="submit" class="btn btn-primary">Entrar</button>
-                    </form>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Crear Cuenta</a>
-                    <a class="dropdown-item" href="#">Olvido su contraseña</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
+@include('components.header');
 @endsection
 
 @section('main')
@@ -72,8 +12,8 @@
 
         <div class="imagen col-md-8  col-sm-12">
             @php
-                $images = explode(',', $product->images);
-                $fimage = array_shift($images);
+            $images = explode(',', $product->images);
+            $fimage = array_shift($images);
             @endphp
             @include('components.carousel-images')
             <div style="overflow: auto;">
@@ -81,7 +21,7 @@
                     <div class="d-flex">
                         @foreach ($images as $image)
                         <div class="d-inline-block" style="width: 500px;">
-                            <img class="w-200" src="{{asset('storage/'.$image)}}" alt="First slide" width="500px"/>
+                            <img class="w-200" src="{{asset('storage/'.$image)}}" alt="First slide" width="500px" />
                         </div>
                         @endforeach
                     </div>

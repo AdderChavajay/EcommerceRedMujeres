@@ -3,10 +3,16 @@
 @section('title','Editar infromcaion del Producto')
 
 @section('header')
-<header class="text-center ">
-    <img src="{{asset('images/icons/icons/LogoMercado.png')}}" class="img img-fluid" alt="">
-    <img src="{{asset('images/icons/icons/medianologopnggrande.ico')}}" class="img img-fluid" alt="">
-</header>
+
+@include('components.header');
+
+<!--
+
+    <header class="text-center ">
+        <img src="{{asset('images/icons/icons/LogoMercado.png')}}" class="img img-fluid" alt="">
+        <img src="{{asset('images/icons/icons/medianologopnggrande.ico')}}" class="img img-fluid" alt="">
+    </header>
+-->
 @endsection
 
 @section('main')
@@ -22,20 +28,21 @@
                         </div>
 
                         @if ($errors->any())
-                            @foreach ($errors->all() as $message)
-                            <div class="alert alert-danger" role="alert">
-                                {{ $message }}
-                            </div>
-                            @endforeach
+                        @foreach ($errors->all() as $message)
+                        <div class="alert alert-danger" role="alert">
+                            {{ $message }}
+                        </div>
+                        @endforeach
                         @endif
 
-                        <form action="{{route('product.update',$product->id)}} " method="POST"  id="post-form" enctype="multipart/form-data">
+                        <form action="{{route('product.update',$product->id)}} " method="POST" id="post-form"
+                            enctype="multipart/form-data">
                             @csrf
                             {{method_field('PATCH')}}
                             @include('layauts.form')
                         </form>
                         @php
-                            $images = explode(',', $product->images);
+                        $images = explode(',', $product->images);
                         @endphp
                         <div>
                             @include('components.carousel-images')

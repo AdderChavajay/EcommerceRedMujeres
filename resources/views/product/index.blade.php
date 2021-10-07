@@ -3,10 +3,14 @@
 @section('title','Ingresar Producto')
 
 @section('header')
-<header class="text-center ">
-    <img src="{{asset('images/icons/icons/LogoMercado.png')}}" class="img img-fluid" alt="">
-    <img src="{{asset('images/icons/icons/medianologopnggrande.ico')}}" class="img img-fluid" alt="">
-</header>
+
+@include('components.header');
+<!--
+    <header class="text-center ">
+        <img src="{{asset('images/icons/icons/LogoMercado.png')}}" class="img img-fluid" alt="">
+        <img src="{{asset('images/icons/icons/medianologopnggrande.ico')}}" class="img img-fluid" alt="">
+    </header>
+-->
 @endsection
 
 @section('main')
@@ -33,37 +37,38 @@
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Tamaño</th>
-            <th scope="col">Descripcion</th>
-            <th scope="col">Imagen</th>
-            <th scope="col">Opciones</th>
+            <th scope="col" class="">Descripcion</th>
+            <th scope="col" class="">Imagen</th>
+            <th scope="col" class="">Opciones</th>
         </tr>
     </thead>
     <tbody>
         @foreach ($products as $product)
         <tr class="">
-            <th scope="row">{{ $product->id }}</th>
+            <th scope="">{{ $product->id }}</th>
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
             <td>{{ $product->quantity }}</td>
             <td>{{ $product->size }}</td>
-            <td>{{ $product->description}}</td>
-            <td>
+            <td class="">{{ $product->description}}</td>
+            <td class="">
                 @empty($product->images)
                 @else
-                    @php
-                        $images = explode(',', $product->images);
-                    @endphp
+                @php
+                $images = explode(',', $product->images);
+                @endphp
                 <img src="{{asset('storage/'.$images[0])}}" class="img img-fluid" style="max-width: 8rem;" alt="">
                 @endempty
             </td>
-            <td class="row">
+            <td class="row col-sm-12">
                 <div class="text-center col">
                     <a title="Detalles" href="{{ route('product.show', $product->id) }}" class="btn btn-secondary ">
                         <ion-icon name="eye" title="Detalles"></ion-icon>
                     </a>
                 </div>
                 <div class="text-center col">
-                    <a title="Editar Producto" href="{{ route('product.edit', $product->id) }}" class="btn btn-secondary ">
+                    <a title="Editar Producto" href="{{ route('product.edit', $product->id) }}"
+                        class="btn btn-secondary ">
                         <ion-icon name="pencil" title="Editar Producto"></ion-icon>
                     </a>
                 </div>
@@ -71,8 +76,8 @@
                     <form action="{{ route('product.destroy', $product->id) }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button title="Borrar" type="submit" onclick="return confirm('Deseas borrar el prducto')" value="borrar"
-                            class="btn btn-danger">
+                        <button title="Borrar" type="submit" onclick="return confirm('Deseas borrar el prducto')"
+                            value="borrar" class="btn btn-danger">
                             <ion-icon name="close"></ion-icon>
                         </button>
                     </form>
