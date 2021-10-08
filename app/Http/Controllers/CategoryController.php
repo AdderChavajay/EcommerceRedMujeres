@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -13,7 +14,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('category.index');
+        $categories = Category::paginate(10);
+        return view('category.index', compact('categories'));
+        //$dato['categories']=Category::paginate(10);
+        //return view('category.index',$dato);
     }
 
     /**
@@ -24,6 +28,8 @@ class CategoryController extends Controller
     public function create()
     {
         //
+        $category = new Category();
+        return view('category.create', compact('category'));
     }
 
     /**
@@ -35,6 +41,17 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //
+
+        $data=$request->validate([
+            'name' => ['required','string'],
+        ]);
+        //$data=request()->except('_token');
+
+        
+        Category::insert($data);
+       // return response()->json($data);
+        return redirect()->route('category.index');
+
     }
 
     /**
@@ -57,6 +74,8 @@ class CategoryController extends Controller
     public function edit($id)
     {
         //
+        $category = Category::findOrFail($id);
+        return view('category.edit', compact('category'));
     }
 
     /**
@@ -69,6 +88,12 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $data = request()->except(['_token', '_method']);
+        Category::where('id', '=', $id)->update($data);
+        $category = Category::findOrFail($id);
+        return view('category.edit', compact('category'));
+        //return redirect()->route('');
     }
 
     /**
@@ -80,5 +105,8 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         //
+        $category = Category::findOrFail($id);
+        Category::destroy($id);
+        return redirect('category')->with('message', 'Producto Borrado');
     }
 }
