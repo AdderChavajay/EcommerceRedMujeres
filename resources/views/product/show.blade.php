@@ -25,30 +25,16 @@
                         </div>
                         @endforeach
                     </div>
-                    <!---
-
-                    <div class="row">
-                        <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
-                        <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
-                        <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
-                        <div class="col-md-4 col-sm-4 img">
-                        </div>
-                        <div class="col-md-4 col-sm-4 img">
-                        </div>
-                        <div class="col-md-4 col-sm-4 img ">
-                        </div>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>
 
         <div class="descripcion col-md-3 col-sm-12">
             <div class="margen_descripcion">
-                <h5> <b> Anne Klein Sleeveless Colorblock Scuba </b> </h5>
-                <p> <b>Web ID:</b> 1089772</p>
+                <h5> <b> {{ $product->name }} </b> </h5>
+                <p> <b>Web ID:</b> {{ $product->id }}</p>
                 <span class="span">
-                    <h2 class="text-center"><b> US $15 </b> </h2>
+                    <h2 class="text-center"><b> US ${{ $product->price }} </b> </h2>
 
                     <div class="input">
                         <input type="text" class="form-control" placeholder="Cantidad de productos" />

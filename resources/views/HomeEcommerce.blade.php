@@ -97,59 +97,30 @@
                     </div>
 
                     <div class="row col-md-12">
+                        @foreach ($products as $product)
                         <div class="col-md-4 col-sm-6 all_product">
-                            <div class="product-image-wrapper producto shadow">
-                                <div class="single-products">
-                                    <img src="images/Carrusell/2.JPG" class="img img-fluid" alt="">
-                                    <div class="productinfo text-center">
-                                        <h3>$56</h3>
-                                        <p>Easy Polo Black Edition</p>
-                                        <div class="margen">
-                                            <button type=" submit" class="btn btn-default">
-                                                <ion-icon name="cart"></ion-icon>
-                                                Agregar
-                                            </button>
+                            <a href="{{ route('product.show', $product->id) }}" style="text-decoration: none">
+                                <div class="product-image-wrapper producto shadow">
+                                    <div class="single-products">
+                                        @php
+                                            $images = explode(',', $product->images);
+                                        @endphp
+                                        <img src="{{ asset('storage/'.$images[0]) }}" class="img-full-contain" alt="">
+                                        <div class="productinfo text-center">
+                                            <h3>${{ $product->price }}</h3>
+                                            <p>{{ $product->name }}</p>
+                                            <div class="margen">
+                                                <button type=" submit" class="btn btn-default">
+                                                    <ion-icon name="cart"></ion-icon>
+                                                    Agregar
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-
-
-                        <div class="col-md-4 col-sm-4 all_product">
-                            <div class="product-image-wrapper producto shadow">
-                                <div class="single-products">
-                                    <img src="images/Carrusell/3.JPG" alt="" class="img img-fluid">
-                                    <div class="productinfo text-center">
-                                        <h3>$56</h3>
-                                        <p>Easy Polo Black Edition</p>
-                                        <div class="margen">
-                                            <button type="button" class="btn btn-default ">
-                                                <ion-icon name="cart"></ion-icon>
-                                                Agregar
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4  col-sm-4 all_product">
-                            <div class="product-image-wrapper producto shadow">
-                                <div class="single-products">
-                                    <img src="images/Carrusell/1.JPG" alt="" class="img img-fluid">
-                                    <div class="productinfo text-center">
-                                        <h3>$56</h3>
-                                        <p>Easy Polo Black Edition</p>
-                                        <div class="margen">
-                                            <button type="button" class="btn btn-default ">
-                                                <ion-icon name="cart"></ion-icon>
-                                                Agregar
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 </div>
@@ -165,6 +136,4 @@
 <footer>
     <p class="text-center">Derechos reservados &copy</p>
 </footer>
-
-
 @endsection

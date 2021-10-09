@@ -15,7 +15,7 @@
         </div>
         @foreach ($images as $image)
         <div class="carousel-item">
-            <img class="d-block w-200" src="{{asset('storage/'.$image)}}" alt="First slide" />
+            <img class="img-full-contain-height-auto"src="{{asset('storage/'.$image)}}" alt="First slide" />
             {{-- <div class="row">
                 <div class="col-md-3">
                     <div class="sigle-box">

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AssociationController;
+use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\ProductController;
@@ -24,7 +25,7 @@ Route::get('/2', function () {
     return view('welcome');
 });
 
-Route::get('/', homeController::class);
+Route::get('/', [CatalogController::class, 'index'])->name('main');
 Route::resource('product', ProductController::class)->middleware('auth');
 Route::resource('category', CategoryController::class)->middleware('auth');
 Route::resource('association', AssociationController::class)->middleware('auth');
