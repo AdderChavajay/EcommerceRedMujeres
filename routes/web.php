@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AssociationController;
+use App\Http\Controllers\userController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
@@ -27,6 +28,7 @@ Route::get('/', homeController::class);
 Route::resource('product', ProductController::class)->middleware('auth');
 Route::resource('category', CategoryController::class)->middleware('auth');
 Route::resource('association', AssociationController::class)->middleware('auth');
+Route::resource('user', UserController::class)->middleware('auth');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

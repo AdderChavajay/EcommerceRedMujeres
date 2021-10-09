@@ -19,8 +19,8 @@
       <li class="nav-item  {{ (request()->routeIs('association.index')) ? 'active' : '' }}">
         <a class="nav-link" href="{{ route('association.index') }}">Asociasiones</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Usuarios</a>
+      <li class="nav-item {{ (request()->routeIs('user.index')) ? 'active' : '' }}">
+        <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>
       </li>
     </ul>
     <div>
