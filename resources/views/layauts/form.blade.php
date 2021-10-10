@@ -63,21 +63,21 @@
                 </span>
             </div>
             <textarea class="form-control" cols="10" rows="5" name="description" placeholder="Descripción del producto"
-            id="description">{{old('description', $product->description)}}</textarea>
+                id="description">{{old('description', $product->description)}}</textarea>
         </div>
     </div>
 
     <div class="">
         <label for='files'>Fotos: </label>
-        <div class="py-3">
+        <div class="py-3" class="rounded ">
             @empty($product->image)
             @else
-            <img src="{{asset('storage'.'/'.$product->images)}}" class="img img-fluid" style="max-width: 8rem;" alt="">
+            <img src="{{asset('storage'.'/'.$product->images)}}" class="rounded float-left" alt="">
             @endempty
         </div>
 
-        <input id='files' type='file' name="images[]" multiple />
-        <output id='result' />
+        <input id='files' class="form-control" type='file' name="images[]" multiple />
+        <output id='result' class="" />
     </div>
 </div>
 <div class="row py-3">
@@ -87,7 +87,7 @@
 
     <div class="d-grid text-center col">
         <a href="{{url('product/')}}" class="btn btn-primary row">
-                <ion-icon name="arrow-back-outline"></ion-icon>
+            <ion-icon name="arrow-back-outline"></ion-icon>
         </a>
     </div>
 </div>

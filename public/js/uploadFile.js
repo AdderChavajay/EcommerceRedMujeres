@@ -14,7 +14,8 @@ window.onload = function() {
                 picReader.addEventListener("load", function(event) {
                     var picFile = event.target;
                     var div = document.createElement("div");
-                    div.innerHTML = "<img class='img-fluid py-2' src='" + picFile.result + "'" +
+                    div.className="float-left";
+                    div.innerHTML = "<img class='thumbnail rounded col' src='" + picFile.result + "'" +
                     "title='" + picFile.name + "'/>";
                     output.insertBefore(div, null);
                 });
