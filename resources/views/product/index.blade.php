@@ -3,7 +3,7 @@
 @section('title','Productos')
 
 @section('main')
-<div class="container">
+<div class="container py-3 px-0">
 
     <a href="{{route('product.create') }}" class="btn btn-primary">
         <ion-icon name="add"></ion-icon> Nuevo producto
@@ -26,7 +26,7 @@
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
             <th scope="col">Tamaño</th>
-            <th scope="col" class="">Descripcion</th>
+            <th scope="col-3" class="">Descripcion</th>
             <th scope="col" class="">Imagen</th>
             <th scope="col" class="">Opciones</th>
         </tr>
@@ -34,12 +34,12 @@
     <tbody>
         @foreach ($products as $product)
         <tr class="">
-            <th >{{ $product->id }}</th>
+            <th>{{ $product->id }}</th>
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
             <td>{{ $product->quantity }}</td>
             <td>{{ $product->size }}</td>
-            <td class="">{{ $product->description}}</td>
+            <td class="col-3">{{ $product->description}}</td>
             <td class="">
                 @empty($product->images)
                 @else

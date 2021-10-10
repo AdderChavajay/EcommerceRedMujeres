@@ -3,7 +3,7 @@
 @section('title', 'Categorias')
 
 @section('main')
-<div>
+<div class="container py-2 px-0">
     <a href="{{route('category.create')}}" class="btn btn-primary">nueva categoria</a>
 </div>
 
@@ -31,27 +31,29 @@
                                 <ion-icon name="pencil" title="Editar Producto"></ion-icon>
                             </a>
                         </div>
-                        
+
                         <div class="col">
-                            <a title="Detalles" href="{{ route('product.show', $category->id) }}" class="btn btn-secondary ">
+                            <a title="Detalles" href="{{ route('product.show', $category->id) }}"
+                                class="btn btn-secondary ">
                                 <ion-icon name="eye" title="Detalles"></ion-icon>
                             </a>
                         </div>
-                        
+
                         <div class="col">
                             <form action="{{ route('category.destroy', $category->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button title="Borrar" type="submit" onclick="return confirm('Deseas borrar el prducto')"
-                                    value="borrar" class="btn btn-danger my-1 mx-1">
+                                <button title="Borrar" type="submit"
+                                    onclick="return confirm('Deseas borrar el prducto')" value="borrar"
+                                    class="btn btn-danger my-1 mx-1">
                                     <ion-icon name="close"></ion-icon>
                                 </button>
                             </form>
                         </div>
-                    
+
                     </div>
                 </td>
-            
+
             </tr>
             @endforeach
         </tbody>

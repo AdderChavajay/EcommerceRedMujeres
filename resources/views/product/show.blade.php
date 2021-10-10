@@ -20,8 +20,9 @@
                 <div style="overflow: auto;">
                     <div class="d-flex">
                         @foreach ($images as $image)
-                        <div class="d-inline-block" style="width: 500px;">
-                            <img class="w-200" src="{{asset('storage/'.$image)}}" alt="First slide" width="500px" />
+                        <div class="d-inline-block py-2 px-1" style="max-width: 150px;">
+                            <img class="w-200 img-fluid" src="{{asset('storage/'.$image)}}" alt="First slide"
+                                width="500px" />
                         </div>
                         @endforeach
                     </div>

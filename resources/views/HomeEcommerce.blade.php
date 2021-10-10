@@ -72,7 +72,8 @@
             <section class="productos_sugeridos row">
                 <div class="asociaciones col-md-3 ">
 
-                    <h5 class=" list-group-item list-group-item-success"><b> Asociaciones </b></h5>
+                    <h5 class=" list-group-item list-group-item-success" style="background: 1b2631;"><b> Asociaciones
+                        </b></h5>
                     <ol class="list-group list-group-flush">
 
                         <li class="list-group-item"><a href="list-group-item">Tz'unun Ya'</a> </li>
@@ -103,12 +104,12 @@
                                 <div class="product-image-wrapper producto shadow">
                                     <div class="single-products">
                                         @php
-                                            $images = explode(',', $product->images);
+                                        $images = explode(',', $product->images);
                                         @endphp
                                         <img src="{{ asset('storage/'.$images[0]) }}" class="img-full-contain" alt="">
                                         <div class="productinfo text-center">
-                                            <h3>${{ $product->price }}</h3>
-                                            <p>{{ $product->name }}</p>
+                                            <h3 style="color:#566573 ">${{ $product->price }}</h3>
+                                            <p style="color:#566573 ">{{ $product->name }}</p>
                                             <div class="margen">
                                                 <button type=" submit" class="btn btn-default">
                                                     <ion-icon name="cart"></ion-icon>

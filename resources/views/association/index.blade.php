@@ -3,7 +3,7 @@
 @section('title', 'Categorias')
 
 @section('main')
-<div>
+<div class="container py-2 px-0">
     <a href="{{route('association.create')}}" class="btn btn-primary">nueva categoria</a>
 </div>
 
