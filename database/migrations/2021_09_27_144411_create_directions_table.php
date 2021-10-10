@@ -25,7 +25,7 @@ class CreateDirectionsTable extends Migration
             $table->unsignedBigInteger('id_user')->nullable();
 
             $table->foreign('id_user')->references('id')
-                  ->on('users')->onDelete('set null');
+                ->on('users')->onDelete('set null');
 
         });
     }

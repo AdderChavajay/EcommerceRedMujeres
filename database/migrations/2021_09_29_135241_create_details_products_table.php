@@ -21,8 +21,7 @@ class CreateDetailsProductsTable extends Migration
             $table->unsignedBigInteger('id_purchase_mades')->nullable();
             
             $table->foreign('id_purchase_mades')->references('id')
-                  ->on('purchase_mades')->onDelete('set null');
-                  
+                ->on('purchase_mades')->onDelete('set null');
         });
     }
 

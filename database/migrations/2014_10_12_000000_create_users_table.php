@@ -26,7 +26,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('id_association')->nullable();
             $table->foreign('id_association')->references('id')
-                  ->on('associations')->onDelete('set null');
+                ->on('associations')->onDelete('set null');
         });
     }
 
