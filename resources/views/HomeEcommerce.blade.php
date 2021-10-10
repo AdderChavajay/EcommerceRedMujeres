@@ -72,7 +72,8 @@
             <section class="productos_sugeridos row">
                 <div class="asociaciones col-md-3 ">
 
-                    <h5 class=" list-group-item list-group-item-success" style="background: 1b2631;"><b> Asociaciones
+                    <h5 class=" list-group-item list-group-item-action active" style="background: 1b2631;"><b>
+                            Asociaciones
                         </b></h5>
                     <ol class="list-group list-group-flush">
 
@@ -99,7 +100,7 @@
 
                     <div class="row col-md-12">
                         @foreach ($products as $product)
-                        <div class="col-md-4 col-sm-6 all_product">
+                        <div class="col-md-4 col-sm-12 all_product">
                             <a href="{{ route('product.show', $product->id) }}" style="text-decoration: none">
                                 <div class="product-image-wrapper producto shadow">
                                     <div class="single-products">

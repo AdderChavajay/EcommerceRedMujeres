@@ -72,6 +72,7 @@
     </section>
     <section>
         <section class="productos_sugeridos row">
+            <!--
             <div class="asociaciones col-md-3 ">
 
                 <h4 class="text-center list-group-item list-group-item-success bordeo_asociacion"><b> Asociaciones </b>
@@ -93,10 +94,10 @@
 
             </div>
 
-
-            <div class="col-md-9">
+        -->
+            <div class="col-md-12">
                 <div class="text-center">
-                    <h3 class="Products_As"> <b> Productos sugeridos </b> </h3>
+                    <h3 class="Products_As"> <b> Productos relacionados </b> </h3>
                 </div>
 
                 <div class="row col-md-12">
