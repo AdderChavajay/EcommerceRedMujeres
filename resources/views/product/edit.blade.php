@@ -4,7 +4,7 @@
 
 @section('main')
 <main>
-    <div class="container">
+    <div class="">
         <div class="row ">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto my-5">
                 <div class=" shadow border-radius ">

@@ -68,7 +68,7 @@
     </div>
 
     <div class="">
-        <label for='files'>Fotos: </label>
+        <label for='files'> Seleccionar Fotos: </label>
         <div class="py-3" class="rounded ">
             @empty($product->image)
             @else

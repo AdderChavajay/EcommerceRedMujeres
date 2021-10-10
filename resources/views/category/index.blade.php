@@ -22,19 +22,19 @@
             <tr class="">
                 <th class="col-2">{{ $category->id }}</th>
                 <td class="col-7">{{ $category->name }}</td>
-                <td class="col-3 col-sm-12">
+                <td class="col-3">
                     <div class="row ">
 
                         <div class="col">
                             <a title="Editar Producto" href="{{ route('category.edit', $category->id) }}"
-                                class="btn btn-secondary my-1 mx-1 ">
+                                class="btn btn-secondary">
                                 <ion-icon name="pencil" title="Editar Producto"></ion-icon>
                             </a>
                         </div>
 
                         <div class="col">
                             <a title="Detalles" href="{{ route('product.show', $category->id) }}"
-                                class="btn btn-secondary ">
+                                class="btn btn-secondary">
                                 <ion-icon name="eye" title="Detalles"></ion-icon>
                             </a>
                         </div>
@@ -45,7 +45,7 @@
                                 @method('DELETE')
                                 <button title="Borrar" type="submit"
                                     onclick="return confirm('Deseas borrar el prducto')" value="borrar"
-                                    class="btn btn-danger my-1 mx-1">
+                                    class="btn btn-danger">
                                     <ion-icon name="close"></ion-icon>
                                 </button>
                             </form>
