@@ -16,11 +16,11 @@
             </form>
             <ul class="navbar-nav ml-auto ">
                 <li class="nav-item active w-100">
-                    <a class="nav-link" href="#">Inicio</a>
+                    <a class="nav-link" href="{{ route('main') }}">Inicio</a>
                 </li>
                 <!--##################################Menu deplegable de Asociaciones ################################-->
                 <li class="nav-item active w-100">
-                    <a href="#" class="nav-link">Carrito</a>
+                    <a href="{{route('shopping.index')}} " class="nav-link">Carrito</a>
                 </li>
                 <!--###################### meno desplegable de inicio de secion#######################-->
                 @auth

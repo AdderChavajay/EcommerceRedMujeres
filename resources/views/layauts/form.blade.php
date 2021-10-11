@@ -41,6 +41,21 @@
         </div>
     </div>
 </div>
+<div class="row">
+    <div class="form-floating mb-3 col">
+        <label for="category">Catergoria del porducto</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addonddd">
+                    <ion-icon name="keypad-outline"></ion-icon>
+                </span>
+            </div>
+            <select class="form-control">
+                <option>Seleccionar Categoria</option>
+            </select>
+        </div>
+    </div>
+</div>
 <div class="">
     <div class="form-floating mb-3 ">
         <label for="price">Precio Unitario</label>
