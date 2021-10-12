@@ -22,6 +22,7 @@
     <thead>
         <tr class="">
             <th scope="col">#</th>
+            <th>Categorias</th>
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
@@ -35,6 +36,13 @@
         @foreach ($products as $product)
         <tr class="">
             <th>{{ $product->id }}</th>
+            <td>
+                @foreach ($product->categories as $category)
+                <ul>
+                    <li>{{ $category->name }}</li>
+                </ul>
+                @endforeach
+            </td>
             <td>{{ $product->name }}</td>
             <td>{{ $product->price }}</td>
             <td>{{ $product->quantity }}</td>

@@ -24,12 +24,8 @@ class CreateProductsTable extends Migration
             $table->integer('selled')->default(0);
             $table->timestamps();
             $table->unsignedBigInteger('id_user')->nullable();
-            $table->unsignedBigInteger('id_category')->nullable();
-
             $table->foreign('id_user')->references('id')
                 ->on('users')->onDelete('set null');
-            $table->foreign('id_category')->references('id')
-                ->on('categories')->onDelete('set null');
         });
     }
 

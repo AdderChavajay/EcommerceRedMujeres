@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\product;
 use Illuminate\Support\Facades\Storage;
@@ -16,7 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         //$products = Product::all();
-        $products = product::paginate(10);
+        $products = product::with('categories')->paginate(10);
         return view('product.index', compact('products'));
     }
 
@@ -27,8 +28,10 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $categories = Category::all();
+
         $product = new product();
-        return view('product.create', compact('product'));
+        return view('product.create', compact('product', 'categories'));
     }
 
     /**
@@ -45,7 +48,8 @@ class ProductController extends Controller
             'price'       => ['required', 'numeric'],
             'size'        => ['required', 'string'],
             'description' => ['nullable', 'string', 'max:500'],
-            'images'      => ['nullable', 'array'],
+            'images'      => ['required', 'array'],
+            'categories'      => ['required', 'array'],
         ]);
 
         $images = array();
@@ -56,7 +60,8 @@ class ProductController extends Controller
             }
         }
         $data['images'] = join(',', $images);
-        Product::insert($data);
+        $product = Product::create($data);
+        $product->categories()->sync($data['categories']);
         return redirect()->route('product.index')->with('message', 'Producto agregado');
     }
 

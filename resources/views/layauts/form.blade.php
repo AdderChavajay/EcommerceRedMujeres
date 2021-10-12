@@ -50,8 +50,10 @@
                     <ion-icon name="keypad-outline"></ion-icon>
                 </span>
             </div>
-            <select class="form-control">
-                <option>Seleccionar Categoria</option>
+            <select name="categories[]" class="form-control" multiple>
+                @foreach ($categories as $category)
+                <option value="{{$category->id}}"> {{$category->name}} </option>
+                @endforeach
             </select>
         </div>
     </div>
