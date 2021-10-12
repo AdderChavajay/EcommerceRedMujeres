@@ -10,7 +10,7 @@ window.onload = function() {
                 //Only pics
                 if (!file.type.match('image'))
                     continue;
-                var picReader = new FileReader();
+                var picReader = new FileReader();                
                 picReader.addEventListener("load", function(event) {
                     var picFile = event.target;
                     var div = document.createElement("div");
@@ -21,9 +21,11 @@ window.onload = function() {
                 });
                 //Read the image
                 picReader.readAsDataURL(file);
+                
+                
             }
         });
     } else {
-        console.log("Your browser does not support File API");
+        console.log("imagen no soportado ");
     }
 }

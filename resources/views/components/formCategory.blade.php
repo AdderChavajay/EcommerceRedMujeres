@@ -12,6 +12,9 @@
                 <input type="text" class="form-control" placeholder="Nombre" name="name" aria-describedby="basic-addon1"
                     required value="{{old('name', $category->name)}}" id="name">
             </div>
+            <div>
+                <input type='file' name="images" class="form-control" />
+            </div>
             <!--<input type="text" class="form-control" id="floatingInput" placeholder="Nombre">-->
         </div>
     </div>
@@ -21,7 +24,9 @@
         </div>
 
         <div class="col">
-            <a href="{{route('category.index')}}" class="btn btn-primary"> Regresar</a>
+            <a href="{{route('category.index')}}" class="btn btn-primary">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </a>
         </div>
     </div>
 

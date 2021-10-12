@@ -18,16 +18,16 @@
                 <div class="text-center py-2">
                     <h3>Nueva Categoria </h3>
                 </div>
-                
-                    <div class=" py-2 ">
-                        <form action="{{ route('category.store') }}" method="post">
+
+                <div class=" py-2 ">
+                    <form action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @include('components.formCategory')
                     </form>
-                    </div>
-            
-            </div>    
-        </div>    
-    </div>    
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

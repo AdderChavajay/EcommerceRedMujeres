@@ -46,7 +46,6 @@ div form .buscador::placeholder {
 */
 main section .asociaciones ol li a {
     text-decoration: none;
-    color: #000;
 }
 
 main section .asociaciones ol li:hover {

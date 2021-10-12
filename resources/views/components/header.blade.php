@@ -15,16 +15,19 @@
                 <button class="btn btn-primary my-2 my-sm-0 rounded" type="submit">Buscar</button>
             </form>
             <ul class="navbar-nav ml-auto ">
-                <li class="nav-item active w-100">
+                <li class="nav-item  w-100 {{ (request()->routeIs('main')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('main') }}">Inicio</a>
                 </li>
+                <li class="nav-item  w-100 {{ (request()->routeIs('allCategory.index')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('allCategory.index') }}">Catalogo</a>
+                </li>
                 <!--##################################Menu deplegable de Asociaciones ################################-->
-                <li class="nav-item active w-100">
+                <li class="nav-item  w-100 {{ (request()->routeIs('shopping.index')) ? 'active' : '' }}">
                     <a href="{{route('shopping.index')}} " class="nav-link">Carrito</a>
                 </li>
                 <!--###################### meno desplegable de inicio de secion#######################-->
                 @auth
-                <li class="nav-item active w-100">
+                <li class="nav-item  w-100 {{ (request()->routeIs('product.index')) ? 'active' : '' }}">
                     <a href="{{ route('product.index') }}" class="nav-link">
                         Productos
                     </a>

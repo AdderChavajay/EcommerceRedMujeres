@@ -38,15 +38,8 @@
                     <h2 class="text-center"><b> US ${{ $product->price }} </b> </h2>
 
                     <div class="input">
-                        <input type="text" class="form-control" placeholder="Cantidad de productos" />
-                        <br>
-                        <select class="form-control">
-                            <option>Grande</option>
-                            <option>Mediano</option>
-                            <option>Pequeño</option>
-
-                        </select>
-
+                        <h3>Tamano:</h3>
+                        <p>Grande</p>
                     </div>
                     <div class="text-center ">
                         <button type="button" class="btn btn-danger ">

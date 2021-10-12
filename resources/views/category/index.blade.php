@@ -13,7 +13,8 @@
         <thead>
             <tr class="">
                 <th scope="col-2">#</th>
-                <th scope="col-7">Nombre</th>
+                <th scope="col-4">Nombre</th>
+                <th scope="col-3">imagen</th>
                 <th scope="col-3 col-sm-12">opciones</th>
             </tr>
         </thead>
@@ -21,7 +22,10 @@
             @foreach ($categories as $category)
             <tr class="">
                 <th class="col-2">{{ $category->id }}</th>
-                <td class="col-7">{{ $category->name }}</td>
+                <td class="col-4">{{ $category->name }}</td>
+                <td class="col-3">
+                    <img src="{{asset('storage/'.$category->images)}}" alt="">
+                </td>
                 <td class="col-3">
                     <div class="row ">
 

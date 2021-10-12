@@ -8,9 +8,6 @@
 
 @section('main')
 <main class="container">
-    <div class="espacio"></div>
-
-
     <div class="row">
         <div class="col-md-8 col-sm-12">
 
@@ -62,6 +59,11 @@
                 </a>
                 <a target="_blank" href="https://mercadotzununya.wixsite.com/inicio" class="">
                     <ion-icon name="globe-outline" size="large"></ion-icon>
+                </a>
+            </div>
+            <div class="text-center">
+                <a href="{{route('allCategory.index')}}" class="btn btn-primary">
+                    Ver Catalogo del Mercado
                 </a>
             </div>
         </div>

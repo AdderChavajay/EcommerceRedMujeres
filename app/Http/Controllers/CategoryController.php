@@ -40,18 +40,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request['image']);
         //
-
-        $data=$request->validate([
-            'name' => ['required','string'],
+        /*
+        $data = $request->validate([
+            'name' => ['required', 'string'],
+            'images' => ['required'],
         ]);
-        //$data=request()->except('_token');
+*/
+        $data = request()->except('_token');
 
-        
+        if ($request->hasFile('images')) {
+            $data['images'] = $request->file('images')->store('uploads', 'public');
+        }
         Category::insert($data);
-       // return response()->json($data);
+        // return response()->json($data);
         return redirect()->route('category.index');
-
     }
 
     /**
