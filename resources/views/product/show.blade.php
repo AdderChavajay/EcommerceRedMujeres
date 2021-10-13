@@ -32,14 +32,18 @@
 
         <div class="descripcion col-md-3 col-sm-12">
             <div class="margen_descripcion">
-                <h5> <b> {{ $product->name }} </b> </h5>
+                <h3> <b> {{ $product->name }} </b> </h3>
                 <p> <b>Web ID:</b> {{ $product->id }}</p>
                 <span class="span">
                     <h2 class="text-center"><b> US ${{ $product->price }} </b> </h2>
 
-                    <div class="input">
-                        <h3>Tamano:</h3>
-                        <p>Grande</p>
+                    <div class="input row">
+                        <h5 class=""><b>Tamano:</b></h5>
+                        <p>{{$product->size}}</p>
+                    </div>
+                    <div class="estados_di  ">
+                        <p><b>Descripcion:</b></p>
+                        <p>{{$product->description}}</p>
                     </div>
                     <div class="text-center ">
                         <button type="button" class="btn btn-danger ">
@@ -50,10 +54,7 @@
 
 
                 </span>
-                <div class="estados_di  estados_disponibildad">
-                    <p><b>Disponibilidad:</b> En existencia</p>
-                    <p><b>Estado:</b> Nuevo</p>
-                </div>
+
             </div>
         </div>
     </Section>
@@ -65,42 +66,23 @@
     </section>
     <section>
         <section class="productos_sugeridos row">
-            <!--
-            <div class="asociaciones col-md-3 ">
-
-                <h4 class="text-center list-group-item list-group-item-success bordeo_asociacion"><b> Asociaciones </b>
-                </h4>
-                <ol class="list-group list-group-flush">
-
-                    <li class="list-group-item"><a href="list-group-item">Tz'unun Ya'</a> </li>
-                    <li class="list-group-item"><a href="">Maya Tzutuhil</a></li>
-                    <li class="list-group-item"><a href="">Jun Mokaaj Ixmucane</a></li>
-                    <li class="list-group-item"><a href="">Mujeres artesanas pedranas</a></li>
-                    <li class="list-group-item"><a href="">Movimiento de mujeres tz'utujiles IXKEEM</a></li>
-                    <li class="list-group-item"><a href="">Ixoq Kotz'iij Ya'</a></li>
-                    <li class="list-group-item"><a href="">Mujeres de cambio</a></li>
-                    <li class="list-group-item"><a href="">Innovadoras Mi Soya y Textiles</a></li>
-                    <li class="list-group-item"><a href="">Mujeres Tz'utujiles Semilla I'XIJA'TZ</a></li>
-                    <li class="list-group-item"><a href="">Ixoq Ajqeem</a></li>
-                    <li class="list-group-item"><a href=""> Mujeres Trabajadoras </a></li>
-                </ol>
-
-            </div>
-
-        -->
             <div class="col-md-12">
                 <div class="text-center">
                     <h3 class="Products_As"> <b> Productos relacionados </b> </h3>
                 </div>
 
                 <div class="row col-md-12">
+                    @foreach ($products as $product)
                     <div class="col-md-4 col-sm-6 all_product">
                         <div class="product-image-wrapper producto shadow">
                             <div class="single-products">
-                                <img src="{{asset('images/Carrusell/1.JPG')}}" class="img img-fluid" alt="">
+                                @php
+                                $images = explode(',', $product->images);
+                                @endphp
+                                <img src="{{ asset('storage/'.$images[0]) }}" class="img img-fluid" alt="">
                                 <div class="productinfo text-center">
-                                    <h3>$56</h3>
-                                    <p>Easy Polo Black Edition</p>
+                                    <h3>${{ $product->price }}</h3>
+                                    <p>{{ $product->name }}</p>
                                     <div class="margen">
                                         <button type=" submit" class="btn btn-default">
                                             <ion-icon name="cart"></ion-icon>
@@ -111,113 +93,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-6 all_product">
-                        <div class="product-image-wrapper producto shadow">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="{{asset('images/Carrusell/3.JPG')}}" class="img img-fluid" alt="" />
-                                    <h3>$56</h3>
-                                    <p>Easy Polo Black Edition</p>
-                                    <div class="margen">
-                                        <button type="button" class="btn btn-default ">
-                                            <ion-icon name="cart"></ion-icon>
-                                            Agregar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 all_product">
-                        <div class="product-image-wrapper producto shadow">
-                            <div class="single-products">
-                                <img src="{{asset('images/Carrusell/1.JPG')}}" alt="" class="img img-fluid">
-                                <div class="productinfo text-center">
-                                    <h3>$56</h3>
-                                    <p>Easy Polo Black Edition</p>
-                                    <div class="margen">
-                                        <button type="button" class="btn btn-default ">
-                                            <ion-icon name="cart"></ion-icon>
-                                            Agregar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4  col-sm-6 all_product">
-                        <div class="product-image-wrapper producto shadow">
-                            <div class="single-products">
-                                <img src="{{asset('images/Carrusell/2.JPG')}} " alt="" class="img img-fluid">
-                                <div class="productinfo text-center">
-                                    <h3>$56</h3>
-                                    <p>Easy Polo Black Edition</p>
-                                    <div class="margen">
-                                        <button type="button" class="btn btn-default ">
-                                            <ion-icon name="cart"></ion-icon>
-                                            Agregar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4  col-sm-6 all_product">
-                        <div class="product-image-wrapper producto shadow">
-                            <div class="single-products">
-                                <img src="{{asset('images/Carrusell/3.JPG')}}" alt="" class="img img-fluid">
-                                <div class="productinfo text-center">
-                                    <h3>$56</h3>
-                                    <p>Easy Polo Black Edition</p>
-                                    <div class="margen">
-                                        <button type="button" class="btn btn-default">
-                                            <ion-icon name="cart"></ion-icon>
-                                            Agregar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 all_product">
-                        <div class="product-image-wrapper producto shadow">
-                            <div class="single-products">
-                                <div class="productinfo text-center">
-                                    <img src="{{asset('images/Carrusell/2.JPG')}}" class="img img-fluid" alt="" />
-                                    <h3>$56</h3>
-                                    <p>Easy Polo Black Edition</p>
-                                    <div class="margen">
-                                        <button type="button" class="btn btn-default">
-                                            <ion-icon name="cart"></ion-icon>
-                                            Agregar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6 all_product">
-                        <div class="product-image-wrapper producto shadow">
-                            <div class="single-products">
-                                <img src="{{asset('images/Carrusell/1.JPG')}}" alt="" class="img img-fluid">
-                                <div class="productinfo text-center">
-                                    <h3>$56</h3>
-                                    <p>Easy Polo Black Edition</p>
-                                    <div class="margen">
-                                        <button type="button" class="btn btn-default">
-                                            <ion-icon name="cart"></ion-icon>
-                                            Agregar
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
-            </div>
-            </div>
+        </section>
 </main>
 
 @endsection

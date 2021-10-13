@@ -36,12 +36,15 @@
                                                 <ion-icon name="person-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <input id="name" name="name" type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" :value="old('name')" required autofocus>
+                                        <input id="name" name="name" type="text" class="form-control"
+                                            placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1"
+                                            :value="old('name')" required autofocus>
                                     </div>
                                     <!--<input type="text" class="form-control" id="floatingInput" placeholder="Nombre">-->
                                 </div>
                                 <div class="form-floating mb-3 col">
-                                    <input type="text" name="last_name" class="form-control" id="floatingInput" placeholder="Apellido">
+                                    <input type="text" name="last_name" class="form-control" id="floatingInput"
+                                        placeholder="Apellido">
                                 </div>
                             </div>
 
@@ -51,7 +54,9 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="basic-addon1">@</span>
                                         </div>
-                                        <input id="email" name="email" type="text" class="form-control" placeholder="email@ejemplo.com" aria-describedby="basic-addon1" :value="old('email')" required>
+                                        <input id="email" name="email" type="text" class="form-control"
+                                            placeholder="email@ejemplo.com" aria-describedby="basic-addon1"
+                                            :value="old('email')" required>
                                     </div>
                                 </div>
                                 <div class="form-floating mb-3 ">
@@ -61,9 +66,10 @@
                                                 <ion-icon name="key-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <input id="password" name="password" required autocomplete="new-password" type="password" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1">
+                                        <input id="password" name="password" required autocomplete="new-password"
+                                            type="password" class="form-control" placeholder="Contraseña"
+                                            aria-describedby="basic-addon1">
                                     </div>
-                                    <div id="password_error"></div>
                                 </div>
                                 <div class="form-floating mb-3 ">
                                     <div class="input-group mb-3">
@@ -72,10 +78,12 @@
                                                 <ion-icon name="key-outline"></ion-icon>
                                             </span>
                                         </div>
-                                        <input id="password_confirmation" name="password_confirmation" required type="password" class="form-control" placeholder="Confirmar contraseña" aria-describedby="basic-addon1">
+                                        <input id="password_confirmation" name="password_confirmation" required
+                                            type="password" class="form-control" placeholder="Confirmar contraseña"
+                                            aria-describedby="basic-addon1">
                                     </div>
-                                    <div >
-                                        <div id="password_confirmation_error"  style="font-size: 11px"></div>
+                                    <div>
+                                        <div id="password_confirmation_error" style="font-size: 11px"></div>
                                     </div>
                                 </div>
 
@@ -97,11 +105,11 @@
                                         <label class="form-check-label" for="inlineRadio1">Sexo:</label>
                                     </div>
                                     <div class="form-check col-md-5 col-sm-6">
-                                        <input class="position-static" type="radio" name="gender" id="radio1" value="M" >
+                                        <input class="position-static" type="radio" name="gender" id="radio1" value="M">
                                         <label class="form-check-label" for="inlineRadio1">Hombre</label>
                                     </div>
                                     <div class="form-check col-md-5 col-sm-6">
-                                        <input class="position-static" type="radio" name="gender" id="radio2" value="F" >
+                                        <input class="position-static" type="radio" name="gender" id="radio2" value="F">
                                         <label class="form-check-label" for="inlineRadio1">Mujer</label>
                                     </div>
                                 </div>
@@ -111,7 +119,8 @@
                             <div class="g-recaptcha" data-sitekey="your_site_key"></div>
 
                             <div class="d-grid text-center">
-                                <button class="btn btn-primary btn-login text-uppercase fw-bold" onclick="sendForm();" type="submit">Crear Cuenta</button>
+                                <button class="btn btn-primary btn-login text-uppercase fw-bold" onclick=""
+                                    type="submit">Crear Cuenta</button>
                             </div>
 
 
@@ -129,5 +138,8 @@
 <footer class="text-center">
     <img src="logoMuni.jpeg" alt="" width="50px">
 </footer>
+
+
 <script src="{{asset('js/validation.js')}}"></script>
+
 @endsection

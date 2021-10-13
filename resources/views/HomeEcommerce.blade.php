@@ -79,17 +79,43 @@
                         </b></h5>
                     <ol class="list-group list-group-flush">
 
-                        <li class="list-group-item"><a href="list-group-item">Tz'unun Ya'</a> </li>
-                        <li class="list-group-item"><a href="">Maya Tzutuhil</a></li>
-                        <li class="list-group-item"><a href="">Jun Mokaaj Ixmucane</a></li>
-                        <li class="list-group-item"><a href="">Mujeres artesanas pedranas</a></li>
-                        <li class="list-group-item"><a href="">Movimiento de mujeres tz'utujiles IXKEEM</a></li>
-                        <li class="list-group-item"><a href="">Ixoq Kotz'iij Ya'</a></li>
-                        <li class="list-group-item"><a href="">Mujeres de cambio</a></li>
-                        <li class="list-group-item"><a href="">Innovadoras Mi Soya y Textiles</a></li>
-                        <li class="list-group-item"><a href="">Mujeres Tz'utujiles Semilla I'XIJA'TZ</a></li>
-                        <li class="list-group-item"><a href="">Ixoq Ajqeem</a></li>
-                        <li class="list-group-item"><a href=""> Mujeres Trabajadoras </a></li>
+                        <li class="list-group-item"><a href="https://mercadotzununya.wixsite.com/inicio/tzunun-ya"
+                                target="_blank">Tz'unun Ya'</a> </li>
+                        <li class="list-group-item"><a href="https://mercadotzununya.wixsite.com/inicio/maya-tzutuhil"
+                                target="_blank">Maya Tzutuhil</a></li>
+                        <li class="list-group-item"><a
+                                href="https://mercadotzununya.wixsite.com/inicio/jun-mokaaj-ixmucane"
+                                target="_blank">Jun Mokaaj
+                                Ixmucane</a></li>
+                        <li class="list-group-item"><a
+                                href="https://mercadotzununya.wixsite.com/inicio/mujeres-artesanas-pedranas"
+                                target="_blank">Mujeres
+                                artesanas pedranas</a></li>
+                        <li class="list-group-item"><a
+                                href="https://mercadotzununya.wixsite.com/inicio/movimiento-de-mujeres-tzutujiles-ixkeem"
+                                target="_blank">Movimiento
+                                de mujeres tz'utujiles IXKEEM</a></li>
+                        <li class="list-group-item"><a
+                                href="https://mercadotzununya.wixsite.com/inicio/ixoq-kotz-iij-ya" target="_blank">Ixoq
+                                Kotz'iij Ya'</a>
+                        </li>
+                        <li class="list-group-item"><a
+                                href="https://mercadotzununya.wixsite.com/inicio/mujeres-de-cambio"
+                                target="_blank">Mujeres de
+                                cambio</a></li>
+                        <li class="list-group-item"><a
+                                href="https://mercadotzununya.wixsite.com/inicio/innovadoras-mi-soya-y-textiles"
+                                target="_blank">Innovadoras
+                                Mi Soya y Textiles</a></li>
+                        <li class="list-group-item"><a
+                                href="https://mercadotzununya.wixsite.com/inicio/mujeres-tzutujiles-semilla-ixijatz"
+                                target="_blank">Mujeres
+                                Tz'utujiles Semilla I'XIJA'TZ</a></li>
+                        <li class="list-group-item"><a href="https://mercadotzununya.wixsite.com/inicio/ixoq-ajqeem"
+                                target="_blank">Ixoq Ajqeem</a></li>
+                        <li class="list-group-item"><a
+                                href="https://mercadotzununya.wixsite.com/inicio/mujeres-trabajadoras" target="_blank">
+                                MujeresTrabajadoras </a></li>
                     </ol>
 
                 </div>

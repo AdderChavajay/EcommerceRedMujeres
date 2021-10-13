@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Association;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\product;
@@ -29,9 +30,10 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
+        $associations = Association::all();
 
         $product = new product();
-        return view('product.create', compact('product', 'categories'));
+        return view('product.create', compact('product', 'categories', 'associations'));
     }
 
     /**
@@ -86,8 +88,9 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
-        $product = product::findOrFail($id);
-        return view('product.edit', compact('product'));
+        $categories = Category::all();
+        $product = product::with('categories')->findOrFail($id);
+        return view('product.edit', compact('product', 'categories'));
     }
 
     /**

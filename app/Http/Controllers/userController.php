@@ -90,5 +90,8 @@ class userController extends Controller
     public function destroy($id)
     {
         //
+        $category = User::findOrFail($id);
+        User::destroy($id);
+        return redirect('User.edit')->with('message', 'Producto Borrado');
     }
 }

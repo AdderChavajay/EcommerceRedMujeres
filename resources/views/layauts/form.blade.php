@@ -41,7 +41,23 @@
         </div>
     </div>
 </div>
+
 <div class="row">
+    @php
+    function in_array_field($needle, $needle_field, $haystack, $strict = false) {
+    if ($strict) {
+    foreach ($haystack as $item)
+    if (isset($item->$needle_field) && $item->$needle_field === $needle)
+    return true;
+    }
+    else {
+    foreach ($haystack as $item)
+    if (isset($item->$needle_field) && $item->$needle_field == $needle)
+    return true;
+    }
+    return false;
+    }
+    @endphp
     <div class="form-floating mb-3 col">
         <label for="category">Catergoria del porducto</label>
         <div class="input-group mb-3">
@@ -52,12 +68,40 @@
             </div>
             <select name="categories[]" class="form-control" multiple>
                 @foreach ($categories as $category)
+                @if (in_array_field($category->id, 'id', $product->categories))
+                <option value="{{$category->id}}" selected> {{$category->name}} </option>
+                @else
                 <option value="{{$category->id}}"> {{$category->name}} </option>
+                @endif
                 @endforeach
             </select>
         </div>
     </div>
 </div>
+
+{{-- <div class="row">
+    <div class="form-floating mb-3 col">
+        <label for="category">Catergoria del porducto</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addonddd">
+                    <ion-icon name="keypad-outline"></ion-icon>
+                </span>
+            </div>
+            <select name="associations[]" class="form-control" multiple>
+                @foreach ($associations as $association)
+                @if (in_array_field($association->id, 'id', $product->associations))
+                <option value="{{$association->id}}" selected> {{$association->name}} </option>
+                @else
+                <option value="{{$association->id}}"> {{$association->name}} </option>
+                @endif
+                @endforeach
+            </select>
+        </div>
+    </div>
+</div> --}}
+
+
 <div class="">
     <div class="form-floating mb-3 ">
         <label for="price">Precio Unitario</label>

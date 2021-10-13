@@ -20,7 +20,7 @@ class CatalogController extends Controller
     {
         $category_id = $request->query('category');
         $category = Category::findOrFail($category_id);
-        $products = Product::paginate(15);
+        $products = $category->products()->paginate(15);
         $products->appends(['category' => $category_id]);
         return view('catalog.index', compact('products', 'category'));
     }
