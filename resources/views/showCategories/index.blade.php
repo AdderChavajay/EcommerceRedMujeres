@@ -19,7 +19,7 @@
                     <div class="productinfo text-center">
                         <h4 style="color:#566573 ">{{ $category->name }}</h4>
                         <div class="margen py-3">
-                            <a href="{{route('allproducts')}}" class="btn btn-primary">
+                            <a href="{{route('allproducts', ['category' => $category->id])}}" class="btn btn-primary">
                                 <ion-icon name="eye-outline"></ion-icon>
                             </a>
                         </div>

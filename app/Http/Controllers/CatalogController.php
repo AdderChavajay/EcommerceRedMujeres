@@ -3,20 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\allCategory;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\product;
+use App\Models\product as Product;
 
 class CatalogController extends Controller
 {
     //
     public function index()
     {
-        $products = product::orderBy('selled', 'desc')->limit(10)->get();
+        $products = Product::orderBy('selled', 'desc')->limit(10)->get();
         return view('HomeEcommerce', compact('products'));
     }
 
-    public function allproducts()
+    public function allproducts(Request $request)
     {
-        return view('catalog.index');
+        $category_id = $request->query('category');
+        $category = Category::findOrFail($category_id);
+        $products = Product::paginate(15);
+        $products->appends(['category' => $category_id]);
+        return view('catalog.index', compact('products', 'category'));
     }
 }
