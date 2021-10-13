@@ -93,7 +93,7 @@
             @endempty
         </div>
 
-        <input id='files' class="form-control" type='file' name="images[]" multiple required />
+        <input id='files' class="form-control" type='file' name="images[]" multiple />
         <output id='result' class="" />
     </div>
 </div>

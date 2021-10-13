@@ -63,6 +63,7 @@
                                         </div>
                                         <input id="password" name="password" required autocomplete="new-password" type="password" class="form-control" placeholder="Contraseña" aria-describedby="basic-addon1">
                                     </div>
+                                    <div id="password_error"></div>
                                 </div>
                                 <div class="form-floating mb-3 ">
                                     <div class="input-group mb-3">
@@ -72,6 +73,9 @@
                                             </span>
                                         </div>
                                         <input id="password_confirmation" name="password_confirmation" required type="password" class="form-control" placeholder="Confirmar contraseña" aria-describedby="basic-addon1">
+                                    </div>
+                                    <div >
+                                        <div id="password_confirmation_error"  style="font-size: 11px"></div>
                                     </div>
                                 </div>
 
@@ -107,7 +111,7 @@
                             <div class="g-recaptcha" data-sitekey="your_site_key"></div>
 
                             <div class="d-grid text-center">
-                                <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">Crear Cuenta</button>
+                                <button class="btn btn-primary btn-login text-uppercase fw-bold" onclick="sendForm();" type="submit">Crear Cuenta</button>
                             </div>
 
 
@@ -125,4 +129,5 @@
 <footer class="text-center">
     <img src="logoMuni.jpeg" alt="" width="50px">
 </footer>
+<script src="{{asset('js/validation.js')}}"></script>
 @endsection
