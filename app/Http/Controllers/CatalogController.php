@@ -14,4 +14,9 @@ class CatalogController extends Controller
         $products = product::orderBy('selled', 'desc')->limit(10)->get();
         return view('HomeEcommerce', compact('products'));
     }
+
+    public function allproducts()
+    {
+        return view('catalog.index');
+    }
 }

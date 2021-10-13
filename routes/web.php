@@ -35,7 +35,7 @@ Route::resource('association', AssociationController::class)->middleware('auth')
 Route::resource('user', UserController::class)->middleware('auth');
 Route::resource('shopping', ShoppingController::class)->middleware('auth');
 Route::resource('allCategory', AllCategoryController::class)->middleware('auth');
-
+Route::get('catalog', [CatalogController::class, 'allproducts'])->name('allproducts');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

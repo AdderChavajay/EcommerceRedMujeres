@@ -19,7 +19,7 @@
                     <a class="nav-link" href="{{ route('main') }}">Inicio</a>
                 </li>
                 <li class="nav-item  w-100 {{ (request()->routeIs('allCategory.index')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('allCategory.index') }}">Catalogo</a>
+                    <a class="nav-link" href="{{ route('allCategory.index') }}">Categorias</a>
                 </li>
                 <!--##################################Menu deplegable de Asociaciones ################################-->
                 <li class="nav-item  w-100 {{ (request()->routeIs('shopping.index')) ? 'active' : '' }}">
