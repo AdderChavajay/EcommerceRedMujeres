@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="row col-md-12">
-                    @foreach ($products as $product)
+                    @foreach ($relation_products as $product)
                     <div class="col-md-4 col-sm-6 all_product">
                         <div class="product-image-wrapper producto shadow">
                             <div class="single-products">

@@ -23,9 +23,12 @@ class CreateProductsTable extends Migration
             $table->string('images');
             $table->integer('selled')->default(0);
             $table->timestamps();
-            $table->unsignedBigInteger('id_user')->nullable();
-            $table->foreign('id_user')->references('id')
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->unsignedBigInteger('association_id');
+            $table->foreign('user_id')->references('id')
                 ->on('users')->onDelete('set null');
+            $table->foreign('association_id')->references('id')
+                ->on('associations')->onDelete('cascade');
         });
     }
 

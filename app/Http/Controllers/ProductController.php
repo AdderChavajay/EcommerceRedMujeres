@@ -6,6 +6,7 @@ use App\Models\Association;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\product;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
@@ -51,7 +52,8 @@ class ProductController extends Controller
             'size'        => ['required', 'string'],
             'description' => ['nullable', 'string', 'max:500'],
             'images'      => ['required', 'array'],
-            'categories'      => ['required', 'array'],
+            'association_id' => ['required', 'numeric'],
+            'categories'  => ['required', 'array'],
         ]);
 
         $images = array();
@@ -76,7 +78,33 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = product::findOrFail($id);
-        return view('product.show', compact('product'));
+        /**
+         * Query for recomend products
+         */
+        $relation_products = DB::table('category_product')
+            ->join('products as p', function ($join) use ($product) {
+                $join->on('p.id', '=', 'category_product.product_id')
+                    ->where('product_id', '!=', $product->id);
+            });
+        foreach ($product->categories as $category) {
+            $where = ['category_id', '=', $category->id];
+            $relation_products->orWhere('category_id', '=', $category->id);
+        }
+        $relation_products = $relation_products
+            ->select([
+                'category_product.product_id',
+                'p.id',
+                'p.name',
+                'p.price',
+                'p.quantity',
+                'p.description',
+                'p.association_id',
+                'p.images',
+                'p.size',
+                'p.selled'
+            ])
+            ->groupBy('product_id')->get();
+        return view('product.show', compact('product', 'relation_products'));
     }
 
     /**
@@ -89,8 +117,9 @@ class ProductController extends Controller
     {
         //
         $categories = Category::all();
+        $associations = Association::all();
         $product = product::with('categories')->findOrFail($id);
-        return view('product.edit', compact('product', 'categories'));
+        return view('product.edit', compact('product', 'categories', 'associations'));
     }
 
     /**
@@ -103,17 +132,30 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $data = request()->except(['_token', '_method']);
-
-        if ($request->hasFile('images')) {
-            $product = product::findOrFail($id);
-            Storage::delete('public/' . $product->images);
-            $data['images'] = $request->file('images')->store('uploads', 'public');
-        }
-
-        product::where('id', '=', $id)->update($data);
         $product = product::findOrFail($id);
-        return view('product.edit', compact('product'));
+        $data = $request->validate([
+            'name'        => ['required', 'string', 'max:30'],
+            'quantity'    => ['required', 'numeric'],
+            'price'       => ['required', 'numeric'],
+            'size'        => ['required', 'string'],
+            'description' => ['nullable', 'string', 'max:500'],
+            // 'images'      => ['required', 'array'],
+            'association_id' => ['required', 'numeric'],
+            'categories'  => ['required', 'array'],
+        ]);
+
+        // if ($request->hasFile('images')) {
+        //     $product = product::findOrFail($id);
+        //     Storage::delete('public/' . $product->images);
+        //     $data['images'] = $request->file('images')->store('uploads', 'public');
+        // }
+
+        if (isset($data['categories'])) {
+            $product->categories()->sync($data['categories']);
+            unset($data['categories']);
+        }
+        $product->update($data);
+        return redirect()->route('product.show', $product->id)->with('message', 'Producto agregado');
     }
 
     /**

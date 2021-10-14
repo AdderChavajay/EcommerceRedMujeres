@@ -79,27 +79,23 @@
     </div>
 </div>
 
-{{-- <div class="row">
+<div class="row">
     <div class="form-floating mb-3 col">
-        <label for="category">Catergoria del porducto</label>
+        <label for="category">Asociacion</label>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addonddd">
                     <ion-icon name="keypad-outline"></ion-icon>
                 </span>
             </div>
-            <select name="associations[]" class="form-control" multiple>
+            <select name="association_id" class="form-control">
                 @foreach ($associations as $association)
-                @if (in_array_field($association->id, 'id', $product->associations))
-                <option value="{{$association->id}}" selected> {{$association->name}} </option>
-                @else
                 <option value="{{$association->id}}"> {{$association->name}} </option>
-                @endif
                 @endforeach
             </select>
         </div>
     </div>
-</div> --}}
+</div>
 
 
 <div class="">
