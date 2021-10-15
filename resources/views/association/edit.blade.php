@@ -22,7 +22,7 @@
                         @endforeach
                         @endif
 
-                        <form action="{{route('association.update',$association->id)}} " method="POST" id="post-form">
+                        <form action="{{route('association.update',$association->id)}} " method="POST" enctype="multipart/form-data" id="post-form">
                             @csrf
                             {{method_field('PATCH')}}
                             @include('components.formAssociation')

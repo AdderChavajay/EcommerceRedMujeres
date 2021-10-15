@@ -22,7 +22,7 @@
                         @endforeach
                         @endif
 
-                        <form action="{{route('category.update',$category->id)}} " method="POST" id="post-form">
+                        <form action="{{route('category.update',$category->id)}} " method="POST" id="post-form" enctype="multipart/form-data">
                             @csrf
                             {{method_field('PATCH')}}
                             @include('components.formCategory')

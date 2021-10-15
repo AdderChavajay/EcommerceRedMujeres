@@ -92,12 +92,11 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
-
         $data = request()->except(['_token', '_method']);
         Category::where('id', '=', $id)->update($data);
         $category = Category::findOrFail($id);
         return view('category.edit', compact('category'));
-        //return redirect()->route('');
+        return redirect()->route('');
     }
 
     /**

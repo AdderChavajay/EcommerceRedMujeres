@@ -24,13 +24,13 @@
                 <th class="col-2">{{ $category->id }}</th>
                 <td class="col-4">{{ $category->name }}</td>
                 <td class="col-3">
-                    <img src="{{asset('storage/'.$category->images)}}" alt="">
+                    <img src="{{asset('storage/'.$category->images)}}" alt="" style="max-width: 5rem;">
                 </td>
                 <td class="col-3">
                     <div class="row ">
 
                         <div class="col">
-                            <a title="Editar Producto" href="{{ route('category.edit', $category->id) }}"
+                            <a title="Editar Producto"  href="{{ route('category.edit', $category->id) }}" 
                                 class="btn btn-secondary">
                                 <ion-icon name="pencil" title="Editar Producto"></ion-icon>
                             </a>
@@ -44,7 +44,7 @@
                         </div>
 
                         <div class="col">
-                            <form action="{{ route('category.destroy', $category->id) }}" method="post">
+                            <form action="{{ route('category.destroy', $category->id) }}" enctype="multipart/form-data" method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button title="Borrar" type="submit"

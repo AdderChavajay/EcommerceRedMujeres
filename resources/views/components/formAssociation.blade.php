@@ -22,7 +22,9 @@
         </div>
 
         <div class="col">
-            <a href="{{route('association.index')}}" class="btn btn-primary"> Regresar</a>
+            <a href="{{route('association.index')}}" class="btn btn-primary">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </a>
         </div>
     </div>
 

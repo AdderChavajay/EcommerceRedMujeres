@@ -69,7 +69,7 @@
         </div>
     </div>
 
-    <section class=" product_sug my-3">
+    <section class="productos my-3">
         <section>
             <section class="productos_sugeridos row">
                 <div class="asociaciones col-md-3 ">
@@ -126,10 +126,10 @@
                         <h3 class="Products_As"> <b> Productos sugeridos </b> </h3>
                     </div>
 
-                    <div class="row col-md-12">
+                    <div class="mustra_producto row col-md-12">
                         @foreach ($products as $product)
                         <div class="col-md-4 col-sm-12 all_product">
-                            <a href="{{ route('product.show', $product->id) }}" style="text-decoration: none">
+                            <a href="{{ route('product.show', $product->id) }}" class="color_letras">
                                 <div class="product-image-wrapper producto shadow">
                                     <div class="single-products">
                                         @php
@@ -137,13 +137,20 @@
                                         @endphp
                                         <img src="{{ asset('storage/'.$images[0]) }}" class="img-full-contain" alt="">
                                         <div class="productinfo text-center">
-                                            <h3 style="color:#566573 ">${{ $product->price }}</h3>
-                                            <p style="color:#566573 ">{{ $product->name }}</p>
+                                            <h3 class="color_letras">${{ $product->price }}</h3>
+                                            <p class="color_letras">{{ $product->name }}</p>
                                             <div class="margen">
-                                                <button type=" submit" class="btn btn-default">
+
+                                                <a href="{{ route('product.show', $product->id) }} " class="btn btn-dark">
                                                     <ion-icon name="cart"></ion-icon>
                                                     Agregar
-                                                </button>
+                                                </a>
+                                                <!--
+                                                    <button type=" submit" >
+                                                        
+                                                    </button>
+                                                
+                                                -->
                                             </div>
                                         </div>
                                     </div>

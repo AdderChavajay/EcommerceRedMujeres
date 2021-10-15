@@ -1,3 +1,4 @@
+
 nav .icono img {
     width: 50px;
 }
@@ -63,6 +64,10 @@ main section .asociaciones ol li:hover {
     transition: all 0.6s ease;
     box-shadow: 0px 0px 5px 0px #000;
 }
+.productos_sugeridos .all_product .producto .productinfo{
+    text-decoration: none;
+
+}
 
 .productos_sugeridos .all_product .producto .productinfo .margen {
     padding: 0rem 0rem 1rem 0rem;
@@ -98,4 +103,13 @@ main section .asociaciones ol li:hover {
     max-width: 100%;
     height: auto;
     object-fit: cover;
+}
+
+.color_letras {
+    color: #566573; 
+    text-decoration: none;
+}
+
+main .container .productos .productos_sugeridos .mustra_producto div a, a:hover,a:visited, a:focus {
+    text-decoration:none;
 }

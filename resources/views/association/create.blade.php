@@ -16,11 +16,11 @@
                 @endforeach
                 @endif
                 <div class="text-center py-2">
-                    <h3>Nueva Categoria </h3>
+                    <h3>Nueva Asociacion</h3>
                 </div>
 
                 <div class=" py-2 ">
-                    <form action="{{ route('association.store') }}" method="post">
+                    <form action="{{ route('association.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @include('components.formAssociation')
                     </form>

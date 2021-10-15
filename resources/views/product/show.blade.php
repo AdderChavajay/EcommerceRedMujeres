@@ -21,7 +21,7 @@
                     <div class="d-flex">
                         @foreach ($images as $image)
                         <div class="d-inline-block py-2 px-1" style="max-width: 150px;">
-                            <img class="w-200 img-fluid" src="{{asset('storage/'.$image)}}" alt="First slide"
+                            <img class="w-200 img-fluid " src="{{asset('storage/'.$image)}}" alt="First slide"
                                 width="500px" />
                         </div>
                         @endforeach
@@ -37,9 +37,8 @@
                 <span class="span">
                     <h2 class="text-center"><b> US ${{ $product->price }} </b> </h2>
 
-                    <div class="input row">
-                        <h5 class=""><b>Tamano:</b></h5>
-                        <p>{{$product->size}}</p>
+                    <div class="">
+                        <h5 class=""><b>Tamaño: </b> {{$product->size}}  </h5>
                     </div>
                     <div class="estados_di  ">
                         <p><b>Descripcion:</b></p>
@@ -73,25 +72,28 @@
 
                 <div class="row col-md-12">
                     @foreach ($relation_products as $product)
-                    <div class="col-md-4 col-sm-6 all_product">
-                        <div class="product-image-wrapper producto shadow">
-                            <div class="single-products">
-                                @php
-                                $images = explode(',', $product->images);
-                                @endphp
-                                <img src="{{ asset('storage/'.$images[0]) }}" class="img img-fluid" alt="">
-                                <div class="productinfo text-center">
-                                    <h3>${{ $product->price }}</h3>
-                                    <p>{{ $product->name }}</p>
-                                    <div class="margen">
-                                        <button type=" submit" class="btn btn-default">
-                                            <ion-icon name="cart"></ion-icon>
-                                            Agregar
-                                        </button>
+                    <div class="col-md-3 col-sm-6 all_product">
+                        <a href="{{ route('product.show', $product->id) }}" class="color_letras ">
+                            <div class="product-image-wrapper producto shadow">
+                                <div class="single-products">
+                                    @php
+                                    $images = explode(',', $product->images);
+                                    @endphp
+                                    <img src="{{ asset('storage/'.$images[0]) }}"  class="img-full-contain" alt="">
+                                    <div class="productinfo text-center">
+                                        <h3><b>  ${{ $product->price }}  </b></h3>
+                                        <p>{{ $product->name }}</p>
+                                        <div class="margen">
+                                            <button type=" submit" class="btn btn-dark">
+                                                <ion-icon name="cart"></ion-icon>
+                                                Agregar
+                                            </button>
+                                        </div>
+                                        <div class="py-2"></div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     @endforeach
                 </div>

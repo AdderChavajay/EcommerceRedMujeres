@@ -56,7 +56,7 @@
                     @php
                     $images = explode(',', $product->images);
                     @endphp
-                    <img src="{{asset('storage/'.$images[0])}}" class="img img-fluid" style="max-width: 8rem;" alt="">
+                    <img src="{{asset('storage/'.$images[0])}}" class="img img-fluid" style="max-width: 10rem;" alt="">
                     @endempty
                 </td>
                 <td class="row col-sm-12">

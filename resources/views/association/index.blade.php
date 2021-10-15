@@ -4,7 +4,7 @@
 
 @section('main')
 <div class="container py-2 px-0">
-    <a href="{{route('association.create')}}" class="btn btn-primary">nueva categoria</a>
+    <a href="{{route('association.create')}}" class="btn btn-primary">nueva asociacion</a>
 </div>
 
 <div class="table">
@@ -38,7 +38,7 @@
                         </div>
 
                         <div class="col">
-                            <form action="{{ route('association.destroy', $association->id) }}" method="post">
+                            <form action="{{ route('association.destroy', $association->id) }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method('DELETE')
                                 <button title="Borrar" type="submit"
