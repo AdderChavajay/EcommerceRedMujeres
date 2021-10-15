@@ -16,18 +16,29 @@
             </form>
             <ul class="navbar-nav ml-auto ">
                 <li class="nav-item  w-100 {{ (request()->routeIs('main')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('main') }}">Inicio</a>
+                    <a class="nav-link" href="{{ route('main') }}"><i class="fas fa-home">Inicio</i> </a>
                 </li>
                 <li class="nav-item  w-100 {{ (request()->routeIs('allCategory.index')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('allCategory.index') }}">Categorias</a>
+                    <a class="nav-link" href="{{ route('allCategory.index') }}">
+                        <b>   </b>
+                        <i class="fas ">Categorias</i> 
+                    </a>
                 </li>
                 <!--##################################Menu deplegable de Asociaciones ################################-->
-                <li class="nav-item  w-100 {{ (request()->routeIs('shopping.index')) ? 'active' : '' }}">
+                <li class="nav-item   w-100 {{ (request()->routeIs('shopping.index')) ? 'active' : '' }}">
                     @if (Cart::isEmpty())
-                    <a href="{{route('shopping.index')}}" class="nav-link">Carrito</a>
+                    <a href="{{route('shopping.index')}}" class="nav-link w-100"
+                    role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-shopping-cart">Carrito</i> 
+                    </a>
                     @else
-                    <a href="{{route('shopping.index')}}" class="nav-link">
-                        Carrito <span class="badge badge-info">{{ Cart::getContent()->count() }} </span>
+                    <a href="{{route('shopping.index')}}" class=" nav-link row px-3">
+                        <i class="fas fa-shopping-cart  "> 
+                            <span class=" badge badge-info">{{ Cart::getContent()->count() }} </span>
+                        </i> 
+                        {{--
+                            Carrito <span class="badge badge-info">{{ Cart::getContent()->count() }} </span>
+                            ---}}
                     </a>
                     @endif
                 </li>
@@ -35,7 +46,8 @@
                 @auth
                 <li class="nav-item  w-100 {{ (request()->routeIs('product.index')) ? 'active' : '' }}">
                     <a href="{{ route('product.index') }}" class="nav-link">
-                        Productos
+                        <i class="fas "> Productos</i> 
+
                     </a>
                 </li>
                 <!--opcion de cerrar cesion-->
@@ -43,6 +55,8 @@
 
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-sign-out-alt"></i>
+
                         {{ Auth::user()->name }}
                     </a>
 

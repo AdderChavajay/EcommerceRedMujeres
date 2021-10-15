@@ -61,6 +61,7 @@ return [
             /**
              * @TODO: fix groupBy for mariadb
              */
+            /*
             'modes' => [
                 'STRICT_TRANS_TABLES',
                 'NO_ZERO_IN_DATE',
@@ -68,7 +69,7 @@ return [
                 'ERROR_FOR_DIVISION_BY_ZERO',
                 'NO_AUTO_CREATE_USER',
                 'NO_ENGINE_SUBSTITUTION'
-            ],
+            ],*/
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],

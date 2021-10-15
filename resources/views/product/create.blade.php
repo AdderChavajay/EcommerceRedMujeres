@@ -2,7 +2,9 @@
 
 @section('title', 'Ingresar Producto')
 
-{{-- @section('header')
+{{-- 
+
+@section('header')
 @include('components.header'); --}}
 <!--
 
