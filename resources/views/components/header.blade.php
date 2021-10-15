@@ -23,7 +23,13 @@
                 </li>
                 <!--##################################Menu deplegable de Asociaciones ################################-->
                 <li class="nav-item  w-100 {{ (request()->routeIs('shopping.index')) ? 'active' : '' }}">
-                    <a href="{{route('shopping.index')}} " class="nav-link">Carrito</a>
+                    @if (Cart::isEmpty())
+                    <a href="{{route('shopping.index')}}" class="nav-link">Carrito</a>
+                    @else
+                    <a href="{{route('shopping.index')}}" class="nav-link">
+                        Carrito <span class="badge badge-info">{{ Cart::getContent()->count() }} </span>
+                    </a>
+                    @endif
                 </li>
                 <!--###################### meno desplegable de inicio de secion#######################-->
                 @auth

@@ -45,10 +45,19 @@
                         <p>{{$product->description}}</p>
                     </div>
                     <div class="text-center ">
-                        <button type="button" class="btn btn-danger ">
-                            <ion-icon name="cart" class=""></ion-icon>
-                            Agregar al carrito
-                        </button>
+                        <form id="form-add-to-cart" action="{{ route('shopping.store', ) }}" method="post">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $product->id }}">
+                            <input type="hidden" name="name" value="{{ $product->name }}">
+                            <input type="hidden" name="size" value="{{ $product->size }}">
+                            <input type="hidden" name="quantity" value="1">
+                            <input type="hidden" name="price" value="{{ $product->price }}">
+                            <input type="hidden" name="image" value="{{ $fimage }}">
+                            <button class="btn btn-primary" type="submit">
+                                <ion-icon name="cart" class=""></ion-icon>
+                                Agregar al carrito
+                            </button>
+                        </form>
                     </div>
 
 

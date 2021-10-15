@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\shopping;
+use App\Models\product as Product;
 use Illuminate\Http\Request;
 
 class ShoppingController extends Controller
@@ -16,17 +17,8 @@ class ShoppingController extends Controller
     public function index()
     {
         //
-        return view('shopping.index');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $products = \Cart::getContent();
+        return view('shopping.index', compact('products'));
     }
 
     /**
@@ -37,7 +29,27 @@ class ShoppingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'id' => ['required', 'numeric'],
+            'name' => ['required', 'string'],
+            'price' => ['required', 'numeric'],
+            'size' => ['required', 'string'],
+            'quantity' => ['required', 'numeric'],
+            'image' => ['required', 'string'],
+        ]);
+        // dd($data);
+        \Cart::add([
+            'id' => $data['id'],
+            'name' => $data['name'],
+            'price' => $data['price'],
+            'quantity' => $data['quantity'],
+            'attributes' => array(
+                'size' => $data['size'],
+                'image' => $data['image'],
+            )
+        ]);
+        session()->flash('success', 'Producto agregado correctamente !');
+        return redirect()->route('shopping.index');
     }
 
     /**
@@ -52,17 +64,6 @@ class ShoppingController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\shopping  $shopping
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(shopping $shopping)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -71,7 +72,19 @@ class ShoppingController extends Controller
      */
     public function update(Request $request, shopping $shopping)
     {
-        //
+        \Cart::update(
+            $request->id,
+            [
+                'quantity' => [
+                    'relative' => false,
+                    'value' => $request->quantity
+                ],
+            ]
+        );
+
+        session()->flash('success', 'El producto se ha actualizado !');
+
+        return redirect()->route('shopping.index');
     }
 
     /**
@@ -80,8 +93,20 @@ class ShoppingController extends Controller
      * @param  \App\Models\shopping  $shopping
      * @return \Illuminate\Http\Response
      */
-    public function destroy(shopping $shopping)
+    public function destroy($id)
     {
-        //
+        \Cart::remove($id);
+        session()->flash('success', 'El producto se ha eliminado !');
+
+        return redirect()->route('shopping.index');
+    }
+
+    public function clearAllCart()
+    {
+        \Cart::clear();
+
+        session()->flash('success', 'Todos los productos se ha eliminados del carrito !');
+
+        return redirect()->route('shopping.index');
     }
 }

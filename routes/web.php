@@ -33,7 +33,9 @@ Route::resource('product', ProductController::class)->middleware('auth');
 Route::resource('category', CategoryController::class)->middleware('auth');
 Route::resource('association', AssociationController::class)->middleware('auth');
 Route::resource('user', UserController::class)->middleware('auth');
-Route::resource('shopping', ShoppingController::class)->middleware('auth');
+Route::apiResource('shopping', ShoppingController::class)->except('destroy');
+Route::delete('shopping/remove/{id}', [ShoppingController::class, 'destroy'])->name('shopping.destroy');
+Route::delete('shopping/clen-all', [ShoppingController::class, 'clearAllCart'])->name('shopping.clean');
 Route::resource('allCategory', AllCategoryController::class)->middleware('auth');
 Route::get('catalog', [CatalogController::class, 'allproducts'])->name('allproducts');
 
