@@ -1,6 +1,6 @@
 <div class="row">
     <div class="form-floating mb-3 col">
-        <label for="name">Nombre del Producto</label>
+        <label for="name">Nombre</label>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">
@@ -15,7 +15,7 @@
 </div>
 <div class="row">
     <div class="form-floating mb-3 col">
-        <label for="quantity">Cantidad del Producto</label>
+        <label for="quantity">Cantidad</label>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">
@@ -29,7 +29,7 @@
 </div>
 <div class="row">
     <div class="form-floating mb-3 col">
-        <label for="size">tamaño del Producto</label>
+        <label for="size">Tamaño</label>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addonddd">
@@ -59,7 +59,7 @@
     }
     @endphp
     <div class="form-floating mb-3 col">
-        <label for="category">Catergoria del porducto</label>
+        <label for="category">Catergorias</label>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addonddd">
@@ -133,7 +133,7 @@
             @endempty
         </div>
 
-        <input id='files' class="form-control" type='file' name="images[]" multiple />
+        <input id='files' class="form-control" type='file' name="images[]" multiple accept="image/*"/>
         <output id='result' class="" />
     </div>
 </div>
