@@ -8,6 +8,7 @@
 
 @section('main')
 <main class="container">
+
     <div class="row">
         <div class="col-md-8 col-sm-12">
 
@@ -147,9 +148,7 @@
                                                 </a>
                                                 <!--
                                                     <button type=" submit" >
-                                                        
                                                     </button>
-                                                
                                                 -->
                                             </div>
                                         </div>

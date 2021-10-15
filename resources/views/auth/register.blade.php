@@ -15,9 +15,16 @@
 
 <main>
     <div class="container">
+    {{--
+    @if ($errors->any())
+    @foreach ($errors->all() as $message)
+    <div class="alert alert-danger" role="alert">
+        {{ $message }}
+    </div>
+    @endforeach
+    @endif
+    --}}
         <div class="row ">
-
-
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto my-5">
                 <div class=" shadow  ">
 
@@ -58,6 +65,11 @@
                                             placeholder="email@ejemplo.com" aria-describedby="basic-addon1"
                                             :value="old('email')" required>
                                     </div>
+                                    @if ($errors->has('email'))
+                                        <span class="invalid feedback text-danger"role="alert">
+                                            <strong>{{ $errors->first('email') }}.</strong>
+                                        </span>
+                                    @endif
                                 </div>
                                 <div class="form-floating mb-3 ">
                                     <div class="input-group mb-3">
@@ -82,9 +94,11 @@
                                             type="password" class="form-control" placeholder="Confirmar contraseña"
                                             aria-describedby="basic-addon1">
                                     </div>
-                                    <div>
-                                        <div id="password_confirmation_error" style="font-size: 11px"></div>
-                                    </div>
+                                    @if ($errors->has('password'))
+                                        <span class="invalid feedback text-danger"role="alert">
+                                            <strong>{{ $errors->first('password') }}.</strong>
+                                        </span>
+                                    @endif
                                 </div>
 
                                 <div class="form-check mb-3">

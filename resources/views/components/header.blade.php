@@ -65,6 +65,13 @@
                                 <x-label for="email" :value="__('Correo electronico')" />
                                 <x-input id="email" class="form-control" type="email" name="email" :value="old('email')"
                                     required autofocus placeholder="email@ejemplo.com" />
+                                    {{--
+                                        @if ($errors->has('email'))
+                                        <span class="invalid feedback text-danger"role="alert">
+                                            <strong>{{ $errors->first('email') }}.</strong>
+                                        </span>
+                                    @endif
+                                        --}}
                             </div>
 
                             <!-- Password -->
@@ -72,7 +79,14 @@
                                 <x-label for="password" :value="__('Contraseña')" />
                                 <x-input id="password" class="form-control" type="password" name="password" required
                                     autocomplete="current-password" />
-                            </div>
+                                </div>
+                                @if ($errors->any())
+                                @foreach ($errors->all() as $message)
+                                <div class="invalid feedback text-danger alert alert-danger" role="alert">
+                                    {{ $message }}
+                                </div>
+                                @endforeach
+                                @endif
 
                             <!-- Remember Me -->
                             <div class="block mt-4">
