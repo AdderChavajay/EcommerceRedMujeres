@@ -40,6 +40,10 @@
                     <div class="">
                         <h5 class=""><b>Tamaño: </b> {{$product->size}}  </h5>
                     </div>
+                    <div class="">
+                        <b>catidad:  </b> 
+                        <input type="number" class="form-control" style="width: 80px;">
+                    </div>
                     <div class="estados_di  ">
                         <p><b>Descripcion:</b></p>
                         <p>{{$product->description}}</p>
