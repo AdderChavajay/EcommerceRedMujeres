@@ -47,11 +47,13 @@
                 </li>
                 <!--###################### meno desplegable de inicio de secion#######################-->
                 @auth
+                @can('user-list')
                 <li class="nav-item  w-100 {{ (request()->routeIs('product.index')) ? 'active' : '' }}">
                     <a href="{{ route('product.index') }}" class="nav-link">
                         Administracion
                     </a>
                 </li>
+                @endcan
                 <!--opcion de cerrar cesion-->
                 <li class="nav-item dropdown w-100 ">
 

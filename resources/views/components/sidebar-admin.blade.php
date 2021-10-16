@@ -24,6 +24,12 @@
         <li class="nav-item {{ (request()->routeIs('user.index')) ? 'active' : '' }}">
           <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>
         </li>
+        <li class="nav-item {{ (request()->routeIs('roles.index')) ? 'active' : '' }}">
+          <a class="nav-link" href="{{ route('roles.index') }}">Roles</a>
+        </li>
+        <li class="nav-item {{ (request()->routeIs('permissions.index')) ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('permissions.index') }}">Permisos</a>
+        </li>
       </ul>
       <div>
         <li class="nav-item dropdown " style=" list-style:none;">

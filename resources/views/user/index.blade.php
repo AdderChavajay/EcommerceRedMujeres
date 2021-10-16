@@ -9,6 +9,7 @@
         <thead>
             <tr class="">
                 <th scope="col-1">#</th>
+                <th scope="col-2">Rol</th>
                 <th scope="col-3">Nombre</th>
                 <th scope="col-2">Apellido</th>
                 <th scope="col-4">email</th>
@@ -19,6 +20,13 @@
             @foreach ($users as $user)
             <tr class="">
                 <th class="col-1">{{ $user->id }}</th>
+                <th class="col-1">
+                    @if(!empty($user->getRoleNames()))
+                        @foreach($user->getRoleNames() as $val)
+                            <label class="badge badge-dark">{{ $val }}</label>
+                        @endforeach
+                    @endif
+                </th>
                 <td class="col-3">{{ $user->name }}</td>
                 <td class="col-2">{{ $user->last_name }}</td>
                 <td class="col-4">{{ $user->email }}</td>

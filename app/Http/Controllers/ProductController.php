@@ -11,6 +11,10 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    function __construct()
+    {
+        $this->middleware('role:admin', ['except' => ['show']]);
+    }
     /**
      * Display a listing of the resource.
      *
