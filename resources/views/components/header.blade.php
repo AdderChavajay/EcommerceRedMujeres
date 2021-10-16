@@ -8,37 +8,40 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <form class="form-inline my-2 my-lg-0 mx-auto">
-                <input type="text" class="form-control mr-sm-2 buscador" placeholder="  "
-                    aria-describedby="basic-addon1">
-                <button class="btn btn-primary my-2 my-sm-0 rounded" type="submit">Buscar</button>
-            </form>
-            <ul class="navbar-nav ml-auto ">
+        <div class="collapse  navbar-collapse" id="navbarSupportedContent">
+            <div class="mx-auto">
+                <form class="form-inline my-2 my-lg-0 mx-auto">
+                    <input type="text" class="form-control mr-sm-2 buscador" placeholder="  "
+                        aria-describedby="basic-addon1">
+                    <button class="btn btn-primary my-2 my-sm-0 rounded" type="submit">Buscar</button>
+                </form>
+            </div>
+            <ul class="navbar-nav  ml-auto">
                 <li class="nav-item  w-100 {{ (request()->routeIs('main')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('main') }}"><i class="fas fa-home">Inicio</i> </a>
+                    <a class="nav-link" href="{{ route('main') }}">
+                        Inicio </a>
                 </li>
                 <li class="nav-item  w-100 {{ (request()->routeIs('allCategory.index')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('allCategory.index') }}">
-                        <b>   </b>
-                        <i class="fas ">Categorias</i> 
+                        <b> </b>
+                        Categorias
                     </a>
                 </li>
                 <!--##################################Menu deplegable de Asociaciones ################################-->
-                <li class="nav-item   w-100 {{ (request()->routeIs('shopping.index')) ? 'active' : '' }}">
+                <li class="nav-item  w-100 {{ (request()->routeIs('shopping.index')) ? 'active' : '' }}">
                     @if (Cart::isEmpty())
-                    <a href="{{route('shopping.index')}}" class="nav-link w-100"
-                    role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-shopping-cart">Carrito</i> 
+                    <a href="{{route('shopping.index')}}" class="nav-link w-100" role="button" aria-haspopup="true"
+                        aria-expanded="false">
+                        <i class="fas fa-shopping-cart">Carrito</i>
                     </a>
                     @else
                     <a href="{{route('shopping.index')}}" class=" nav-link row px-3">
-                        <i class="fas fa-shopping-cart  "> 
+                        <i class="fas fa-shopping-cart">
                             <span class=" badge badge-info">{{ Cart::getContent()->count() }} </span>
-                        </i> 
+                        </i>
                         {{--
-                            Carrito <span class="badge badge-info">{{ Cart::getContent()->count() }} </span>
-                            ---}}
+                        Carrito <span class="badge badge-info">{{ Cart::getContent()->count() }} </span>
+                        ---}}
                     </a>
                     @endif
                 </li>
@@ -46,7 +49,7 @@
                 @auth
                 <li class="nav-item  w-100 {{ (request()->routeIs('product.index')) ? 'active' : '' }}">
                     <a href="{{ route('product.index') }}" class="nav-link">
-                        <i class="fas "> Productos</i> 
+                        Productos
 
                     </a>
                 </li>
@@ -85,13 +88,13 @@
                                 <x-label for="email" :value="__('Correo electronico')" />
                                 <x-input id="email" class="form-control" type="email" name="email" :value="old('email')"
                                     required autofocus placeholder="email@ejemplo.com" />
-                                    {{--
-                                        @if ($errors->has('email'))
-                                        <span class="invalid feedback text-danger"role="alert">
-                                            <strong>{{ $errors->first('email') }}.</strong>
-                                        </span>
-                                    @endif
-                                        --}}
+                                {{--
+                                @if ($errors->has('email'))
+                                <span class="invalid feedback text-danger" role="alert">
+                                    <strong>{{ $errors->first('email') }}.</strong>
+                                </span>
+                                @endif
+                                --}}
                             </div>
 
                             <!-- Password -->
@@ -99,14 +102,14 @@
                                 <x-label for="password" :value="__('Contraseña')" />
                                 <x-input id="password" class="form-control" type="password" name="password" required
                                     autocomplete="current-password" />
-                                </div>
-                                @if ($errors->any())
-                                @foreach ($errors->all() as $message)
-                                <div class="invalid feedback text-danger alert alert-danger" role="alert">
-                                    {{ $message }}
-                                </div>
-                                @endforeach
-                                @endif
+                            </div>
+                            @if ($errors->any())
+                            @foreach ($errors->all() as $message)
+                            <div class="invalid feedback text-danger alert alert-danger" role="alert">
+                                {{ $message }}
+                            </div>
+                            @endforeach
+                            @endif
 
                             <!-- Remember Me -->
                             <div class="block mt-4">

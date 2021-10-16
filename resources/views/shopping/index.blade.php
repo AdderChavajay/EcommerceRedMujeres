@@ -11,23 +11,23 @@
 
 <div class="container col-md-6">
     @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-dismissible fade show ">
-            {{ $message }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
+    <div class="alert alert-success alert-dismissible fade show ">
+        {{ $message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
     @endif
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col">
-            <div class="card">
+            <div class="">
                 <div class="card-body p-4">
                     <div class="text-center">
                         <h4>Productos</h4>
                     </div>
                     @foreach ($products as $product)
-                    <div class="card mb-3">
-                        <div class="card-body">
+                    <div class="  mb-3">
+                        <div class="card-body shadow">
                             <div class="d-flex justify-content-between">
                                 <div class="d-flex flex-row align-items-center">
                                     <div>
