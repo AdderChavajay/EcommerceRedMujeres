@@ -24,7 +24,7 @@
         </div>
 
         <div class="col">
-            <a href="{{route('category.index')}}" class="btn btn-primary">
+            <a href="{{route('category.index')}}" class="btn btn-secondary">
                 <ion-icon name="arrow-back-outline"></ion-icon>
             </a>
         </div>

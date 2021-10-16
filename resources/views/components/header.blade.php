@@ -35,7 +35,7 @@
                         <i class="fas fa-shopping-cart">Carrito</i>
                     </a>
                     @else
-                    <a href="{{route('shopping.index')}}" class=" nav-link row px-3">
+                    <a href="{{route('shopping.index')}}" class=" nav-link row px-4">
                         <i class="fas fa-shopping-cart">
                             <span class=" badge badge-info">{{ Cart::getContent()->count() }} </span>
                         </i>
@@ -49,8 +49,7 @@
                 @auth
                 <li class="nav-item  w-100 {{ (request()->routeIs('product.index')) ? 'active' : '' }}">
                     <a href="{{ route('product.index') }}" class="nav-link">
-                        Productos
-
+                        Administracion
                     </a>
                 </li>
                 <!--opcion de cerrar cesion-->
