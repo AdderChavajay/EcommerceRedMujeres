@@ -8,8 +8,15 @@
 
 @section('main')
 <main class="container">
+    @if ($message = Session::get('error'))
+    <div class="alert alert-danger alert-dismissible fade show ">
+        {{ $message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    @endif
     <Section class="row">
-
         <div class="imagen col-md-8  col-sm-12">
             @php
             $images = explode(',', $product->images);
@@ -34,38 +41,39 @@
             <div class="margen_descripcion">
                 <h3> <b> {{ $product->name }} </b> </h3>
                 <p> <b>Web ID:</b> {{ $product->id }}</p>
-                <span class="span">
+                <form id="form-add-to-cart" action="{{ route('shopping.store', ) }}" method="post">
                     <h2 class="text-center"><b> US ${{ $product->price }} </b> </h2>
 
                     <div class="">
                         <h5 class=""><b>Tamaño: </b> {{$product->size}}  </h5>
                     </div>
                     <div class="">
-                        <b>catidad:  </b> 
-                        <input type="number" class="form-control" style="width: 80px;">
+                        <b>catidad:  </b>
+                        <input
+                            autofocus
+                            type="number"
+                            name="quantity"
+                            class="form-control"
+                            style="width: 80px;"
+                            value="{{ $productInCart != null ? $productInCart->quantity : 1 }}">
                     </div>
                     <div class="estados_di  ">
                         <p><b>Descripcion:</b></p>
                         <p>{{$product->description}}</p>
                     </div>
                     <div class="text-center ">
-                        <form id="form-add-to-cart" action="{{ route('shopping.store', ) }}" method="post">
-                            @csrf
-                            <input type="hidden" name="id" value="{{ $product->id }}">
-                            <input type="hidden" name="name" value="{{ $product->name }}">
-                            <input type="hidden" name="size" value="{{ $product->size }}">
-                            <input type="hidden" name="quantity" value="1">
-                            <input type="hidden" name="price" value="{{ $product->price }}">
-                            <input type="hidden" name="image" value="{{ $fimage }}">
-                            <button class="btn btn-primary" type="submit">
-                                <ion-icon name="cart" class=""></ion-icon>
-                                Agregar al carrito
-                            </button>
-                        </form>
+                        @csrf
+                        <input type="hidden" name="id" value="{{ $product->id }}">
+                        <input type="hidden" name="name" value="{{ $product->name }}">
+                        <input type="hidden" name="size" value="{{ $product->size }}">
+                        <input type="hidden" name="price" value="{{ $product->price }}">
+                        <input type="hidden" name="image" value="{{ $fimage }}">
+                        <button class="btn btn-primary" type="submit">
+                            <ion-icon name="cart" class=""></ion-icon>
+                            Agregar al carrito
+                        </button>
                     </div>
-
-
-                </span>
+                </form>
 
             </div>
         </div>

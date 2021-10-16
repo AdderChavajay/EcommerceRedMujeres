@@ -8,7 +8,13 @@
 
 @section('main')
 <main class="container">
-
+    @if ($errors->any())
+    @foreach ($errors->all() as $message)
+    <div class="alert alert-danger" role="alert">
+        {{ $message }}
+    </div>
+    @endforeach
+    @endif
     <div class="row">
         <div class="col-md-8 col-sm-12">
 

@@ -104,7 +104,8 @@ class ProductController extends Controller
                 'p.selled'
             ])
             ->groupBy('product_id')->get();
-        return view('product.show', compact('product', 'relation_products'));
+        $productInCart = \Cart::get($product->id);
+        return view('product.show', compact('product', 'relation_products', 'productInCart'));
     }
 
     /**

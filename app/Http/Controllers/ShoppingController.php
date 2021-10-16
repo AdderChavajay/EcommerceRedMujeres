@@ -37,7 +37,12 @@ class ShoppingController extends Controller
             'quantity' => ['required', 'numeric'],
             'image' => ['required', 'string'],
         ]);
-        // dd($data);
+        $product = Product::findOrFail($data['id']);
+        if ($data['quantity'] > $product->quantity) {
+            session()->flash('error', 'No hay suficiente cantidad, por ahora contamos solo con ' . $product->quantity . ' unidades');
+            return redirect()->route('product.show', $product->id);
+        }
+        \Cart::remove($data['id']);
         \Cart::add([
             'id' => $data['id'],
             'name' => $data['name'],

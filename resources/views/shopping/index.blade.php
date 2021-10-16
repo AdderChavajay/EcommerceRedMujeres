@@ -25,8 +25,32 @@
                     <div class="text-center">
                         <h4>Productos</h4>
                     </div>
+
+                    <div class="mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div class="ms-3 px-3 py-0">
+                                        <h5>Producto</h5>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <div>
+                                        <h5 class="fw-normal mb-0 mr-2">Cantidad</h5>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0 mr-2">Precio/U</h5>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0 mr-2">Subtotal</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     @foreach ($products as $product)
-                    <div class="  mb-3">
+                    <div class="mb-3">
                         <div class="card-body shadow">
                             <div class="d-flex justify-content-between">
                                 <div class="d-flex flex-row align-items-center">
@@ -46,10 +70,16 @@
                                     <div style="width: 80px;">
                                         <h5 class="mb-0">${{ $product->price }}</h5>
                                     </div>
+                                    <div style="width: 80px;">
+                                        <h5 class="mb-0">${{ $product->getPriceSum() }} </h5>
+                                    </div>
+                                    <a class="btn btn-default" style="color: green;" href="{{ route('product.show', $product->id) }}">
+                                        <ion-icon name="pencil"></ion-icon>
+                                    </a>
                                     <form action="{{ route('shopping.destroy', $product->id) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-default" style="color: green;" type="submit">
+                                        <button class="btn btn-default" style="color: red;" type="submit">
                                             <ion-icon name="trash-outline"></ion-icon>
                                         </button>
                                     </form>
@@ -58,6 +88,13 @@
                         </div>
                     </div>
                     @endforeach
+                    <div class="row py-2 px-5 ">
+                        <div class="col">
+                        </div>
+                        <div class="col d-flex shadow py-2" style="width: 80px;">
+                            <h5 class="mx-auto mb-0"> Total: ${{\Cart::getTotal();}} </h5>
+                        </div>
+                    </div>
 
                     <form action="{{ route('shopping.clean') }}" method="post">
                         @csrf
