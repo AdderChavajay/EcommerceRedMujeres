@@ -40,7 +40,7 @@ Route::apiResource('shopping', ShoppingController::class)->except('destroy');
 Route::delete('shopping/remove/{id}', [ShoppingController::class, 'destroy'])->name('shopping.destroy');
 Route::delete('shopping/clen-all', [ShoppingController::class, 'clearAllCart'])->name('shopping.clean');
 Route::get('catalog', [CatalogController::class, 'allproducts'])->name('allproducts');
-Route::get('category', [CatalogController::class, 'allCategories'])->name('catalog.categories');
+Route::get('all-categories', [CatalogController::class, 'allCategories'])->name('catalog.categories');
 Route::get('product/{product}', [ProductController::class, 'show'])->name('product.show');
 
 Route::get('/dashboard', function () {
