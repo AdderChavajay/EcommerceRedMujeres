@@ -8,6 +8,10 @@
 
 @section('main')
 <div class="container">
+    <div class="text-center alert alert-info">
+        <h4>{{$category->name}}</h4>
+    </div>
+    
     <div class="row col-md-12 my-2">
         @foreach ($products as $product)
             <div class="col-md-3 col-sm-6 ">

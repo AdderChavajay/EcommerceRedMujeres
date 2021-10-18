@@ -114,15 +114,15 @@
                                     <div class="mb-3 col-md-8 col-sm-12 "></div>
                                 </div>
 
-                                <div class="row mb-3">
+                                <div class="row mb-3 mx-auto">
                                     <div class="col-md-12 mb-2">
                                         <label class="form-check-label" for="inlineRadio1">Sexo:</label>
                                     </div>
-                                    <div class="form-check col-md-5 col-sm-6">
+                                    <div class="form-check col-md-5 mx-auto col-sm-6">
                                         <input class="position-static" type="radio" name="gender" id="radio1" value="M">
                                         <label class="form-check-label" for="inlineRadio1">Hombre</label>
                                     </div>
-                                    <div class="form-check col-md-5 col-sm-6">
+                                    <div class="form-check col-md-5 col-sm-6 mx-auto">
                                         <input class="position-static" type="radio" name="gender" id="radio2" value="F">
                                         <label class="form-check-label" for="inlineRadio1">Mujer</label>
                                     </div>
@@ -131,12 +131,19 @@
 
 
                             <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+                            <div class="row">
 
-                            <div class="d-grid text-center">
-                                <button class="btn btn-primary btn-login text-uppercase fw-bold" onclick=""
-                                    type="submit">Crear Cuenta</button>
+                                <div class="d-grid px-2">
+                                    <button class="btn btn-primary btn-login text-uppercase fw-bold" onclick=""
+                                        type="submit">Crear Cuenta</button>
+                                </div>
+    
+                                <div class="d-grid ml-auto">
+                                    <a class="btn btn-primary btn-login text-uppercase fw-bold"
+                                        type="submit" href="/"> <ion-icon name="home-outline"></ion-icon>  </a>
+                                </div>
+
                             </div>
-
 
                         </form>
                     </div>
