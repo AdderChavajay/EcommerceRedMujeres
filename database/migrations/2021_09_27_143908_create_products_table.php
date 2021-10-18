@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -30,6 +31,11 @@ class CreateProductsTable extends Migration
             $table->foreign('association_id')->references('id')
                 ->on('associations')->onDelete('cascade');
         });
+
+        DB::statement('
+            create fulltext index name_description_product
+            on products(name, description);
+        ');
     }
 
     /**

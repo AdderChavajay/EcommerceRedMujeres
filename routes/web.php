@@ -42,6 +42,7 @@ Route::delete('shopping/clen-all', [ShoppingController::class, 'clearAllCart'])-
 Route::get('catalog', [CatalogController::class, 'allproducts'])->name('allproducts');
 Route::get('all-categories', [CatalogController::class, 'allCategories'])->name('catalog.categories');
 Route::get('product/{product}', [ProductController::class, 'show'])->name('product.show');
+Route::get('product-search', [CatalogController::class, 'search'])->name('product.search');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -29,4 +29,20 @@ class CatalogController extends Controller
         $products->appends(['category' => $category_id]);
         return view('catalog.index', compact('products', 'category'));
     }
+
+    public function search()
+    {
+        $products = Product::query()->when(request('search'), function ($query, $search) {
+            $query->select('id', 'name', 'quantity', 'description', 'images', 'price', 'size')
+                ->selectRaw('
+                match(name, description)
+                against(? in natural language mode) as score
+            ', [$search])
+                ->whereRaw('
+                match(name, description)
+                against(? in natural language mode) > 0.0000001
+            ', [$search]);
+        })->paginate(20);
+        return view('catalog.index', compact('products'));
+    }
 }

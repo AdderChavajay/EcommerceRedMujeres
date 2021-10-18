@@ -10,8 +10,8 @@
         </button>
         <div class="collapse  navbar-collapse" id="navbarSupportedContent">
             <div class="mx-auto">
-                <form class="form-inline my-2 my-lg-0 mx-auto">
-                    <input type="text" class="form-control mr-sm-2 buscador" placeholder="  "
+                <form action="{{ route('product.search') }}" method="GET" class="form-inline my-2 my-lg-0 mx-auto">
+                    <input name="search" type="text" class="form-control buscador" placeholder="Buscar..."
                         aria-describedby="basic-addon1">
                     <button class="btn btn-primary my-2 my-sm-0 rounded" type="submit">Buscar</button>
                 </form>
