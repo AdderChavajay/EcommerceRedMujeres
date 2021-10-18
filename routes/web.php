@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\AllCategoryController;
 use App\Http\Controllers\AssociationController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\userController;
@@ -30,11 +29,10 @@ Route::get('/2', function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('permissions', PermissionController::class);
-    Route::resource('product', ProductController::class);
+    Route::resource('product', ProductController::class)->except(['show']);
     Route::resource('category', CategoryController::class);
     Route::resource('association', AssociationController::class);
     Route::resource('user', UserController::class);
-    Route::resource('allCategory', AllCategoryController::class);
 });
 
 Route::get('/', [CatalogController::class, 'index'])->name('main');
@@ -42,6 +40,8 @@ Route::apiResource('shopping', ShoppingController::class)->except('destroy');
 Route::delete('shopping/remove/{id}', [ShoppingController::class, 'destroy'])->name('shopping.destroy');
 Route::delete('shopping/clen-all', [ShoppingController::class, 'clearAllCart'])->name('shopping.clean');
 Route::get('catalog', [CatalogController::class, 'allproducts'])->name('allproducts');
+Route::get('category', [CatalogController::class, 'allCategories'])->name('catalog.categories');
+Route::get('product/{product}', [ProductController::class, 'show'])->name('product.show');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

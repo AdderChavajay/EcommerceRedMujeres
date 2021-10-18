@@ -69,7 +69,7 @@
                 </a>
             </div>
             <div class="text-center">
-                <a href="{{route('allCategory.index')}}" class="btn btn-primary">
+                <a href="{{route('catalog.categories')}}" class="btn btn-primary">
                     Ver Catalogo del Mercado
                 </a>
             </div>

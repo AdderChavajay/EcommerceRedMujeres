@@ -21,8 +21,8 @@
                     <a class="nav-link" href="{{ route('main') }}">
                         Inicio </a>
                 </li>
-                <li class="nav-item  w-100 {{ (request()->routeIs('allCategory.index')) ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('allCategory.index') }}">
+                <li class="nav-item  w-100 {{ (request()->routeIs('catalog.categories')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('catalog.categories') }}">
                         <b> </b>
                         Categorias
                     </a>

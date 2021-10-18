@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\allCategory;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\product as Product;
@@ -14,6 +13,12 @@ class CatalogController extends Controller
     {
         $products = Product::orderBy('selled', 'desc')->limit(10)->get();
         return view('HomeEcommerce', compact('products'));
+    }
+
+    public function allCategories()
+    {
+        $categories = Category::paginate(10);
+        return view('showCategories.index', compact('categories'));
     }
 
     public function allproducts(Request $request)
