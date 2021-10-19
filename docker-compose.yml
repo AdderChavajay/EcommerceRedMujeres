@@ -13,6 +13,10 @@ services:
     myecommerce:
         tty: true
         image: docker.io/bitnami/laravel:8
+        deploy:
+            resources:
+                limits:
+                    memory: 350M
         environment:
             - DB_HOST=mariadb
             - DB_USERNAME=my_user
