@@ -22,7 +22,7 @@
     @include('components.sidebar-admin')
 
     <!-- ######################## main ####################### -->
-    <div class="my-10 pt-10">
+    <div class="my-2 pt-10">
         @yield('main')
     </div>
 
