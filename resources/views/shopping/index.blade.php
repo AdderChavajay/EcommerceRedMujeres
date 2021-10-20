@@ -9,7 +9,7 @@
 
 @section('main')
 
-<div class="container col-md-6">
+<div class="container col-md-8">
     @if ($message = Session::get('success'))
     <div class="alert alert-success alert-dismissible fade show ">
         {{ $message }}
@@ -21,81 +21,86 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col">
             <div class="">
-                <div class="card-body p-4">
-                    <div class="text-center">
-                        <h4>Productos</h4>
-                    </div>
+                <div class="container">
 
-                    <div class="mb-3">
-                        <div class="card-body">
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <div class="ms-3 px-3 py-0">
-                                        <h5>Producto</h5>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-row">
-                                    <div>
-                                        <h5 class="fw-normal mb-0 mr-2">Cantidad</h5>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-0 mr-2">Precio/U</h5>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-0 mr-2">Subtotal</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    @foreach ($products as $product)
-                    <div class="mb-3">
-                        <div class="card-body shadow">
-                            <div class="d-flex justify-content-between">
-                                <div class="d-flex flex-row align-items-center">
-                                    <div>
-                                        <img src="{{asset('storage/'.$product->attributes->image)}}"
-                                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
-                                    </div>
-                                    <div class="ms-3 px-3 py-0">
-                                        <h5>{{ $product->name }}</h5>
-                                        <p class="small mb-0">{{ $product->attributes->size }}</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-row align-items-center">
-                                    <div style="width: 50px;">
-                                        <h5 class="fw-normal mb-0">{{ $product->quantity }}</h5>
-                                    </div>
-                                    <div style="width: 80px;">
-                                        <h5 class="mb-0">${{ $product->price }}</h5>
-                                    </div>
-                                    <div style="width: 80px;">
-                                        <h5 class="mb-0">${{ $product->getPriceSum() }} </h5>
-                                    </div>
-                                    <a class="btn btn-default" style="color: green;" href="{{ route('product.show', $product->id) }}">
-                                        <ion-icon name="pencil"></ion-icon>
-                                    </a>
-                                    <form action="{{ route('shopping.destroy', $product->id) }}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-default" style="color: red;" type="submit">
-                                            <ion-icon name="trash-outline"></ion-icon>
-                                        </button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                    <div class="row py-2 px-5 ">
-                        <div class="col">
-                        </div>
-                        <div class="col d-flex shadow py-2" style="width: 80px;">
-                            <h5 class="mx-auto mb-0"> Total: ${{\Cart::getTotal();}} </h5>
-                        </div>
-                    </div>
+                    <div class="Card">
+                        <div class="card-header text-center">
+                            <h5>Carrito </h5>
 
+                        </div>
+                        <div class="card-body overflow-auto">
+                            <table class="table table-hover ">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th class="col">Producto</th>
+                                        <th class="">Cantidad</th>
+                                        <th class="">Precio/U</th>
+                                        <th class="">Subtotal</th>
+                                        <th class="">Accion</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+
+                                    @foreach ($products as $product)
+                                    <tr class="shadow">
+                                        <td class="row ">
+                                            <div class="col">
+                                                <img src="{{asset('storage/'.$product->attributes->image)}}"
+                                                    class="img-fluid rounded-3" alt="Shopping item"
+                                                    style="width: 65px;">
+                                            </div>
+                                            <div class="col">
+                                                <p style="font-size: 1rem;">{{ $product->name }}</p>
+                                                <p class="small mb-0">Tamaño: <b> {{ $product->attributes->size }} </b>
+                                                </p>
+                                            </div>
+                                        </td>
+                                        <td class="">
+                                            <h5 class="fw-normal mb-0" style="font-size: 18px;">{{ $product->quantity }}
+                                            </h5>
+                                        </td>
+                                        <td class="">
+                                            <h5 class="mb-0" style="font-size: 18px;">${{ $product->price }}</h5>
+                                        </td>
+                                        <td class="">
+                                            <p class="mb-0" style="font-size: 18px;">${{ $product->getPriceSum() }} </p>
+                                        </td>
+
+                                        <td class="col">
+                                            <a class="btn btn-default" style="color: green;"
+                                                href="{{ route('product.show', $product->id) }}">
+                                                <ion-icon name="pencil"></ion-icon>
+                                            </a>
+                                            <form action="{{ route('shopping.destroy', $product->id) }}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-default" style="color: red;" type="submit">
+                                                    <ion-icon name="trash-outline"></ion-icon>
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row py-2 px-5 ">
+                    <div class="col text-center">
+                        <a href="" class="btn btn-primary">
+                            <ion-icon name="logo-paypal"></ion-icon> Comprar
+                        </a>
+                    </div>
+                    <div class="col d-flex shadow py-2" style="width: 80px;">
+                        <h5 class="mx-auto mb-0"> Total: ${{\Cart::getTotal();}} </h5>
+                    </div>
+                </div>
+                <div class="text-center my-3">
                     <form action="{{ route('shopping.clean') }}" method="post">
                         @csrf
                         @method('DELETE')
@@ -105,6 +110,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 </div>
 @endsection
