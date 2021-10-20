@@ -11,10 +11,9 @@
 
     <div class="card-header text-center">
         <h5>Categorias Insertadas </h5>
-
     </div>
 
-    <div class="card-body">
+    <div class="card-body  overflow-auto">
         <table class="table table-hover text-center">
             <thead class="thead-dark">
                 <tr class="">
@@ -30,7 +29,8 @@
                     <th class="col-2">{{ $category->id }}</th>
                     <td class="col-4">{{ $category->name }}</td>
                     <td class="col-3">
-                        <img src="{{asset('storage/'.$category->images)}}" alt="" style="max-width: 5rem;">
+                        <img src="{{asset('storage/'.$category->images)}}" alt=""
+                            style="max-width: 3rem; max-height: 3rem;">
                     </td>
                     <td class="col-3">
                         <div class="row ">
