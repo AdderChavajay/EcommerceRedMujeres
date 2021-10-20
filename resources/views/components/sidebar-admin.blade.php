@@ -21,6 +21,9 @@
         <li class="nav-item  {{ (request()->routeIs('association.index')) ? 'active' : '' }}">
           <a class="nav-link" href="{{ route('association.index') }}">Asociasiones</a>
         </li>
+        <li class="nav-item  {{ (request()->routeIs('SoldProduct.index')) ? 'active' : '' }}">
+          <a class="nav-link" href="{{ route('SoldProduct.index') }}">Productos Vendidos</a>
+        </li>
         <li class="nav-item {{ (request()->routeIs('user.index')) ? 'active' : '' }}">
           <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>
         </li>
@@ -28,7 +31,7 @@
           <a class="nav-link" href="{{ route('roles.index') }}">Roles</a>
         </li>
         <li class="nav-item {{ (request()->routeIs('permissions.index')) ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('permissions.index') }}">Permisos</a>
+          <a class="nav-link" href="{{ route('permissions.index') }}">Permisos</a>
         </li>
       </ul>
       <div>
@@ -49,9 +52,9 @@
         </li>
       </div>
       {{-- <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> --}}
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> --}}
     </div>
   </nav>
 </div>

@@ -4,10 +4,12 @@ use App\Http\Controllers\AssociationController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\ProductController;
+
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\SoldProductController;
 use Doctrine\DBAL\Driver\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('permissions', PermissionController::class);
     Route::resource('product', ProductController::class)->except(['show']);
     Route::resource('category', CategoryController::class);
+
+    Route::get('soldproduct', [SoldProductController::class, 'index'])->name('SoldProduct.index');
     Route::resource('association', AssociationController::class);
     Route::resource('user', UserController::class);
 });
