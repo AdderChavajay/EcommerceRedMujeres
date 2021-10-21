@@ -94,7 +94,7 @@
 
                 <div class="row py-2 px-5 ">
                     <div class="col text-center">
-                        <a href="{{route('direcctions.index')}}" class="btn btn-primary">
+                        <a href="{{route('direcctions.index')}}" class="btn btn-primary btn-lg btn-block">
                             <ion-icon name="logo-paypal"></ion-icon> Comprar
                         </a>
                     </div>
