@@ -27,7 +27,7 @@
                         <img class="d-block w-100" src="images/Carrusell/2.JPG" alt="Second slide">
                     </div>
                     <div class="carousel-item ">
-                        <img class="d-block w-100" src="images/Carrusell/3.JPG" alt="Second slide">
+                        <img class="d-block w-100" src="images/Carrusell/3.jpeg" alt="Second slide">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -148,7 +148,8 @@
                                             <p class="color_letras">{{ $product->name }}</p>
                                             <div class="margen">
 
-                                                <a href="{{ route('product.show', $product->id) }} " class="btn btn-dark">
+                                                <a href="{{ route('product.show', $product->id) }} "
+                                                    class="btn btn-dark">
                                                     <ion-icon name="cart"></ion-icon>
                                                     Agregar
                                                 </a>

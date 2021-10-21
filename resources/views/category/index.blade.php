@@ -3,7 +3,7 @@
 @section('title', 'Categorias')
 
 @section('main')
-<div class="container py-2 px-0">
+<div class="container ">
     <a href="{{route('category.create')}}" class="btn btn-primary">nueva categoria</a>
 </div>
 

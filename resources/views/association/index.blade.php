@@ -3,7 +3,7 @@
 @section('title', 'Categorias')
 
 @section('main')
-<div class="container py-2 px-0">
+<div class="container">
     <a href="{{route('association.create')}}" class="btn btn-primary">nueva asociacion</a>
 </div>
 
@@ -15,7 +15,7 @@
     </div>
 
     <div class="card-body  overflow-auto">
-        <table class="table table-hover text-center text-center">
+        <table class="table table-hover  text-center">
             <thead class="thead-dark">
                 <tr class="">
                     <th scope="col-2">#</th>

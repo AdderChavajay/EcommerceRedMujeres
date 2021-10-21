@@ -13,7 +13,9 @@
                 <form action="{{ route('product.search') }}" method="GET" class="form-inline my-2 my-lg-0 mx-auto">
                     <input name="search" type="text" class="form-control buscador" placeholder="Buscar..."
                         aria-describedby="basic-addon1">
-                    <button class="btn btn-primary my-2 my-sm-0 rounded" type="submit">Buscar</button>
+                    <button class="btn btn-primary my-2 my-sm-0 rounded" type="submit">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </button>
                 </form>
             </div>
             <ul class="navbar-nav  ml-auto">
@@ -37,7 +39,8 @@
                     @else
                     <a href="{{route('shopping.index')}}" class=" nav-link row px-4">
                         <i class="fas fa-shopping-cart">
-                            <span class=" badge badge-info">{{ Cart::getContent()->count() }} </span>
+
+                            <span class=" badge badge-info"></span>{{ Cart::getContent()->count() }}
                         </i>
                         {{--
                         Carrito <span class="badge badge-info">{{ Cart::getContent()->count() }} </span>

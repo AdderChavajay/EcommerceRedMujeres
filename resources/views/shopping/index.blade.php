@@ -44,7 +44,7 @@
 
 
                                     @foreach ($products as $product)
-                                    <tr class="shadow">
+                                    <tr class="">
                                         <td class="row ">
                                             <div class="col">
                                                 <img src="{{asset('storage/'.$product->attributes->image)}}"
@@ -62,10 +62,12 @@
                                             </h5>
                                         </td>
                                         <td class="">
-                                            <h5 class="mb-0" style="font-size: 18px;">${{ $product->price }}</h5>
+                                            <h5 class="" style="font-size: 18px;">${{
+                                                $product->price }}</h5>
                                         </td>
                                         <td class="">
-                                            <p class="mb-0" style="font-size: 18px;">${{ $product->getPriceSum() }} </p>
+                                            <p class="" style="font-size: 18px;">${{
+                                                $product->getPriceSum() }} </p>
                                         </td>
 
                                         <td class="col">

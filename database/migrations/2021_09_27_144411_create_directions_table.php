@@ -16,13 +16,13 @@ class CreateDirectionsTable extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->string('country', 50);
-            $table->string('state_dep', 50);
-            $table->string('village_city', 50);
-            $table->integer('zone');
-            $table->string('street', 50);
-            $table->string('avenue', 50);
-            $table->numbre('postal_code', 10);
+            $table->string('direction');
+            $table->string('departament');
+            $table->string('city', 50);
+            $table->string('state', 50);
+            $table->integer('postalcode')->length(10)->unsigned();
             $table->timestamps();
+
             $table->unsignedBigInteger('id_user')->nullable();
 
             $table->foreign('id_user')->references('id')

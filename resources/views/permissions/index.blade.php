@@ -15,7 +15,7 @@
                 </span>
                 @endcan
             </div>
-            <div class="card-body">
+            <div class="card-body overflow-auto">
                 <table class="table table-hover">
                     <thead class="thead-dark">
                         <tr>

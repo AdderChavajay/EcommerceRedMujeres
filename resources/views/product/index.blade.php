@@ -3,7 +3,7 @@
 @section('title','Productos')
 
 @section('main')
-<div class="container-fluid py-3 px-4">
+<div class="container">
 
     <a href="{{route('product.create') }}" class="btn btn-primary">
         <ion-icon name="add"></ion-icon> Nuevo producto
