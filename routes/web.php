@@ -4,7 +4,7 @@ use App\Http\Controllers\AssociationController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\ProductController;
-
+use App\Http\Controllers\DirectionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ShoppingController;
 use App\Http\Controllers\RoleController;
@@ -33,7 +33,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('permissions', PermissionController::class);
     Route::resource('product', ProductController::class)->except(['show']);
     Route::resource('category', CategoryController::class);
-
     Route::get('soldproduct', [SoldProductController::class, 'index'])->name('SoldProduct.index');
     Route::resource('association', AssociationController::class);
     Route::resource('user', UserController::class);
@@ -47,6 +46,7 @@ Route::get('catalog', [CatalogController::class, 'allproducts'])->name('allprodu
 Route::get('all-categories', [CatalogController::class, 'allCategories'])->name('catalog.categories');
 Route::get('product/{product}', [ProductController::class, 'show'])->name('product.show');
 Route::get('product-search', [CatalogController::class, 'search'])->name('product.search');
+Route::get('direction', [DirectionController::class, 'index'])->name('direcctions.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

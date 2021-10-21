@@ -92,7 +92,7 @@
 
                 <div class="row py-2 px-5 ">
                     <div class="col text-center">
-                        <a href="" class="btn btn-primary">
+                        <a href="{{route('direcctions.index')}}" class="btn btn-primary">
                             <ion-icon name="logo-paypal"></ion-icon> Comprar
                         </a>
                     </div>
@@ -100,13 +100,7 @@
                         <h5 class="mx-auto mb-0"> Total: ${{\Cart::getTotal();}} </h5>
                     </div>
                 </div>
-                <div class="text-center my-3">
-                    <form action="{{ route('shopping.clean') }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Quitar todos los productos</button>
-                    </form>
-                </div>
+
             </div>
         </div>
     </div>
