@@ -25,9 +25,20 @@
   @yield('main')
 
 
-  <footer class="row ">
+  <footer class="row container">
     <div class="col ">
-      <p class="text-center">Red Municipal de Mujeres. &copy</p>
+      <p style="font-size: 10px">Red Municipal de Mujeres. &copy</p>
+    </div>
+    <div class=" row">
+      <div class="d-flex align-items-center">
+        <p style="font-size: 10px;">
+          con el apoyo de:
+        </p>
+      </div>
+      <div>
+        <img src="{{asset('images/umg.png')}}" style="width: 2rem;" alt="">
+        <img src="{{asset('images/icons/Logo Municipalida.png')}}" style="width: 2rem;" alt="">
+      </div>
     </div>
   </footer>
   <!-- Optional JavaScript; choose one of the two! -->
