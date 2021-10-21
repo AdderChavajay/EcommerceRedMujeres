@@ -15,6 +15,7 @@ window.onload = function() {
                     var picFile = event.target;
                     var div = document.createElement("div");
                     div.className="float-left";
+                    div.style="whitd: 200px"
                     div.innerHTML = "<img class='thumbnail rounded col' src='" + picFile.result + "'" +
                     "title='" + picFile.name + "'/>";
                     output.insertBefore(div, null);

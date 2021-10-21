@@ -61,7 +61,7 @@
             </article>
 
             <div class="text-center ">
-                <a href="" class="">
+                <a target="_blank" href="https://www.facebook.com/MercadodeArtesaniasTzununYa" class="">
                     <ion-icon name="logo-facebook" size="large"></ion-icon>
                 </a>
                 <a target="_blank" href="https://mercadotzununya.wixsite.com/inicio" class="">
@@ -173,10 +173,4 @@
         </section>
     </section>
 </main>
-@endsection
-
-@section('footer')
-<footer>
-    <p class="text-center">Derechos reservados &copy</p>
-</footer>
 @endsection

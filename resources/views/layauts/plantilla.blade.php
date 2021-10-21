@@ -24,7 +24,12 @@
 
   @yield('main')
 
-  @yield('footer')
+
+  <footer class="row ">
+    <div class="col ">
+      <p class="text-center">Red Municipal de Mujeres. &copy</p>
+    </div>
+  </footer>
   <!-- Optional JavaScript; choose one of the two! -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

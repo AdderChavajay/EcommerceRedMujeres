@@ -4,10 +4,17 @@
 
 @section('main')
 <div class="container">
+    <div class="row">
+        <div class="col">
+            <a href="{{route('product.create') }}" class="btn btn-primary">
+                <ion-icon name="add"></ion-icon> Nuevo producto
+            </a>
+        </div>
+        <div class="col text-right">
+            <a href="" class=" btn btn-secondary">Productos sin existencia</a>
+        </div>
+    </div>
 
-    <a href="{{route('product.create') }}" class="btn btn-primary">
-        <ion-icon name="add"></ion-icon> Nuevo producto
-    </a>
 
     @if (session('message'))
     <div class="alert alert-success alert-dismissible fade show " role="alert">
