@@ -1,3 +1,10 @@
+@extends('layauts.plantilla')
+
+@section('header')
+@include('components.header')
+@endsection
+
+@section('main')
 <main>
     <div class="container mlp  -auto">
         <div class="col-md-4 shadow py-3 px-3">
@@ -62,3 +69,4 @@
         </div>
     </div>
 </main>
+@endsection

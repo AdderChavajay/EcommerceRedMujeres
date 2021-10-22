@@ -11,4 +11,9 @@ class ProfileController extends Controller
     {
         return view('user.profile');
     }
+
+    public function profileSettings()
+    {
+        return view('user.setingprofile');
+    }
 }

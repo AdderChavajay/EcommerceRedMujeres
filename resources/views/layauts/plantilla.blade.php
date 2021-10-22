@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{!!asset('css/estiloHome.css') !!}">
   <link rel="stylesheet" href="{!!asset('css/caracteristicas.css') !!}">
   <link rel="stylesheet" href="{!!asset('css/login.css')!!}">
+  <link rel="stylesheet" href="{!!asset('css/perfil.css')!!}">
   <link rel="shortcut icon" href="{{asset('images/icons/icons/Logo Mercado.ico')}}" type="image/x-icon">
   <title>@yield('title')</title>
 </head>

@@ -1,4 +1,5 @@
-@include('layauts.plantilla')
+@extends('layauts.plantilla')
+
 @section('header')
 @include('components.header')
 @endsection
@@ -26,7 +27,7 @@
                     <ul class="nav text-center">
 
                         <li class="mx-auto">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('settings.profile') }}" class="nav-link">
                                 Ajustes de perfil
                             </a>
                         </li>
