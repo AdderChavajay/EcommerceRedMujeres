@@ -94,9 +94,10 @@
 
                 <div class="row py-2 px-5 ">
                     <div class="col text-center">
-                        <a href="{{route('direcctions.index')}}" class="btn btn-primary btn-lg btn-block">
+                        {{-- <a href="{{route('direcctions.index')}}" class="btn btn-primary btn-lg btn-block">
                             <ion-icon name="logo-paypal"></ion-icon> Comprar
-                        </a>
+                        </a> --}}
+                        <div id="paypal-button-container"></div>
                     </div>
                     <div class="col d-flex shadow py-2" style="width: 80px;">
                         <h5 class="mx-auto mb-0"> Total: ${{\Cart::getTotal();}} </h5>
@@ -109,4 +110,78 @@
 </div>
 </div>
 </div>
+@endsection
+
+@section('scripts')
+@if (!Cart::isEmpty())
+<script src="https://www.paypal.com/sdk/js?client-id={{env('PAYPAL_CLIENT_ID')}}&locale=es_GT"></script>
+<script>
+    paypal.Buttons({
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                @auth
+                payer: {
+                    name: {
+                        given_name: '{{ Auth::user()->name }}',
+                        surname: '{{ Auth::user()->last_name }}'
+                    },
+                    // address: {
+                    //     address_line_1: '',
+                    //     address_line_2: '',
+                    //     admin_area_1: '',
+                    //     admin_area_2: '',
+                    //     postal_code: '',
+                    //     country_code: 'GT'
+                    // }
+                },
+                @endauth
+                purchase_units: [{
+                    amount: {
+                        currency_code: 'USD',
+                        value: {{\Cart::getTotal()}},
+                        breakdown: {
+                            item_total: {
+                                currency_code: 'USD',
+                                value: {{\Cart::getTotal()}},
+                            }
+                        }
+                    },
+                    items: [
+                        @foreach ($products as $product)
+                            {
+                                name: '{{ $product->name }}',
+                                unit_amount: {
+                                    currency_code: 'USD',
+                                    value: '{{ $product->price }}',
+                                },
+                                quantity: '{{ $product->quantity }}',
+                            },
+                        @endforeach
+                    ]
+                }]
+            });
+        },
+        onApprove: function(data, actions) {
+            // return actions.order.capture().then(function(details) {
+            //     alert('Transaction completed by ' + details.payer.name.given_name);
+            // });
+            return fetch('/paypal/process/'+data.orderID)
+            .then(res => res.json())
+            .then(function (response) {
+                if (!response.success) {
+                    const failureMessage = 'Sorry, your transaction could not be processed.';
+                    alert(failureMessage);
+                    return;
+                }
+                location.href = '/shopping-success/status'
+                // alert('Transaction completed by ' + response.data);
+            })
+        },
+        onError: function (err) {
+            alert('No se pudo completar la transaccion' + err);
+            console.error(err);
+        }
+    }).render('#paypal-button-container');
+</script>
+@endif
 @endsection

@@ -114,4 +114,9 @@ class ShoppingController extends Controller
 
         return redirect()->route('shopping.index');
     }
+
+    public function success()
+    {
+        return view('shopping.success');
+    }
 }
