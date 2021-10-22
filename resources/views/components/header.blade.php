@@ -74,6 +74,7 @@
                                                     this.closest('form').submit();">
                                 {{ __('Cerrar sesion') }}
                             </x-dropdown-link>
+                            <a class="dropdown-item " href="{{ route('profile.index') }}">Perfil</a>
                         </form>
                     </div>
 
@@ -129,6 +130,7 @@
                                 <button class="btn btn-primary">
                                     {{ __('Iniciar sesion') }}
                                 </button>
+
                             </div>
                         </form>
                         <div class="dropdown-divider"></div>

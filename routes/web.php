@@ -11,6 +11,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\SoldProductController;
 use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\ProfileController;
 use Doctrine\DBAL\Driver\Middleware;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('product', ProductController::class)->except(['show']);
     Route::resource('category', CategoryController::class);
     Route::get('soldproduct', [SoldProductController::class, 'index'])->name('SoldProduct.index');
+    Route::get('users', [ProfileController::class, 'index'])->name('profile.index');
     Route::resource('association', AssociationController::class);
     Route::resource('user', UserController::class);
 });
@@ -45,6 +47,7 @@ Route::get('all-categories', [CatalogController::class, 'allCategories'])->name(
 Route::get('product/{product}', [ProductController::class, 'show'])->name('product.show');
 Route::get('product-search', [CatalogController::class, 'search'])->name('product.search');
 Route::get('direction', [DirectionController::class, 'index'])->name('direcctions.index');
+
 
 Route::get('paypal/process/{orderId}', [PayPalController::class, 'process'])->name('paypal.process');
 
