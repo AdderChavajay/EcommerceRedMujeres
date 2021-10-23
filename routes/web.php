@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('product', ProductController::class)->except(['show']);
     Route::resource('category', CategoryController::class);
     Route::get('soldproduct', [SoldProductController::class, 'index'])->name('SoldProduct.index');
+    Route::get('soldproduct/{sale}/show', [SoldProductController::class, 'show'])->name('SoldProduct.show');
     Route::get('user-profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::get('user-settings-profile', [ProfileController::class, 'profileSettings'])->name('settings.profile');
     Route::resource('association', AssociationController::class);
