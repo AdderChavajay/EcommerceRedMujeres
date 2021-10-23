@@ -9,20 +9,13 @@
     <div class="row profile">
         <div class="col-md-3">
             <div class="profile-sidebar shadow">
-                <!-- SIDEBAR USERPIC -->
-                <div class="">
-                    <img src="foto.jpg" class=" img img-fluid" alt="">
-                </div>
-                <!-- END SIDEBAR USERPIC -->
-                <!-- SIDEBAR USER TITLE -->
+
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
                         Nombre de Usuario
                     </div>
                 </div>
 
-                <!-- END SIDEBAR BUTTONS -->
-                <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu ">
                     <ul class="nav text-center">
 

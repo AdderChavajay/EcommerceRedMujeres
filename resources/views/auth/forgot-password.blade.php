@@ -1,14 +1,13 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="{{asset('images/icons/icons/Logo Mercado.ico')}}" alt="" class=" w-40 h-40" />
             </a>
         </x-slot>
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-        </div>
 
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -21,15 +20,22 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <div class="form-group ">
+                    <x-label for="email" :value="__('Correo electronico')" />
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                        </div>
+                        <x-input id="email" class="form-control" type="email" name="email" :value="old('email')"
+                            required autofocus placeholder="email@ejemplo.com" />
+                    </div>
+
+                </div>
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
+                <a href="" class="btn btn-primary">Aceptar</a>
             </div>
         </form>
     </x-auth-card>
