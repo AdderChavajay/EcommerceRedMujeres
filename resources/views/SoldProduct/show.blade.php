@@ -20,14 +20,6 @@
                 </tr>
             </thead>
             <tbody>
-<<<<<<< HEAD
-                <tr class="">
-                    <th class="">id</th>
-                    <th class="">nombre</th>
-                    <td class="">21</td>
-                    <td class="">$3</td>
-                    <td class="">4</td>
-=======
                 @foreach ($purchased->details as $detail)
                 <tr class="">
                     <th class="">{{ $detail->product->id }}</th>
@@ -36,7 +28,6 @@
                     <td class="">${{ $detail->quantity }}</td>
                     <td class="">${{ $detail->price }}</td>
                     <td class="">${{ $detail->quantity * $detail->price }}</td>
->>>>>>> eb4bc17604fde12aa8dd8525f8970d09bf1cb435
                 </tr>
                 @endforeach
             </tbody>

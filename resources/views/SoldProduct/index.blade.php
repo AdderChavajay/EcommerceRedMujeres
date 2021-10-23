@@ -19,14 +19,14 @@
                         <th>Cliente</th>
                         <th>Productos</th>
                         <th>Total</th>
-                        <th width="280px">Accion</th>
+                        <th>Accion</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($purchaseds as $purchased)
                     <tr>
                         <td>{{ $purchased->id }}</td>
-                        <td>{{ date('d-m-Y H:i:s', strtotime($purchased->created_at)) }}<td>
+                        <td>{{ date('d-m-Y H:i:s', strtotime($purchased->created_at)) }}</td>
                         <td>{{ $purchased->pay_id }}</td>
                         <td>{{ $purchased->user->name }} {{ $purchased->user->last_name }}</td>
                         <td>{{ $purchased->n_prod }}</td>
