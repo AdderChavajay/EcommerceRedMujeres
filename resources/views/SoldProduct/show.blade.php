@@ -17,15 +17,12 @@
                 </tr>
             </thead>
             <tbody>
-
                 <tr class="">
                     <th class="">id</th>
                     <th class="">nombre</th>
                     <td class="">21</td>
                     <td class="">$3</td>
                     <td class="">4</td>
-
-
                 </tr>
             </tbody>
         </table>
