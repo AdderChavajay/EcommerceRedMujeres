@@ -17,11 +17,12 @@ class CreatePurchaseMadesTable extends Migration
             $table->id();
             $table->string('pay_id')->unique();
             $table->double('total', 8, 2);
-            $table->unsignedBigInteger('user_id');
+            $table->integer('n_prod')->length(5)->default(0);
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')
-                ->on('users')->onDelete('cascade');
+                ->on('users')->onDelete('set null');
         });
     }
 
