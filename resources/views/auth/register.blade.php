@@ -4,8 +4,10 @@
 
 @section('header')
 <header class="text-center ">
-    <img src="{{asset('images/icons/icons/LogoMercado.png')}}" class="img img-fluid" alt="">
-    <img src="{{asset('images/icons/icons/medianologopnggrande.ico')}}" class="img img-fluid" alt="">
+    <a href="{{route('main')}}">
+        <img src="{{asset('images/icons/icons/LogoMercado.png')}}" class="img img-fluid" alt="">
+        <img src="{{asset('images/icons/icons/medianologopnggrande.ico')}}" class="img img-fluid" alt="">
+    </a>
 </header>
 
 @endsection
@@ -15,15 +17,6 @@
 
 <main>
     <div class="container">
-    {{--
-    @if ($errors->any())
-    @foreach ($errors->all() as $message)
-    <div class="alert alert-danger" role="alert">
-        {{ $message }}
-    </div>
-    @endforeach
-    @endif
-    --}}
         <div class="row ">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto my-5">
                 <div class=" shadow  ">
@@ -66,9 +59,9 @@
                                             :value="old('email')" required>
                                     </div>
                                     @if ($errors->has('email'))
-                                        <span class="invalid feedback text-danger"role="alert">
-                                            <strong>{{ $errors->first('email') }}.</strong>
-                                        </span>
+                                    <span class="invalid feedback text-danger" role="alert">
+                                        <strong>{{ $errors->first('email') }}.</strong>
+                                    </span>
                                     @endif
                                 </div>
                                 <div class="form-floating mb-3 ">
@@ -95,9 +88,9 @@
                                             aria-describedby="basic-addon1">
                                     </div>
                                     @if ($errors->has('password'))
-                                        <span class="invalid feedback text-danger"role="alert">
-                                            <strong>{{ $errors->first('password') }}.</strong>
-                                        </span>
+                                    <span class="invalid feedback text-danger" role="alert">
+                                        <strong>{{ $errors->first('password') }}.</strong>
+                                    </span>
                                     @endif
                                 </div>
 
@@ -137,10 +130,12 @@
                                     <button class="btn btn-primary btn-login text-uppercase fw-bold" onclick=""
                                         type="submit">Crear Cuenta</button>
                                 </div>
-    
+
                                 <div class="d-grid ml-auto">
-                                    <a class="btn btn-primary btn-login text-uppercase fw-bold"
-                                        type="submit" href="/"> <ion-icon name="home-outline"></ion-icon>  </a>
+                                    <a class="btn btn-secondary btn-login text-uppercase fw-bold" type="submit"
+                                        href="/">
+                                        <ion-icon name="home-outline"></ion-icon>
+                                    </a>
                                 </div>
 
                             </div>
