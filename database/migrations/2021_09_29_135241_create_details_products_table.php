@@ -13,15 +13,16 @@ class CreateDetailsProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('details_products', function (Blueprint $table) {
+        Schema::create('details_purchased', function (Blueprint $table) {
             $table->id();
-            $table->integer('id_producto');
-            $table->integer('precio_unitario');
-            $table->timestamps();
-            $table->unsignedBigInteger('id_purchase_mades')->nullable();
-            
-            $table->foreign('id_purchase_mades')->references('id')
-                ->on('purchase_mades')->onDelete('set null');
+            $table->double('price', 8, 2);
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('purchase_made_id')->nullable();
+
+            $table->foreign('purchase_made_id')->references('id')
+                ->on('purchase_mades')->onDelete('cascade');
+            $table->foreign('product_id')->references('id')
+                ->on('products')->onDelete('cascade');
         });
     }
 
@@ -32,6 +33,6 @@ class CreateDetailsProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('details_products');
+        Schema::dropIfExists('details_purchased');
     }
 }

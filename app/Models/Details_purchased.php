@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class details_product extends Model
+class Details_purchased extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 }
