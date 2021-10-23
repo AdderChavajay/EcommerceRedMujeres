@@ -11,7 +11,10 @@
             </a>
         </div>
         <div class="col text-right">
-            <a href="" class=" btn btn-secondary">Productos sin existencia</a>
+            <a href="{{ route('product.index') }}" class=" btn btn-secondary">Todos los productos</a>
+        </div>
+        <div class="col text-right">
+            <a href="{{ route('product.index', ['filter' => 'no-stock']) }}" class=" btn btn-secondary">Productos sin existencia</a>
         </div>
     </div>
 
@@ -47,7 +50,7 @@
                 </thead>
                 <tbody>
                     @foreach ($products as $product)
-                    <tr class="">
+                    <tr class="@if ($product->quantity == 0) bg-danger @endif">
                         <th>{{ $product->id }}</th>
                         <td>
                             @foreach ($product->categories as $category)

@@ -20,10 +20,16 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //$products = Product::all();
-        $products = product::with('categories')->paginate(10);
+        $filter = $request->input('filter');
+        $product = [];
+        if ($filter != null && $filter == 'no-stock') {
+            $products = product::where('quantity', '=', 0)->with('categories')->paginate(10);
+        } else {
+            $products = product::with('categories')->paginate(10);
+        }
+        $products->appends(['no-stock' => $filter]);
         return view('product.index', compact('products'));
     }
 
