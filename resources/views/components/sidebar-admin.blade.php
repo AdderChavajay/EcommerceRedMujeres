@@ -22,7 +22,7 @@
           <a class="nav-link" href="{{ route('association.index') }}">Asociasiones</a>
         </li>
         <li class="nav-item  {{ (request()->routeIs('SoldProduct.index')) ? 'active' : '' }}">
-          <a class="nav-link" href="{{ route('SoldProduct.index') }}">Productos Vendidos</a>
+          <a class="nav-link" href="{{ route('SoldProduct.index') }}">Ventas realizadas</a>
         </li>
         <li class="nav-item {{ (request()->routeIs('user.index')) ? 'active' : '' }}">
           <a class="nav-link" href="{{ route('user.index') }}">Usuarios</a>

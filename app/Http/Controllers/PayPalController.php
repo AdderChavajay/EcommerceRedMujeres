@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 use App\Models\product as Product;
+use App\Models\Purchase_made as Purchased;
+use App\Models\Details_purchased as Details;
 
 class PayPalController extends Controller
 {
@@ -58,6 +61,7 @@ class PayPalController extends Controller
 
         if ($data1['status'] === 'APPROVED') {
             $products = \Cart::getContent();
+            $this->addPurchased($products, $orderId);
             foreach ($products as $product) {
                 Product::where('id', $product->id)->decrement('quantity', $product->quantity);
             }
@@ -89,5 +93,29 @@ class PayPalController extends Controller
             'success' => false,
             'data' => $data
         ];
+    }
+
+    private function addPurchased($products, $orderId)
+    {
+        $dataPurchased = [
+            'pay_id' => $orderId,
+            'total' => \Cart::getTotal(),
+            'n_prod' => sizeof($products)
+        ];
+        if (Auth::user()) {
+            $dataPurchased['user_id'] = Auth::user()->id;
+        }
+        $purchased = Purchased::create($dataPurchased);
+
+        $details = array();
+        foreach ($products as $product) {
+            array_push($details, new Details([
+                'price' => $product->price,
+                'product_id' => $product->id,
+                'quantity' => $product->quantity
+            ]));
+        }
+
+        $purchased->details()->saveMany($details);
     }
 }
