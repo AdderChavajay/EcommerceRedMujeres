@@ -14,6 +14,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>#</th>
+                        <th>Fecha</th>
                         <th>Pago ID</th>
                         <th>Cliente</th>
                         <th>Productos</th>
@@ -25,13 +26,13 @@
                     @foreach ($purchaseds as $purchased)
                     <tr>
                         <td>{{ $purchased->id }}</td>
+                        <td>{{ date('d-m-Y H:i:s', strtotime($purchased->created_at)) }}<td>
                         <td>{{ $purchased->pay_id }}</td>
                         <td>{{ $purchased->user->name }} {{ $purchased->user->last_name }}</td>
                         <td>{{ $purchased->n_prod }}</td>
                         <td>{{ $purchased->total }}</td>
                         <td>
-                            <a class="btn btn-success" href="">Mostrar</a>
-                            <a class="btn btn-primary" href="">Editar</a>
+                            <a class="btn btn-success" href="{{ route('SoldProduct.show', $purchased->id) }}">Mostrar</a>
                         </td>
                     </tr>
                     @endforeach

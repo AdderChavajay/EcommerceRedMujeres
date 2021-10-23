@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Purchase_made;
+use App\Models\product as Product;
 
 class Details_purchased extends Model
 {
@@ -17,5 +18,10 @@ class Details_purchased extends Model
     public function purchased()
     {
         return $this->belongsTo(Purchase_made::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
     }
 }

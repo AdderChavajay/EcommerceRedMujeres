@@ -14,4 +14,10 @@ class SoldProductController extends Controller
         $purchaseds = Purchased::with('user:name,id,last_name')->paginate(20);
         return view('SoldProduct.index', compact('purchaseds'));
     }
+
+    public function show($sale)
+    {
+        $purchased = Purchased::with('details.product')->findOrFail($sale);
+        return view('SoldProduct.show', compact('purchased'));
+    }
 }
