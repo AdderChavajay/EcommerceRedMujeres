@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row profile">
         <div class="col-md-3">
-            <div class="profile-sidebar">
+            <div class="profile-sidebar shadow">
                 <!-- SIDEBAR USERPIC -->
                 <div class="">
                     <img src="foto.jpg" class=" img img-fluid" alt="">
@@ -34,11 +34,11 @@
 
                     </ul>
                 </div>
-                <!-- END MENU -->
+                <!-- Fin del Menu -->
             </div>
         </div>
         <div class="col-md-9">
-            <div class="profile-content">
+            <div class="profile-content shadow">
                 <div class="Card">
                     <div class="card-header text-center">
                         <h5>Historial de compras</h5>
