@@ -8,21 +8,14 @@
 <div class="container">
     <div class="row profile">
         <div class="col-md-3">
-            <div class="profile-sidebar">
-                <!-- SIDEBAR USERPIC -->
-                <div class="">
-                    <img src="foto.jpg" class=" img img-fluid" alt="">
-                </div>
-                <!-- END SIDEBAR USERPIC -->
-                <!-- SIDEBAR USER TITLE -->
+            <div class="profile-sidebar shadow">
+
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
                         Nombre de Usuario
                     </div>
                 </div>
 
-                <!-- END SIDEBAR BUTTONS -->
-                <!-- SIDEBAR MENU -->
                 <div class="profile-usermenu ">
                     <ul class="nav text-center">
 
@@ -34,11 +27,11 @@
 
                     </ul>
                 </div>
-                <!-- END MENU -->
+                <!-- Fin del Menu -->
             </div>
         </div>
         <div class="col-md-9">
-            <div class="profile-content">
+            <div class="profile-content shadow">
                 <div class="Card">
                     <div class="card-header text-center">
                         <h5>Historial de compras</h5>
