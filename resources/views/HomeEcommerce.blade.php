@@ -79,6 +79,7 @@
     <section class="productos my-3">
         <section>
             <section class="productos_sugeridos row">
+                <!--
                 <div class="asociaciones col-md-3 ">
 
                     <h5 class=" list-group-item list-group-item-action active" style="background: 1b2631;"><b>
@@ -126,16 +127,18 @@
                     </ol>
 
                 </div>
+            -->
 
-
-                <div class="col-md-9">
+                <div class="col-md-12">
+                    <!-- poner el col-md-12 a 9 para colocar las asociaciones -->
                     <div class="text-center">
                         <h3 class="Products_As"> <b> Productos sugeridos </b> </h3>
                     </div>
 
                     <div class="mustra_producto row col-md-12">
                         @foreach ($products as $product)
-                        <div class="col-md-4 col-sm-12 all_product">
+                        <div class="col-md-3 col-sm-6 all_product">
+                            <!--poner a col-md-3 a 4 para que se ajuste col-sm-6 -->
                             <a href="{{ route('product.show', $product->id) }}" class="color_letras">
                                 <div class="product-image-wrapper producto shadow">
                                     <div class="single-products">

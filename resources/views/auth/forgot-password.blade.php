@@ -9,7 +9,8 @@
         </x-slot>
 
         <div class="mb-4 text-sm text-gray-600">
-            {{ __('¿Olvidaste tu contraseña? No hay problema. Simplemente díganos su dirección de correo electrónico y le enviaremos un enlace para restablecer la contraseña que le permitirá elegir una nueva.') }}
+            {{ __('¿Olvidaste tu contraseña? No hay problema. Simplemente díganos su dirección de correo electrónico y
+            le enviaremos un enlace para restablecer la contraseña que le permitirá elegir una nueva.') }}
         </div>
 
         <!-- Session Status -->
@@ -38,7 +39,7 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a href="" class="btn btn-primary">Aceptar</a>
+                <button type="submit" class="btn btn-primary">Aceptar</button>
             </div>
         </form>
     </x-auth-card>

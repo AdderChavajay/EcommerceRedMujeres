@@ -37,7 +37,10 @@
         </p>
       </div>
       <div>
+        {{--
+
         <img src="{{asset('images/umg.png')}}" style="width: 2rem;" alt="">
+        --}}
         <img src="{{asset('images/icons/Logo Municipalida.png')}}" style="width: 2rem;" alt="">
       </div>
     </div>

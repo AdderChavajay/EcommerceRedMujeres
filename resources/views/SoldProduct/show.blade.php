@@ -4,11 +4,14 @@
     <div class="card-header text-center">
         <h5>Detalles de venta</h5>
     </div>
-    <div class="ma-10">
-        Fecha de creacion: {{ date('d-m-Y H:i:s', strtotime($purchased->created_at)) }}
-    </div>
+
     <div class="card-body overflow-auto">
-        <table class="table table-hover">
+        <div class="ma-10">
+            <div class="alert alert-secondary">
+                Fecha de creacion: {{ date('d-m-Y H:i:s', strtotime($purchased->created_at)) }}
+            </div>
+        </div>
+        <table class="table table-hover text-center">
             <thead class="thead-dark">
                 <tr class="">
                     <th scope="">#</th>
@@ -32,9 +35,14 @@
                 @endforeach
             </tbody>
         </table>
-    </div>
-    <div>
-        Total: ${{ $purchased->total }}
+
+        <div class=" ">
+            <div class="col-2 ml-auto alert alert-secondary">
+                <h5>
+                    Total: ${{ $purchased->total }}
+                </h5>
+            </div>
+        </div>
     </div>
 </div>
 
