@@ -8,9 +8,8 @@
                 </span>
             </div>
             <input type="text" class="form-control" placeholder="Nombre" name="name" aria-describedby="basic-addon1"
-                required value="" id="name">
+                required value="{{old('name', $user->name)}}" id="name">
         </div>
-        <!--<input type="text" class="form-control" id="floatingInput" placeholder="Nombre">-->
     </div>
 </div>
 
@@ -24,14 +23,14 @@
                 </span>
             </div>
             <input type="text" class="form-control" placeholder="Tamaño del Producto" name="last_name"
-                aria-describedby="basic-addonddd" required value="" id="size">
+                aria-describedby="basic-addonddd" required value="{{old('last_name', $user->last_name)}}" id="size">
         </div>
     </div>
 </div>
 
 <div class="row">
     <div class="form-floating mb-3 col">
-        <label for="quantity">Correo Electronico</label>
+        <label for="disabledTextInput">Correo Electronico</label>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">
@@ -39,41 +38,13 @@
                 </span>
             </div>
             <input type="email" class="form-control" placeholder="Cantidad" name="email" aria-describedby="basic-addon1"
-                required value="" id="quantity">
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="form-floating mb-3 col">
-        <label for="quantity">Contraseña</label>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
-                    <ion-icon name="key-outline"></ion-icon>
-                </span>
-            </div>
-            <input type="password" class="form-control" placeholder="Cantidad" name="email"
-                aria-describedby="basic-addon1" required value="" id="quantity">
+                required value="{{old('email', $user->email)}}" disabled>
         </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="form-floating mb-3 col">
-        <label for="quantity">Confirmar Contraseña</label>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">
-                    <ion-icon name="key-outline"></ion-icon>
-                </span>
-            </div>
-            <input type="password" class="form-control" placeholder="Cantidad" name="email"
-                aria-describedby="basic-addon1" required value="" id="quantity">
-        </div>
-    </div>
-</div>
-<div class="row py-3">
-    <div class="d-grid text-center col">
-        <button class="btn btn-primary  fw-bold" type="submit">Confirmar</button>
-    </div>
+<div class=" tex-center">
+
+    <button class="btn btn-primary  fw-bold" type="submit">Confirmar</button>
+
 </div>

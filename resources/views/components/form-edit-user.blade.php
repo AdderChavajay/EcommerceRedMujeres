@@ -24,7 +24,7 @@
                 </span>
             </div>
             <input type="text" class="form-control" placeholder="Tamaño del Producto" name="last_name"
-                aria-describedby="basic-addonddd" required value="{{old('size', $user->last_name)}}" id="size">
+                aria-describedby="basic-addonddd" required value="{{old('last_name', $user->last_name)}}" id="size">
         </div>
     </div>
 </div>
@@ -39,7 +39,7 @@
                 </span>
             </div>
             <input type="email" class="form-control" placeholder="Cantidad" name="email" aria-describedby="basic-addon1"
-                required value="{{old('quantity', $user->email)}}" id="quantity">
+                required value="{{old('email', $user->email)}}" id="quantity">
         </div>
     </div>
 </div>
@@ -48,7 +48,6 @@
     <div class="d-grid text-center col">
         <button class="btn btn-primary  fw-bold" type="submit">Confirmar</button>
     </div>
-
     <div class="d-grid text-center col">
         <a href="{{url('user/')}}" class="btn btn-primary row">
             <ion-icon name="arrow-back-outline"></ion-icon>

@@ -37,6 +37,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('user-settings-profile', [ProfileController::class, 'profileSettings'])->name('settings.profile');
     Route::resource('association', AssociationController::class);
     Route::resource('user', UserController::class);
+
+    //Route::get('change-password', [ChangePasswordController::class], 'index');
+
+    Route::post('change-password', [ProfileController::class, 'store'])->name('change.password');
 });
 
 Route::get('/', [CatalogController::class, 'index'])->name('main');

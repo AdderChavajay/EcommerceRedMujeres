@@ -68,13 +68,14 @@
                     </a>
 
                     <div class="dropdown-menu mx-2">
+                        <a class="dropdown-item " href="{{ route('profile.index') }}">Perfil</a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <x-dropdown-link :href="route('logout')" class=" nav-link " onclick="event.preventDefault();
                                                     this.closest('form').submit();">
                                 {{ __('Cerrar sesion') }}
                             </x-dropdown-link>
-                            <a class="dropdown-item " href="{{ route('profile.index') }}">Perfil</a>
+
                         </form>
                     </div>
 
@@ -141,15 +142,11 @@
                                 {{ __('Olvido su contraseña?') }}
                             </a>
                             @endif
-
                         </div>
                     </div>
                 </li>
                 @endauth
-
             </ul>
-
         </div>
     </nav>
-
 </Header>
