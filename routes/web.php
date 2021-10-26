@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('permissions', PermissionController::class);
     Route::resource('product', ProductController::class)->except(['show']);
