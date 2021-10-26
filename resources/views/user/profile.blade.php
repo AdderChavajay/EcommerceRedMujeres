@@ -12,7 +12,7 @@
 
                 <div class="profile-usertitle">
                     <div class="profile-usertitle-name">
-                        Nombre de Usuario
+                        Perfil de Usuario
                     </div>
                 </div>
 
@@ -57,7 +57,8 @@
                                     <td>{{ $purchased->n_prod }}</td>
                                     <td>{{ $purchased->total }}</td>
                                     {{-- <td>
-                                        <a class="btn btn-success" href="{{ route('SoldProduct.show', $purchased->id) }}">Mostrar</a>
+                                        <a class="btn btn-success"
+                                            href="{{ route('SoldProduct.show', $purchased->id) }}">Mostrar</a>
                                     </td> --}}
                                 </tr>
                                 @endforeach

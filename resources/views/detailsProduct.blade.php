@@ -140,21 +140,6 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-
-                    <!--- 
-                
-                    <div class="row">
-                        <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
-                        <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
-                        <img class="img img-fluid  col-md-4 col-sm-4" src="{{asset('images/Carrusell/1.JPG')}}" alt="">
-                        <div class="col-md-4 col-sm-4 img">
-                        </div>
-                        <div class="col-md-4 col-sm-4 img">
-                        </div>
-                        <div class="col-md-4 col-sm-4 img ">
-                        </div>
-                    </div>
-                    -->
                 </div>
             </div>
         </div>

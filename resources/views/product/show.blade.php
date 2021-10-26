@@ -27,8 +27,8 @@
                 <div style="overflow: auto;">
                     <div class="d-flex">
                         @foreach ($images as $image)
-                        <div class="d-inline-block py-2 px-1" style="max-width: 150px;">
-                            <img class="w-200 img-fluid " src="{{asset('storage/'.$image)}}" alt="First slide"
+                        <div class="d-inline-block py-2 px-1 " style="max-width: 150px;">
+                            <img class="w-200 img-fluid" src="{{asset('storage/'.$image)}}" alt="First slide"
                                 width="500px" />
                         </div>
                         @endforeach
@@ -45,16 +45,11 @@
                     <h2 class="text-center"><b> US ${{ $product->price }} </b> </h2>
 
                     <div class="">
-                        <h5 class=""><b>Tamaño: </b> {{$product->size}}  </h5>
+                        <h5 class=""><b>Tamaño: </b> {{$product->size}} </h5>
                     </div>
                     <div class="">
-                        <b>catidad:  </b>
-                        <input
-                            autofocus
-                            type="number"
-                            name="quantity"
-                            class="form-control"
-                            style="width: 80px;"
+                        <b>catidad: </b>
+                        <input autofocus type="number" name="quantity" class="form-control" style="width: 80px;"
                             value="{{ $productInCart != null ? $productInCart->quantity : 1 }}">
                     </div>
                     <div class="estados_di  ">
@@ -100,9 +95,9 @@
                                     @php
                                     $images = explode(',', $product->images);
                                     @endphp
-                                    <img src="{{ asset('storage/'.$images[0]) }}"  class="img-full-contain" alt="">
+                                    <img src="{{ asset('storage/'.$images[0]) }}" class="img-full-contain" alt="">
                                     <div class="productinfo text-center">
-                                        <h3><b>  ${{ $product->price }}  </b></h3>
+                                        <h3><b> ${{ $product->price }} </b></h3>
                                         <p>{{ $product->name }}</p>
                                         <div class="margen">
                                             <button type=" submit" class="btn btn-dark">
