@@ -54,7 +54,8 @@ main section .asociaciones ol li:hover {
 .titulos {
     padding: 1rem;
 }
-*/
+
+
 .Products_As {
     display: inline-block;
     position: relative;
@@ -78,6 +79,7 @@ main section .asociaciones ol li:hover {
 .Products_As::after {
     right: -110px;
 }
+*/
 .img-full-contain {
     max-width: 100%;
     height: 200px;

@@ -48,9 +48,9 @@
 
             <article class="">
                 <p>
-                    La red de mujeres están conformadas por asociaciones entre ella mismas
+                    La red de mujeres están conformadas por asociaciones entre ellas mismas,
                     que por la cual cada asociación tiene sus propios cualidades y roles que
-                    los hacen destacar.
+                    las hacen destacar.
                 </p>
 
                 <p>
@@ -64,9 +64,11 @@
                 <a target="_blank" href="https://www.facebook.com/MercadodeArtesaniasTzununYa" class="">
                     <ion-icon name="logo-facebook" size="large"></ion-icon>
                 </a>
-                <a target="_blank" href="https://mercadotzununya.wixsite.com/inicio" class="">
-                    <ion-icon name="globe-outline" size="large"></ion-icon>
-                </a>
+                <!--
+                    <a target="_blank" href="https://mercadotzununya.wixsite.com/inicio" class="">
+                        <ion-icon name="globe-outline" size="large"></ion-icon>
+                    </a>
+                -->
             </div>
             <div class="text-center">
                 <a href="{{route('catalog.categories')}}" class="btn btn-primary">
@@ -138,7 +140,7 @@
                     <div class="mustra_producto row col-md-12">
                         @foreach ($products as $product)
                         <div class="col-md-3 col-sm-6 all_product">
-                            <!--poner a col-md-3 a 4 para que se ajuste col-sm-6 -->
+                            <!--poner a col-md-3 a 4 para que se ajuste -->
                             <a href="{{ route('product.show', $product->id) }}" class="color_letras">
                                 <div class="product-image-wrapper producto shadow">
                                     <div class="single-products">
@@ -156,10 +158,6 @@
                                                     <ion-icon name="cart"></ion-icon>
                                                     Agregar
                                                 </a>
-                                                <!--
-                                                    <button type=" submit" >
-                                                    </button>
-                                                -->
                                             </div>
                                         </div>
                                     </div>
