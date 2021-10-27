@@ -29,6 +29,8 @@ class PermissionTableSeeder extends Seeder
             'permission-delete',
         ];
 
+        app()->make(\Spatie\Permission\PermissionRegistrar::class)->forgetCachedPermissions();
+
         foreach ($data as $permission) {
             Permission::create(['name' => $permission]);
         }
