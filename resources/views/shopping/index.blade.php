@@ -99,7 +99,7 @@
                         </a> --}}
                         <div id="paypal-button-container"></div>
                     </div>
-                    <div class="col d-flex shadow py-2" style="width: 80px;">
+                    <div class="col d-flex  py-2" style="width: 80px;">
                         <h5 class="mx-auto mb-0"> Total: ${{\Cart::getTotal();}} </h5>
                     </div>
                 </div>
